@@ -1,0 +1,158 @@
+[
+  {
+    "name": "HTML5",
+    "desc": "An open source frontend framework for creating dynamic, optimized websites.",
+    "skillLvl": 95,
+    "pillColor": "colorD"
+  },
+  {
+    "name": "CSS3",
+    "desc": "An open source frontend framework for creating dynamic, optimized websites.",
+    "skillLvl": 98,
+    "pillColor": "colorA"
+  },
+  {
+    "name": "SASS",
+    "desc": "An open source frontend framework for creating dynamic, optimized websites.",
+    "skillLvl": 97,
+    "pillColor": "colorD"
+  },
+  {
+    "name": "Tailwind",
+    "desc": "An open source frontend framework for creating dynamic, optimized websites.",
+    "skillLvl": 97,
+    "pillColor": "colorC"
+  },
+  {
+    "name": "Bootstrap",
+    "desc": "An open source frontend framework for creating dynamic, optimized websites.",
+    "skillLvl": 97,
+    "pillColor": "colorD"
+  },
+  {
+    "name": "JavaScript",
+    "desc": "A high-level, just-in-time compiled, multi-paradigm programming language.",
+    "skillLvl": 86,
+    "pillColor": "js"
+  },
+  {
+    "name": "TypeScript",
+    "desc": "A high-level, just-in-time compiled, multi-paradigm programming language.",
+    "skillLvl": 42,
+    "pillColor": "colorA"
+  },
+  {
+    "name": "jQuery",
+    "desc": "An open source frontend framework for creating dynamic, optimized websites.",
+    "skillLvl": 88,
+    "pillColor": "colorB"
+  },
+  {
+    "name": "React",
+    "desc": "An open-source front-end JavaScript library for building user interfaces.",
+    "skillLvl": 81,
+    "pillColor": "colorC"
+  },
+  {
+    "name": "Gatsby",
+    "desc": "An open source frontend framework for creating dynamic, optimized websites.",
+    "skillLvl": 76,
+    "pillColor": "colorD"
+  },
+  {
+    "name": "Next.js",
+    "desc": "An open source frontend framework for creating dynamic, optimized websites.",
+    "skillLvl": 55,
+    "pillColor": "colorC"
+  },
+  {
+    "name": "Styled Components",
+    "desc": "An open source frontend framework for creating dynamic, optimized websites.",
+    "skillLvl": 90,
+    "pillColor": "colorB"
+  },
+  {
+    "name": "Node",
+    "desc": "A free and open-source content management system written in PHP and paired with a MySQL or MariaDB database.",
+    "skillLvl": 35,
+    "pillColor": "colorC"
+  },
+  {
+    "name": "GraphCMS",
+    "desc": "A free and open-source content management system written in PHP and paired with a MySQL or MariaDB database.",
+    "skillLvl": 35,
+    "pillColor": "colorB"
+  },
+  {
+    "name": "Redux",
+    "desc": "An open source frontend framework for creating dynamic, optimized websites.",
+    "skillLvl": 50,
+    "pillColor": "colorD"
+  },
+  {
+    "name": "Python",
+    "desc": "A free and open-source content management system written in PHP and paired with a MySQL or MariaDB database.",
+    "skillLvl": 35,
+    "pillColor": "colorB"
+  },
+  {
+    "name": "WordPress",
+    "desc": "A free and open-source content management system written in PHP and paired with a MySQL or MariaDB database.",
+    "skillLvl": 92,
+    "pillColor": "colorA"
+  },
+  {
+    "name": "WooCommerce",
+    "desc": "A free and open-source content management system written in PHP and paired with a MySQL or MariaDB database.",
+    "skillLvl": 70,
+    "pillColor": "colorA"
+  },
+  {
+    "name": "PHP",
+    "desc": "A free and open-source content management system written in PHP and paired with a MySQL or MariaDB database.",
+    "skillLvl": 75,
+    "pillColor": "colorC"
+  },
+  {
+    "name": "MySQL",
+    "desc": "A free and open-source content management system written in PHP and paired with a MySQL or MariaDB database.",
+    "skillLvl": 60,
+    "pillColor": "colorD"
+  },
+  {
+    "name": "Figma",
+    "desc": "A high-level, just-in-time compiled, multi-paradigm programming language.",
+    "skillLvl": 91,
+    "pillColor": "colorD"
+  },
+  {
+    "name": "Photoshop",
+    "desc": "An open source frontend framework for creating dynamic, optimized websites.",
+    "skillLvl": 99,
+    "pillColor": "colorA"
+  },
+  {
+    "name": "Adobe XD",
+    "desc": "A high-level, just-in-time compiled, multi-paradigm programming language.",
+    "skillLvl": 72,
+    "pillColor": "colorC"
+  },
+  {
+    "name": "Lightroom",
+    "desc": "An open source frontend framework for creating dynamic, optimized websites.",
+    "skillLvl": 99,
+    "pillColor": "colorA"
+  },
+  {
+    "name": "Capture One",
+    "desc": "An open source frontend framework for creating dynamic, optimized websites.",
+    "skillLvl": 99,
+    "pillColor": "colorD"
+  },
+  {
+    "name": "Firebase",
+    "desc": "A free and open-source content management system written in PHP and paired with a MySQL or MariaDB database.",
+    "skillLvl": 25,
+    "pillColor": "colorD"
+  }
+]

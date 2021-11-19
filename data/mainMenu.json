@@ -1,0 +1,27 @@
+[
+  {
+    "name": "Services",
+    "slug": "/services",
+    "hasSubMenu": true
+  },
+  {
+    "name": "Projects",
+    "slug": "/projects",
+    "hasSubMenu": true
+  },
+  {
+    "name": "Blog",
+    "slug": "/blog",
+    "hasSubMenu": false
+  },
+  {
+    "name": "About",
+    "slug": "/about",
+    "hasSubMenu": false
+  },
+  {
+    "name": "Contact",
+    "slug": "/contact",
+    "hasSubMenu": false
+  }
+]

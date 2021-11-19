@@ -1,0 +1,14 @@
+[
+  {
+    "name": "Photography",
+    "imageUrl": "../src/images/hobbies/photography.jpeg"
+  },
+  { "name": "Yoga", "imageUrl": "../src/images/hobbies/yoga.jpeg" },
+  {
+    "name": "Scuba Diving",
+    "imageUrl": "../src/images/hobbies/scuba-diving.jpeg"
+  },
+  { "name": "Surfing", "imageUrl": "../src/images/hobbies/surfing.jpeg" },
+  { "name": "Travel", "imageUrl": "../src/images/hobbies/travel.jpeg" },
+  { "name": "Trekking", "imageUrl": "../src/images/hobbies/trekking.jpeg" }
+]
