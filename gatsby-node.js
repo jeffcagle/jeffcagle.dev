@@ -4,9 +4,9 @@ const path = require(`path`);
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
 
-  const serviceTemplate = path.resolve("./src/templates/service.js");
-  const projectTemplate = path.resolve("./src/templates/project.js");
-  const blogPostTemplate = path.resolve("./src/templates/blogPost.js");
+  const serviceTemplate = path.resolve('./src/templates/service.jsx');
+  const projectTemplate = path.resolve('./src/templates/project.jsx');
+  const blogPostTemplate = path.resolve('./src/templates/blogPost.jsx');
 
   const servicesResult = await graphql(
     `

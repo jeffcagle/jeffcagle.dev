@@ -1,0 +1,18 @@
+{
+  "extends": ["airbnb", "prettier"],
+  "rules": {
+    // "func-names": "off",
+    "react/function-component-definition": [
+      2,
+      {
+        "namedComponents": "arrow-function",
+        "unnamedComponents": "arrow-function"
+      }
+    ],
+    "arrow-body-style": ["error", "as-needed"],
+    "react/no-danger": [0]
+  },
+  "env": {
+    "browser": true
+  }
+}

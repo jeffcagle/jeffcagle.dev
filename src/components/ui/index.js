@@ -1,18 +1,13 @@
-import Hero from "./Hero.js";
-import Brand from "./Brand.js";
-import Section from "./Section.js";
-import Row from "./Row.js";
-import Column from "./Column.js";
-import Box from "./Box.js";
-import SiteLink from "./SiteLink.js";
-import ButtonLink from "./ButtonLink.js";
-import ServiceLink from "./ServiceLink.js";
-import SocialLinks from "./SocialLinks.js";
-import GridCard from "./GridCard.js";
+import Section from './Section';
+import Row from './Row';
+import Column from './Column';
+import Box from './Box';
+import SiteLink from './SiteLink';
+import ButtonLink from './ButtonLink';
+import ServiceLink from './ServiceLink';
+import GridCard from './GridCard';
 
 export {
-  Hero,
-  Brand,
   Section,
   Box,
   Row,
@@ -20,6 +15,5 @@ export {
   SiteLink,
   ButtonLink,
   ServiceLink,
-  SocialLinks,
   GridCard,
 };
