@@ -1,0 +1,62 @@
+[
+  {
+    "title": "Atomic Habits",
+    "author": "James Clear",
+    "image": "./atomic-habits.jpg",
+    "amazonUrl": "https://www.amazon.com/Atomic-Habits-Proven-Build-Break/dp/0735211299"
+  },
+  {
+    "title": "Sandworm",
+    "author": "Andy Greenberg",
+    "image": "./sandworm.jpg",
+    "amazonUrl": "https://www.amazon.com/Sandworm-Cyberwar-Kremlins-Dangerous-Hackers-ebook/dp/B07GD4MFW2/"
+  },
+  {
+    "title": "Elon Musk",
+    "author": "Ashlee Vance",
+    "image": "./elon-musk.jpg",
+    "amazonUrl": "https://www.amazon.com/Elon-Musk-SpaceX-Fantastic-Future-ebook/dp/B00KVI76ZS/"
+  },
+  {
+    "title": "Eloquent JavaScript",
+    "author": "Marijn Haverbeke",
+    "image": "./eloquent-javascript.jpg",
+    "amazonUrl": "https://www.amazon.com/Eloquent-JavaScript-3rd-Introduction-Programming-ebook-dp-B07C96Q217/dp/B07C96Q217/"
+  },
+  {
+    "title": "SuperLife",
+    "author": "Darin Olien",
+    "image": "./superlife.jpg",
+    "amazonUrl": "https://www.amazon.com/SuperLife-Forces-Healthy-Eternally-Awesome-ebook/dp/B00FJ3A468/"
+  },
+  {
+    "title": "The Cuckoo's Egg",
+    "author": "Cliff Stoll",
+    "image": "./the-cuckoos-egg-2.jpg",
+    "amazonUrl": "https://www.amazon.com/CUCKOOS-EGG-Clifford-Stoll-ebook/dp/B0083DJXCM/"
+  },
+  {
+    "title": "Cult of the Dead Cow",
+    "author": "Joseph Menn",
+    "image": "./cult-of-the-dead-cow.jpg",
+    "amazonUrl": "https://www.amazon.com/Cult-Dead-Cow-Original-Supergroup-ebook/dp/B07J54F9KR/"
+  },
+  {
+    "title": "The Pragmatic Programmer",
+    "author": "David Thomas, Andrew Hunt",
+    "image": "./pragmatic-programmer.jpg",
+    "amazonUrl": "https://www.amazon.com/Pragmatic-Programmer-journey-mastery-Anniversary-dp-0135957052/dp/0135957052/"
+  },
+  {
+    "title": "The Blue Zones",
+    "author": "Dan Buettner",
+    "image": "./blue-zones.jpg",
+    "amazonUrl": "https://www.amazon.com/Blue-Zones-Second-Lessons-Longest-ebook/dp/B007WL6D60/"
+  },
+  {
+    "title": "The Lean Startup",
+    "author": "Eric Ries",
+    "image": "./the-lean-startup.jpg",
+    "amazonUrl": "https://www.amazon.com/Lean-Startup-Entrepreneurs-Continuous-Innovation-ebook/dp/B004J4XGN6/"
+  }
+]

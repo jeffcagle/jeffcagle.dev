@@ -17,7 +17,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-layout`,
       options: {
-        component: require.resolve(`./src/layouts/Layout.jsx`),
+        component: require.resolve(`./src/layouts/Layout.tsx`),
       },
     },
     'gatsby-plugin-image',

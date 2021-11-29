@@ -1,12 +1,12 @@
 ---
-title: "Launching Your First Website - A Guide For Small Business Owners"
-date: "2021-06-11"
-coverImg: "./small-business-owner.jpg"
-slug: "post-1"
-templateKey: "blog"
+title: 'Launching Your First Website - A Guide For Small Business Owners'
+date: '2021-06-11'
+coverImage: './small-business-owner.jpg'
+slug: 'post-1'
+templateKey: 'blog'
 ---
 
-[![This is the alt tag](./small-business-owner.jpg "This is the title")](https://www.google.com)
+[![This is the alt tag](./small-business-owner.jpg 'This is the title')](https://www.google.com)
 
 ## Heading 2
 
@@ -25,7 +25,7 @@ Here is some _italic text_.
 
 Here is some **_bold & italic text_**.
 
-Here is a [link](https://www.google.com "Here is a link title")
+Here is a [link](https://www.google.com 'Here is a link title')
 
 Turn email into link <jeff@jeffcagle.dev>
 
