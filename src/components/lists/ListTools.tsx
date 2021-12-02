@@ -1,7 +1,6 @@
 import * as React from 'react';
 import styled from 'styled-components';
 import { useStaticQuery, graphql } from 'gatsby';
-import Tool from './Tool';
 
 interface ToolsContainerProps {
   mb?: number;
@@ -19,6 +18,10 @@ interface ToolProps {
   pillColor: string;
 }
 
+interface SingleToolColor {
+  color: string;
+}
+
 /**
  *
  * Display a list of tools.
@@ -29,7 +32,7 @@ interface ToolProps {
  * @param mb Optional bottom margin.
  * @returns A list of tools, styled or unstyled.
  */
-const Tools = ({ startText, items, unstyled, mb }: ToolListProps) => {
+const ListTools = ({ startText, items, unstyled, mb }: ToolListProps) => {
   const data = useStaticQuery(graphql`
     query getTools {
       allToolsJson {
@@ -42,9 +45,11 @@ const Tools = ({ startText, items, unstyled, mb }: ToolListProps) => {
     }
   `);
 
-  const allTools = data.allToolsJson.nodes;
-  const tools = allTools.filter((tool: ToolProps) => items.includes(tool.name));
-  const toolsLength = tools.length - 1;
+  const tools = data.allToolsJson.nodes.filter((tool: ToolProps) =>
+    items.includes(tool.name)
+  );
+
+  const lastToolIndex = tools.length - 1;
 
   if (unstyled) {
     return (
@@ -52,9 +57,9 @@ const Tools = ({ startText, items, unstyled, mb }: ToolListProps) => {
         <strong>{startText}</strong>&nbsp;
         {tools.map((tool: ToolProps, index: number) => (
           <span key={tool.id}>
-            {index === toolsLength && <span>&amp; </span>}
+            {index === lastToolIndex && <>&amp; </>}
             {tool.name}
-            {index !== toolsLength && ','}&nbsp;
+            {index !== lastToolIndex && <>,&nbsp;</>}
           </span>
         ))}
       </>
@@ -66,7 +71,9 @@ const Tools = ({ startText, items, unstyled, mb }: ToolListProps) => {
       <StartText>{startText}</StartText>
       <ToolGroup>
         {tools.map((tool: ToolProps) => (
-          <Tool key={tool.id} name={tool.name} color={tool.pillColor} />
+          <SingleTool key={tool.id} color={tool.pillColor}>
+            {tool.name}
+          </SingleTool>
         ))}
       </ToolGroup>
     </ToolsContainer>
@@ -94,4 +101,23 @@ const ToolGroup = styled.ul`
   flex-wrap: wrap;
 `;
 
-export default Tools;
+const SingleTool = styled.li<SingleToolColor>`
+  background-color: ${props => props.theme[props.color]};
+  transition: 200ms ease;
+  color: ${props =>
+    props.color === 'js' ? props.theme.yellowToolText : 'white'};
+  border-radius: 5px;
+  padding: 0.05rem 0.5rem;
+  font-size: 1rem;
+  margin-right: 0.2rem;
+  margin-bottom: 0.2rem;
+  cursor: pointer;
+  font-weight: bold;
+
+  &:hover {
+    background-color: ${props => props.theme.neutralLighter};
+    color: white;
+  }
+`;
+
+export default ListTools;

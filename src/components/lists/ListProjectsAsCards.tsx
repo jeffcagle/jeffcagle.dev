@@ -2,7 +2,7 @@ import * as React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import Card from '../shared/Card';
 import { Row, Column } from '../shared/Columns';
-import Tools from '../devTools/Tools';
+import ListTools from './ListTools';
 
 interface ListProjectsProps {
   excludeDev?: boolean;
@@ -74,7 +74,7 @@ const ListProjectsAsCards = ({ excludeDev, mt, mb }: ListProjectsProps) => {
 
   const handleToolTip = (frontend: string[], backend: string[]) => {
     const tools = [...frontend, ...backend];
-    return <Tools startText="Built with:" unstyled items={tools} />;
+    return <ListTools startText="Built with:" unstyled items={tools} />;
   };
 
   return (

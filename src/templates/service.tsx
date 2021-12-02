@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { graphql } from 'gatsby';
-import Tools from '../components/devTools/Tools';
+import ListTools from '../components/lists/ListTools';
 import { Box } from '../components/shared/Ui';
 import HeroBar from '../components/shared/HeroBar';
 
@@ -27,7 +27,7 @@ const Service = ({ data }: ServiceProps) => {
         <h1>{service.frontmatter.longTitle}</h1>
         <p>{service.frontmatter.summary}</p>
         <Box flex mt={0.8} mb={0.5}>
-          <Tools startText="Tools: " items={service.frontmatter.tools} />
+          <ListTools startText="Tools: " items={service.frontmatter.tools} />
         </Box>
       </HeroBar>
       <Box withContainer mt={3}>

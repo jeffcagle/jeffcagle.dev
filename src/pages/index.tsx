@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Tools from '../components/devTools/Tools';
+import ListTools from '../components/lists/ListTools';
 import ListProjectsAsCards from '../components/lists/ListProjectsAsCards';
 import ListExperiments from '../components/lists/ListExperiments';
 import ListPosts from '../components/lists/ListPosts';
@@ -31,7 +31,7 @@ const Index = () => {
             <span>UX Designer</span> from the United States.
           </p>
           <Box mt={0.8} mb={0.5}>
-            <Tools startText="I love: " items={tools} />
+            <ListTools startText="I love: " items={tools} />
           </Box>
         </Box>
       </HeroBar>

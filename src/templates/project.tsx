@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { graphql } from 'gatsby';
-import { GatsbyImage, GatsbyImageProps, getImage } from 'gatsby-plugin-image';
-import Tools from '../components/devTools/Tools';
+import ListTools from '../components/lists/ListTools';
 import { Box } from '../components/shared/Ui';
 import HeroBar from '../components/shared/HeroBar';
 
@@ -29,11 +28,11 @@ const Project = ({ data }: ProjectProps) => {
         <h1>{project.frontmatter.longTitle}</h1>
         <p>{project.frontmatter.summary}</p>
         <Box flex flexSpace mt={0.8} mb={0.5}>
-          <Tools
+          <ListTools
             startText="Frontend: "
             items={project.frontmatter.frontendTools}
           />
-          <Tools
+          <ListTools
             startText="Backend: "
             items={project.frontmatter.backendTools}
           />

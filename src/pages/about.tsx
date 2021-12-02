@@ -8,7 +8,7 @@ import {
   getImage,
   StaticImage,
 } from 'gatsby-plugin-image';
-import Tools from '../components/devTools/Tools';
+import ListTools from '../components/lists/ListTools';
 import { Box, Section } from '../components/shared/Ui';
 import { Row, Column } from '../components/shared/Columns';
 import SocialLinks from '../components/shared/SocialLinks';
@@ -65,7 +65,7 @@ const About = ({ data }: AboutProps) => {
       </Section>
 
       <Section h2="Favorite Dev Tools">
-        <Tools
+        <ListTools
           startText="I love:"
           items={[
             'JavaScript',
