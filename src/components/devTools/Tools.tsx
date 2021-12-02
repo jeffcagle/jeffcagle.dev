@@ -76,14 +76,14 @@ const Tools = ({ startText, items, unstyled, mb }: ToolListProps) => {
 const ToolsContainer = styled.div<ToolsContainerProps>`
   display: flex;
   align-items: center;
-  margin-bottom: ${(props) => (props.mb ? `${props.mb}rem` : '0')};
+  margin-bottom: ${props => (props.mb ? `${props.mb}rem` : '0')};
 `;
 
 const StartText = styled.div`
   margin-right: 0.8rem;
   font-weight: bold;
   font-style: italic;
-  color: ${(props) => props.theme.neutralLight};
+  color: ${props => props.theme.neutralLight};
 `;
 
 const ToolGroup = styled.ul`

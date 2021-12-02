@@ -81,7 +81,7 @@ const ListPosts = ({
 const Items = styled.ul``;
 
 const Item = styled.li`
-  border-bottom: 1px dashed ${(props) => props.theme.border};
+  border-bottom: 1px dashed ${props => props.theme.border};
 `;
 
 const ItemLink = styled(Link)`
@@ -90,12 +90,12 @@ const ItemLink = styled(Link)`
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-  color: ${(props) => props.theme.neutralLighter};
+  color: ${props => props.theme.neutralLighter};
   transition: 200ms ease;
 
   &:hover {
-    color: ${(props) => props.theme.js};
-    background-color: ${(props) => props.theme.neutralMed};
+    color: ${props => props.theme.js};
+    background-color: ${props => props.theme.neutralMed};
     padding-left: 0.5rem;
   }
 
@@ -103,14 +103,14 @@ const ItemLink = styled(Link)`
     margin-right: 0.5rem;
     position: relative;
     bottom: 0.1rem;
-    color: ${(props) => props.theme.whiteDark};
+    color: ${props => props.theme.whiteDark};
   }
 `;
 
 const MoreLink = styled(Link)`
   margin-top: 1rem;
   display: block;
-  color: ${(props) => props.theme.white};
+  color: ${props => props.theme.white};
 `;
 
 export default ListPosts;

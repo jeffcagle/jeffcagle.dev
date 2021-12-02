@@ -44,11 +44,11 @@ const Footer = () => (
 
 const FooterBar = styled.div`
   width: 100%;
-  background-color: ${(props) => props.theme.neutralMed};
-  border-top: 3px solid ${(props) => props.theme.colorD};
+  background-color: ${props => props.theme.neutralMed};
+  border-top: 3px solid ${props => props.theme.colorD};
 
   h3 {
-    color: ${(props) => props.theme.whiteDark};
+    color: ${props => props.theme.whiteDark};
   }
 
   ul {
@@ -58,20 +58,20 @@ const FooterBar = styled.div`
     font-size: 0.9rem;
 
     a {
-      color: ${(props) => props.theme.neutralLighter};
+      color: ${props => props.theme.neutralLighter};
 
       &:hover {
-        color: ${(props) => props.theme.js};
+        color: ${props => props.theme.js};
       }
     }
   }
 `;
 
 const FooterContainer = styled.div`
-  max-width: ${(props) => props.theme.containerWidth};
+  max-width: ${props => props.theme.containerWidth};
   margin: 0 auto;
   padding: 4rem 0;
-  color: ${(props) => props.theme.neutralLight};
+  color: ${props => props.theme.neutralLight};
 `;
 
 export default Footer;

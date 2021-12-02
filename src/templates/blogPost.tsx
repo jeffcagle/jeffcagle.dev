@@ -90,17 +90,17 @@ const BlogPost = ({ data }: PostProps) => {
 };
 
 const PostMeta = styled.span`
-  color: ${(props) => props.theme.neutralLighter};
+  color: ${props => props.theme.neutralLighter};
 `;
 
 const PrevNext = styled.div`
-  border-top: 1px dashed ${(props) => props.theme.border};
+  border-top: 1px dashed ${props => props.theme.border};
   padding-top: 1rem;
 `;
 
 const Prev = styled.div`
   margin-bottom: 1rem;
-  color: ${(props) => props.theme.neutralLight};
+  color: ${props => props.theme.neutralLight};
   font-weight: bold;
   font-style: italic;
   text-align: left;
@@ -108,7 +108,7 @@ const Prev = styled.div`
 
 const Next = styled.div`
   margin-bottom: 1rem;
-  color: ${(props) => props.theme.neutralLight};
+  color: ${props => props.theme.neutralLight};
   font-weight: bold;
   font-style: italic;
   text-align: right;
@@ -118,9 +118,9 @@ const PrevNextPost = styled(Link)`
   display: flex;
   align-items: center;
   padding: 0.7rem;
-  color: ${(props) => props.theme.whiteDark};
-  background: ${(props) => props.theme.neutralMed};
-  border: 2px solid ${(props) => props.theme.neutralMed};
+  color: ${props => props.theme.whiteDark};
+  background: ${props => props.theme.neutralMed};
+  border: 2px solid ${props => props.theme.neutralMed};
   border-radius: 10px;
   position: relative;
   width: 100%;
@@ -132,8 +132,8 @@ const PrevNextPost = styled(Link)`
     0.2s cubic-bezier(0.37, 0, 0.65, 1);
 
   &:hover {
-    color: ${(props) => props.theme.js};
-    border: 2px solid ${(props) => props.theme.colorD};
+    color: ${props => props.theme.js};
+    border: 2px solid ${props => props.theme.colorD};
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
     width: 102%;
     margin-top: -1%;
@@ -153,7 +153,7 @@ const PostImageContainer = styled.div`
 const PostImage = styled(GatsbyImage)``;
 
 const PostTitle = styled.span`
-  color: ${(props) => props.theme.neutralLighter};
+  color: ${props => props.theme.neutralLighter};
   display: block;
   text-overflow: ellipsis;
   white-space: nowrap;

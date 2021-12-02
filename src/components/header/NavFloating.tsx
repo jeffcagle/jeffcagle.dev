@@ -140,8 +140,8 @@ const MenuLink = styled(Link)`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: ${(props) => props.theme.neutralMed};
-  color: ${(props) => props.theme.neutralLighter};
+  background-color: ${props => props.theme.neutralMed};
+  color: ${props => props.theme.neutralLighter};
   padding: 0.2rem 1rem;
   height: 50px;
   width: 50px;
@@ -156,7 +156,7 @@ const MenuLink = styled(Link)`
   }
 
   svg {
-    color: ${(props) => props.theme.neutralLighter};
+    color: ${props => props.theme.neutralLighter};
   }
 
   &:hover {
@@ -177,11 +177,11 @@ const MenuItem = styled.li`
 
   &:nth-child(1) {
     ${MenuLink}:hover {
-      background-color: ${(props) => props.theme.colorD};
-      color: ${(props) => props.theme.white};
+      background-color: ${props => props.theme.colorD};
+      color: ${props => props.theme.white};
 
       svg {
-        color: ${(props) => props.theme.white};
+        color: ${props => props.theme.white};
         justify-self: left;
       }
     }
@@ -189,11 +189,11 @@ const MenuItem = styled.li`
 
   &:nth-child(2) {
     ${MenuLink}:hover {
-      background-color: ${(props) => props.theme.colorA};
-      color: ${(props) => props.theme.white};
+      background-color: ${props => props.theme.colorA};
+      color: ${props => props.theme.white};
 
       svg {
-        color: ${(props) => props.theme.white};
+        color: ${props => props.theme.white};
         justify-self: left;
       }
     }
@@ -201,11 +201,11 @@ const MenuItem = styled.li`
 
   &:nth-child(3) {
     ${MenuLink}:hover {
-      background-color: ${(props) => props.theme.js};
-      color: ${(props) => props.theme.yellowToolText};
+      background-color: ${props => props.theme.js};
+      color: ${props => props.theme.yellowToolText};
 
       svg {
-        color: ${(props) => props.theme.yellowToolText};
+        color: ${props => props.theme.yellowToolText};
         justify-self: left;
       }
     }
@@ -213,11 +213,11 @@ const MenuItem = styled.li`
 
   &:nth-child(4) {
     ${MenuLink}:hover {
-      background-color: ${(props) => props.theme.colorD};
-      color: ${(props) => props.theme.white};
+      background-color: ${props => props.theme.colorD};
+      color: ${props => props.theme.white};
 
       svg {
-        color: ${(props) => props.theme.white};
+        color: ${props => props.theme.white};
         justify-self: left;
       }
     }
@@ -225,11 +225,11 @@ const MenuItem = styled.li`
 
   &:nth-child(5) {
     ${MenuLink}:hover {
-      background-color: ${(props) => props.theme.colorA};
-      color: ${(props) => props.theme.white};
+      background-color: ${props => props.theme.colorA};
+      color: ${props => props.theme.white};
 
       svg {
-        color: ${(props) => props.theme.white};
+        color: ${props => props.theme.white};
         justify-self: left;
       }
     }
@@ -237,11 +237,11 @@ const MenuItem = styled.li`
 
   &:nth-child(6) {
     ${MenuLink}:hover {
-      background-color: ${(props) => props.theme.js};
-      color: ${(props) => props.theme.yellowToolText};
+      background-color: ${props => props.theme.js};
+      color: ${props => props.theme.yellowToolText};
 
       svg {
-        color: ${(props) => props.theme.yellowToolText};
+        color: ${props => props.theme.yellowToolText};
         justify-self: left;
       }
     }

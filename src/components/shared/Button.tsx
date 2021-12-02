@@ -35,9 +35,9 @@ const Button = ({ type, to, centered, mt, mb, children }: ButtonProps) => (
 
 const BtnContainer = styled.div<BtnContainerProps>`
   display: flex;
-  justify-content: ${(props) => (props.centered ? 'center' : 'left')};
-  margin-top: ${(props) => (props.mt ? `${props.mt}rem` : '0')};
-  margin-bottom: ${(props) => (props.mb ? `${props.mb}rem` : '0')};
+  justify-content: ${props => (props.centered ? 'center' : 'left')};
+  margin-top: ${props => (props.mt ? `${props.mt}rem` : '0')};
+  margin-bottom: ${props => (props.mb ? `${props.mb}rem` : '0')};
 `;
 
 const Btn = styled(Link)<ButtonProps>`
@@ -46,10 +46,10 @@ const Btn = styled(Link)<ButtonProps>`
   justify-content: center;
   position: relative;
   font-weight: bold;
-  background-color: ${(props) => props.theme.colorD};
+  background-color: ${props => props.theme.colorD};
   color: white;
 
-  ${(props) =>
+  ${props =>
     props.type === 'primary' &&
     `
     padding: 0.6rem 1.4rem;

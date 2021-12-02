@@ -79,7 +79,7 @@ NavSub.propTypes = {
 };
 
 const SubNav = styled.div`
-  background-color: ${(props) => props.theme.neutralDark};
+  background-color: ${props => props.theme.neutralDark};
 `;
 
 const Menu = styled.ul`
@@ -93,7 +93,7 @@ const Menu = styled.ul`
 
 const MenuItem = styled.li`
   a {
-    color: ${(props) => props.theme.neutralLighter};
+    color: ${props => props.theme.neutralLighter};
     transition: 200ms ease;
     padding: 0 1rem;
     display: block;
@@ -101,11 +101,11 @@ const MenuItem = styled.li`
     line-height: 45px;
 
     &:hover {
-      color: ${(props) => props.theme.js};
+      color: ${props => props.theme.js};
     }
 
     &.active {
-      color: ${(props) => props.theme.js};
+      color: ${props => props.theme.js};
     }
   }
 `;

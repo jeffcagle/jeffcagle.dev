@@ -30,11 +30,11 @@ const HeroBar = ({ hasSubMenu, py = 4, flex, children }: HeroBarProps) => (
 );
 
 const Wrapper = styled.div<HeroBarWrapperProps>`
-  background-color: ${(props) => props.theme.neutralMed};
-  padding-top: ${(props) => `${props.py}rem`};
-  padding-bottom: ${(props) => `${props.py}rem`};
+  background-color: ${props => props.theme.neutralMed};
+  padding-top: ${props => `${props.py}rem`};
+  padding-bottom: ${props => `${props.py}rem`};
 
-  ${(props) =>
+  ${props =>
     props.hasSubMenu &&
     `
       margin-top:45px;
@@ -42,7 +42,7 @@ const Wrapper = styled.div<HeroBarWrapperProps>`
 `;
 
 const Container = styled.div<HeroBarContainer>`
-  max-width: ${(props) => props.theme.containerWidth};
+  max-width: ${props => props.theme.containerWidth};
   margin: 0 auto;
 
   h1 {
@@ -60,7 +60,7 @@ const Container = styled.div<HeroBarContainer>`
     }
   }
 
-  ${(props) =>
+  ${props =>
     props.flex &&
     `
     display:flex;
@@ -79,7 +79,7 @@ const HeroSummary = styled.p`
   margin-bottom: 0;
 
   span {
-    /* color: ${(props) => props.theme.js}; */
+    /* color: ${props => props.theme.js}; */
     font-weight: bold;
   }
 `;

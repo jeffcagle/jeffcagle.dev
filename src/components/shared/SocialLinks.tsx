@@ -48,7 +48,7 @@ const Text = styled.span`
   font-style: italic;
   margin-right: 20px;
   display: block;
-  color: ${(props) => props.theme.neutralLight};
+  color: ${props => props.theme.neutralLight};
 `;
 
 const SocialIcons = styled.div`

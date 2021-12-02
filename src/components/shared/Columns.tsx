@@ -27,8 +27,8 @@ const RowItem = styled.div<RowProps>`
   min-width: 100%;
   margin-left: -1rem;
   margin-right: -1rem;
-  margin-top: ${(props) => (props.mt ? `${props.mt}rem` : '0')};
-  margin-bottom: ${(props) => (props.mb ? `${props.mb}rem` : '0')};
+  margin-top: ${props => (props.mt ? `${props.mt}rem` : '0')};
+  margin-bottom: ${props => (props.mb ? `${props.mb}rem` : '0')};
 `;
 
 interface ColumnProps {
@@ -53,7 +53,7 @@ export const Column = ({ title, width = 100, children }: ColumnProps) => (
 );
 
 const ColumnItem = styled.div<ColumnProps>`
-  width: ${(props) => `${props.width}%`};
+  width: ${props => `${props.width}%`};
   margin-bottom: 2rem;
   padding: 0 1rem;
 `;

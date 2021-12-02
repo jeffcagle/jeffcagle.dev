@@ -37,10 +37,10 @@ const ExperimentGroup = styled.ul`
 `;
 
 const Experiment = styled.li`
-  border-bottom: 1px dashed ${(props) => props.theme.border};
+  border-bottom: 1px dashed ${props => props.theme.border};
 
   a {
-    color: ${(props) => props.theme.neutralLighter};
+    color: ${props => props.theme.neutralLighter};
     transition: 200ms ease;
     padding: 0.2rem 0;
     display: block;
@@ -49,8 +49,8 @@ const Experiment = styled.li`
     overflow: hidden;
 
     &:hover {
-      color: ${(props) => props.theme.js};
-      background-color: ${(props) => props.theme.neutralMed};
+      color: ${props => props.theme.js};
+      background-color: ${props => props.theme.neutralMed};
       padding-left: 0.5rem;
     }
   }
@@ -59,7 +59,7 @@ const Experiment = styled.li`
     margin-right: 0.5rem;
     position: relative;
     bottom: 0.1rem;
-    color: ${(props) => props.theme.whiteDark};
+    color: ${props => props.theme.whiteDark};
   }
 `;
 

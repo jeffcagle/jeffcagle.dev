@@ -23,8 +23,6 @@ interface ProjectProps {
 const Project = ({ data }: ProjectProps) => {
   const project = data.markdownRemark;
 
-  console.log(data);
-
   return (
     <>
       <HeroBar py={2} hasSubMenu>

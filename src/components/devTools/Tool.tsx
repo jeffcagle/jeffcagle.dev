@@ -22,9 +22,9 @@ const Tool = ({ name, color }: ToolProps) => (
 );
 
 const SingleTool = styled.li<SingleToolProps>`
-  background-color: ${(props) => props.theme[props.color]};
+  background-color: ${props => props.theme[props.color]};
   transition: 200ms ease;
-  color: ${(props) =>
+  color: ${props =>
     props.color === 'js' ? props.theme.yellowToolText : 'white'};
   border-radius: 5px;
   padding: 0.05rem 0.5rem;
@@ -35,7 +35,7 @@ const SingleTool = styled.li<SingleToolProps>`
   font-weight: bold;
 
   &:hover {
-    background-color: ${(props) => props.theme.neutralLighter};
+    background-color: ${props => props.theme.neutralLighter};
     color: white;
   }
 `;

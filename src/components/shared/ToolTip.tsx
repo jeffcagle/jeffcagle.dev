@@ -33,10 +33,10 @@ const ToolTipWrapper = styled.div<ToolTipWrapperProps>`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  background-color: ${(props) => props.theme.whiteMed};
+  background-color: ${props => props.theme.whiteMed};
   box-shadow: 3px 2px 10px rgba(0, 0, 0, 0.3);
   text-align: center;
-  color: ${(props) => props.theme.neutralMed};
+  color: ${props => props.theme.neutralMed};
   font-size: 0.8rem;
   line-height: 1.5;
   font-weight: normal;
@@ -49,9 +49,9 @@ const ToolTipWrapper = styled.div<ToolTipWrapperProps>`
   transition-property: opacity visibility;
   transition-timing-function: ease-in-out;
   transition-duration: 0.3s;
-  transition-delay: ${(props) => props.delay}s;
+  transition-delay: ${props => props.delay}s;
 
-  ${(props) =>
+  ${props =>
     props.position === 'top' &&
     `
     bottom: 107%;
@@ -60,13 +60,13 @@ const ToolTipWrapper = styled.div<ToolTipWrapperProps>`
     right: 0;
   `}
 
-  ${(props) =>
+  ${props =>
     props.position === 'bottom' &&
     `
     top: 107%;
   `}
 
-  ${(props) =>
+  ${props =>
     props.position === 'right' &&
     `
     left: 107%;
@@ -74,7 +74,7 @@ const ToolTipWrapper = styled.div<ToolTipWrapperProps>`
     transform: translateY(-50%);
   `}
 
-  ${(props) =>
+  ${props =>
     props.position === 'left' &&
     `
     right: 107%;
@@ -86,7 +86,7 @@ const ToolTipWrapper = styled.div<ToolTipWrapperProps>`
     content: '';
     position: absolute;
 
-    ${(props) =>
+    ${props =>
       props.position === 'top' &&
       `
       left: 50%;
@@ -97,7 +97,7 @@ const ToolTipWrapper = styled.div<ToolTipWrapperProps>`
       border-top: 10px solid ${props.theme.whiteMed};
     `}
 
-    ${(props) =>
+    ${props =>
       props.position === 'bottom' &&
       `
       left: 50%;
@@ -108,7 +108,7 @@ const ToolTipWrapper = styled.div<ToolTipWrapperProps>`
       border-bottom: 10px solid ${props.theme.whiteMed};
     `}
 
-    ${(props) =>
+    ${props =>
       props.position === 'right' &&
       `
       top: 50%;
@@ -119,7 +119,7 @@ const ToolTipWrapper = styled.div<ToolTipWrapperProps>`
       border-right: 10px solid ${props.theme.whiteMed};
     `}
 
-    ${(props) =>
+    ${props =>
       props.position === 'left' &&
       `
       top: 50%;

@@ -29,10 +29,10 @@ const SectionItem = styled.section`
 `;
 
 const SectionContainer = styled.div<SectionProps>`
-  max-width: ${(props) => props.theme.containerWidth};
+  max-width: ${props => props.theme.containerWidth};
   margin: 0 auto;
 
-  ${(props) =>
+  ${props =>
     props.flex &&
     `
       display:flex;
@@ -97,29 +97,29 @@ export const Box = (props: BoxProps) => (
 );
 
 const BoxItem = styled.div<BoxProps>`
-  margin-top: ${(props) => (props.mt ? `${props.mt}rem` : '0')};
-  margin-right: ${(props) => (props.mr ? `${props.mr}rem` : '0')};
-  margin-left: ${(props) => (props.ml ? `${props.ml}rem` : '0')};
-  margin-bottom: ${(props) => (props.mb ? `${props.mb}rem` : '0')};
-  padding-top: ${(props) => (props.pt ? `${props.pt}rem` : '0')};
-  padding-right: ${(props) => (props.pr ? `${props.pr}rem` : '0')};
-  padding-left: ${(props) => (props.pl ? `${props.pl}rem` : '0')};
-  padding-bottom: ${(props) => (props.pb ? `${props.pb}rem` : '0')};
+  margin-top: ${props => (props.mt ? `${props.mt}rem` : '0')};
+  margin-right: ${props => (props.mr ? `${props.mr}rem` : '0')};
+  margin-left: ${props => (props.ml ? `${props.ml}rem` : '0')};
+  margin-bottom: ${props => (props.mb ? `${props.mb}rem` : '0')};
+  padding-top: ${props => (props.pt ? `${props.pt}rem` : '0')};
+  padding-right: ${props => (props.pr ? `${props.pr}rem` : '0')};
+  padding-left: ${props => (props.pl ? `${props.pl}rem` : '0')};
+  padding-bottom: ${props => (props.pb ? `${props.pb}rem` : '0')};
 
-  ${(props) =>
+  ${props =>
     props.flex &&
     `
     display:flex;
     align-items:center;
   `}
 
-  ${(props) =>
+  ${props =>
     props.flexSpace &&
     `
     justify-content:space-between;
   `}
 
-${(props) =>
+${props =>
     props.justifyRight &&
     `
     justify-content:right;
@@ -127,7 +127,7 @@ ${(props) =>
 `;
 
 const BoxContainer = styled.div`
-  max-width: ${(props) => props.theme.containerWidth};
+  max-width: ${props => props.theme.containerWidth};
   margin: 0 auto;
 
   .gatsby-resp-image-wrapper {

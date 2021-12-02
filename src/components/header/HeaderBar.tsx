@@ -34,7 +34,7 @@ const HeaderBar = ({ menu }: HeaderBarProps) => (
 
 const Header = styled.header`
   position: relative;
-  background: ${(props) =>
+  background: ${props =>
     `linear-gradient(-45deg, ${props.theme.colorA}, ${props.theme.colorB}, ${props.theme.colorC}, ${props.theme.colorD})`};
   background-size: 400% 400%;
   animation: gradient 15s ease infinite;

@@ -71,12 +71,12 @@ const Item = styled.li`
     transition: 200ms ease;
 
     &:hover {
-      color: ${(props) => props.theme.white};
-      /* background-color: ${(props) => props.theme.blueAccent}; */
+      color: ${props => props.theme.white};
+      /* background-color: ${props => props.theme.blueAccent}; */
     }
 
     &.active {
-      color: ${(props) => props.theme.js};
+      color: ${props => props.theme.js};
       background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0));
 
       & + ${SubMenu} {
@@ -86,7 +86,7 @@ const Item = styled.li`
     }
 
     &.hasSub.active:after {
-      border-bottom: 12px solid ${(props) => props.theme.neutralDark};
+      border-bottom: 12px solid ${props => props.theme.neutralDark};
     }
 
     &.active:after {
@@ -98,7 +98,7 @@ const Item = styled.li`
       height: 0;
       border-left: 12px solid transparent;
       border-right: 12px solid transparent;
-      border-bottom: 12px solid ${(props) => props.theme.neutralMed};
+      border-bottom: 12px solid ${props => props.theme.neutralMed};
     }
   }
 `;
