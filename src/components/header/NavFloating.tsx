@@ -24,11 +24,11 @@ interface MenuProps {
  * @returns The floating menu.
  */
 const NavFloating = ({ menu }: MenuProps) => {
-  const [visibile, setVisibile] = useState(false);
+  const [visible, setVisible] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setVisibile(window.scrollY > 150);
+      setVisible(window.scrollY > 150);
     };
     window.addEventListener('scroll', handleScroll);
 
@@ -55,7 +55,7 @@ const NavFloating = ({ menu }: MenuProps) => {
   return (
     <FloatingNav>
       <Nav>
-        <Menu className={visibile ? 'animateIn' : ''}>
+        <Menu className={visible ? 'animateIn' : ''}>
           <MenuItem>
             <MenuLink to="/">
               <FontAwesomeIcon icon={faHome} /> <span>Home</span>
