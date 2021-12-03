@@ -24,7 +24,7 @@ const ListPostsAsCards = ({ limit = 1000 }: ListPostsProps) => {
     query getPostsWithImage {
       allMarkdownRemark(
         filter: { frontmatter: { templateKey: { in: "blog" } } }
-        sort: { fields: [frontmatter___date], order: ASC }
+        sort: { fields: [frontmatter___date], order: DESC }
       ) {
         nodes {
           id

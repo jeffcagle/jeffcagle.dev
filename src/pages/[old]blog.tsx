@@ -2,7 +2,7 @@ import * as React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBlog } from '@fortawesome/free-solid-svg-icons';
 import { Box } from '../components/shared/Ui';
-import ListPostsAsCards from '../components/lists/ListPostsAsCards';
+// import ListPostsAsCards from '../components/lists/ListPostsAsCards';
 import HeroBar from '../components/shared/HeroBar';
 
 const Blog = () => (
@@ -15,7 +15,7 @@ const Blog = () => (
       </Box>
     </HeroBar>
     <Box withContainer mt={3}>
-      <ListPostsAsCards />
+      {/* <ListPostsAsCards /> */}
     </Box>
   </>
 );
