@@ -1,55 +1,53 @@
-const jcTheme = {
-  js: '#FFE856',
+import { DefaultTheme } from 'styled-components';
 
-  // CANDY THEME
-  // colorA: "#4585B6",
-  // colorB: "#4585B6",
-  // colorC: "#4585B6",
-  // colorD: "#F4526C",
-  // colorE: "#F4526C",
+const jcTheme: DefaultTheme = {
+  colors: {
+    primary: '#FFE856',
+    secondary: '#5685E3',
+    accent1: '#AB60FD',
+    accent2: '#7356E3',
+    accent3: '#6B74FA',
+    accent4: '#60BDFD',
 
-  // Theme 3 - Blue
+    neutral100: '#ffffff',
+    neutral200: '#dbdbdb',
+    neutral300: '#c4c4c4',
+    neutral400: '#999999',
+    neutral500: '#646464',
+    neutral550: '#424242',
+    neutral600: '#2e2e2e',
+    neutral700: '#2a2a2a',
+    neutral800: '#222222',
 
-  colorA: '#AB60FD',
-  colorB: '#7356E3',
-  colorC: '#6B74FA',
-  colorD: '#5685E3',
-  colorE: '#60BDFD',
+    jsToolFont: '#241f00',
+  },
+
+  fonts: {
+    title:
+      '-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif',
+    content:
+      '-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif',
+  },
+
+  sizes: {
+    containerWidth: '928px',
+  },
 
   // Theme 4 - Blue 2
 
-  // colorA: "#3B5396",
-  // colorB: "#4865B8",
-  // colorC: "#5F87F5",
-  // colorD: "#4D6DC4",
-  // colorE: "#3E589E",
+  // secondary: "#4D6DC4",
+  // accent1: "#3B5396",
+  // accent2: "#4865B8",
+  // accent3: "#5F87F5",
+  // accent4: "#3E589E",
 
   // Theme 5 - Purple
 
-  // colorA: "#643DFF",
-  // colorB: "#482CB8",
-  // colorC: "#5E44C3",
-  // colorD: "#55439C",
-  // colorE: "#5433D6",
-
-  yellowToolText: '#241f00',
-
-  // OTHER
-  blueAccent: '#427dae',
-  blueDark: '#376890',
-  neutralDark: '#222222',
-  neutralMed: '#2a2a2a',
-  neutralMedLight: '#2e2e2e',
-  border: '#64646482',
-  shadow: '#141414',
-  neutralLight: '#646464',
-  neutralLighter: '#999999',
-  whiteDark: '#c4c4c4',
-  whiteMed: '#dbdbdb',
-  white: '#ffffff',
-  fontFamilyText:
-    '-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif',
-  containerWidth: '928px',
+  // secondary: "#55439C",
+  // accent1: "#643DFF",
+  // accent2: "#482CB8",
+  // accent3: "#5E44C3",
+  // accent4: "#5433D6",
 };
 
 export default jcTheme;

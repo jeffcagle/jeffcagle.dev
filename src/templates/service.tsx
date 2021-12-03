@@ -31,7 +31,10 @@ const Service = ({ data }: ServiceProps) => {
         </Box>
       </HeroBar>
       <Box withContainer mt={3}>
-        <div dangerouslySetInnerHTML={{ __html: service.html }} />
+        <div
+          className="service"
+          dangerouslySetInnerHTML={{ __html: service.html }}
+        />
       </Box>
     </>
   );

@@ -30,7 +30,7 @@ const HeroBar = ({ hasSubMenu, py = 4, flex, children }: HeroBarProps) => (
 );
 
 const Wrapper = styled.div<HeroBarWrapperProps>`
-  background-color: ${props => props.theme.neutralMed};
+  background-color: ${props => props.theme.colors.neutral700};
   padding-top: ${props => `${props.py}rem`};
   padding-bottom: ${props => `${props.py}rem`};
 
@@ -42,7 +42,7 @@ const Wrapper = styled.div<HeroBarWrapperProps>`
 `;
 
 const Container = styled.div<HeroBarContainer>`
-  max-width: ${props => props.theme.containerWidth};
+  max-width: ${props => props.theme.sizes.containerWidth};
   margin: 0 auto;
 
   h1 {
@@ -79,7 +79,7 @@ const HeroSummary = styled.p`
   margin-bottom: 0;
 
   span {
-    /* color: ${props => props.theme.js}; */
+    /* color: ${props => props.theme.colors.primary}; */
     font-weight: bold;
   }
 `;

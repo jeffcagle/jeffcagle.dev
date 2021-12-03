@@ -33,10 +33,10 @@ const ToolTipWrapper = styled.div<ToolTipWrapperProps>`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  background-color: ${props => props.theme.whiteMed};
+  background-color: ${props => props.theme.colors.neutral200};
   box-shadow: 3px 2px 10px rgba(0, 0, 0, 0.3);
   text-align: center;
-  color: ${props => props.theme.neutralMed};
+  color: ${props => props.theme.colors.neutral700};
   font-size: 0.8rem;
   line-height: 1.5;
   font-weight: normal;
@@ -94,7 +94,7 @@ const ToolTipWrapper = styled.div<ToolTipWrapperProps>`
       top: 99%;
       border-left: 10px solid transparent;
       border-right: 10px solid transparent;
-      border-top: 10px solid ${props.theme.whiteMed};
+      border-top: 10px solid ${props.theme.colors.neutral200};
     `}
 
     ${props =>
@@ -105,7 +105,7 @@ const ToolTipWrapper = styled.div<ToolTipWrapperProps>`
       bottom: 99%;
       border-left: 10px solid transparent;
       border-right: 10px solid transparent;
-      border-bottom: 10px solid ${props.theme.whiteMed};
+      border-bottom: 10px solid ${props.theme.colors.neutral200};
     `}
 
     ${props =>
@@ -116,7 +116,7 @@ const ToolTipWrapper = styled.div<ToolTipWrapperProps>`
       right: 99%;
       border-top: 10px solid transparent;
       border-bottom: 10px solid transparent;
-      border-right: 10px solid ${props.theme.whiteMed};
+      border-right: 10px solid ${props.theme.colors.neutral200};
     `}
 
     ${props =>
@@ -127,7 +127,7 @@ const ToolTipWrapper = styled.div<ToolTipWrapperProps>`
       left: 99%;
       border-top: 10px solid transparent;
       border-bottom: 10px solid transparent;
-      border-left: 10px solid ${props.theme.whiteMed};
+      border-left: 10px solid ${props.theme.colors.neutral200};
     `}
   }
 `;

@@ -39,7 +39,10 @@ const Project = ({ data }: ProjectProps) => {
         </Box>
       </HeroBar>
       <Box withContainer mt={3}>
-        <div dangerouslySetInnerHTML={{ __html: project.html }} />
+        <div
+          className="project"
+          dangerouslySetInnerHTML={{ __html: project.html }}
+        />
       </Box>
     </>
   );

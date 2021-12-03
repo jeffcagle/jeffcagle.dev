@@ -29,7 +29,7 @@ const SectionItem = styled.section`
 `;
 
 const SectionContainer = styled.div<SectionProps>`
-  max-width: ${props => props.theme.containerWidth};
+  max-width: ${props => props.theme.sizes.containerWidth};
   margin: 0 auto;
 
   ${props =>
@@ -127,7 +127,7 @@ ${props =>
 `;
 
 const BoxContainer = styled.div`
-  max-width: ${props => props.theme.containerWidth};
+  max-width: ${props => props.theme.sizes.containerWidth};
   margin: 0 auto;
 
   .gatsby-resp-image-wrapper {

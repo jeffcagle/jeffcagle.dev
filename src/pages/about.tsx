@@ -49,7 +49,7 @@ const About = ({ data }: AboutProps) => {
               consectetur adipisicing elit. Molestias aut, repellat ipsum facere
               voluptate dicta obcaecati deserunt nobis suscipit eaque.
             </p>
-            <SocialLinks startText="Find Me On: " />
+            <SocialLinks startText="Find me on: " />
           </Column>
           <Column width={50}>
             <Box flex justifyRight>
@@ -108,14 +108,14 @@ const ProfileImage = styled.div`
   height: 250px;
   border-radius: 125px;
   overflow: hidden;
-  border: 10px solid ${props => props.theme.neutralMed};
+  border: 10px solid ${props => props.theme.colors.neutral700};
 `;
 
 const BookItem = styled.a`
   padding: 0.7rem;
-  color: ${props => props.theme.whiteDark};
-  background: ${props => props.theme.neutralMed};
-  border: 2px solid ${props => props.theme.neutralMed};
+  color: ${props => props.theme.colors.neutral300};
+  background: ${props => props.theme.colors.neutral700};
+  border: 2px solid ${props => props.theme.colors.neutral700};
   border-radius: 10px;
   display: flex;
   flex-direction: column;
@@ -131,9 +131,9 @@ const BookItem = styled.a`
     0.2s cubic-bezier(0.37, 0, 0.65, 1);
 
   &:hover {
-    /* color: ${props => props.theme.white}; */
-    color: ${props => props.theme.js};
-    border: 2px solid ${props => props.theme.colorD};
+    /* color: ${props => props.theme.colors.neutral100}; */
+    color: ${props => props.theme.colors.primary};
+    border: 2px solid ${props => props.theme.colors.secondary};
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
     width: 102%;
     height: 102%;

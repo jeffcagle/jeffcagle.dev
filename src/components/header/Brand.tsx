@@ -44,7 +44,7 @@ const Dot = styled.span`
   width: 10px;
   height: 10px;
   border-radius: 100%;
-  background-color: ${props => props.theme.js};
+  background-color: ${props => props.theme.colors.primary};
 
   position: absolute;
   bottom: 5px;
@@ -58,10 +58,10 @@ const Name = styled.div`
   a {
     position: relative;
     display: flex;
-    color: ${props => props.theme.white};
+    color: ${props => props.theme.colors.neutral100};
 
     &:hover {
-      color: ${props => props.theme.white};
+      color: ${props => props.theme.colors.neutral100};
     }
   }
 
@@ -71,14 +71,14 @@ const Name = styled.div`
 
     @keyframes twirl {
       0% {
-        color: ${props => props.theme.white};
+        color: ${props => props.theme.colors.neutral100};
         transform: rotate3d(0, 0, 0, 0);
       }
       50% {
-        color: ${props => props.theme.whiteDark};
+        color: ${props => props.theme.colors.neutral300};
       }
       100% {
-        color: ${props => props.theme.white};
+        color: ${props => props.theme.colors.neutral100};
         transform: rotate3d(0, 1, 0, 360deg);
       }
     }

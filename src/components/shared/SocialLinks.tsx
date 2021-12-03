@@ -48,7 +48,7 @@ const Text = styled.span`
   font-style: italic;
   margin-right: 20px;
   display: block;
-  color: ${props => props.theme.neutralLight};
+  color: ${props => props.theme.colors.neutral500};
 `;
 
 const SocialIcons = styled.div`
@@ -59,6 +59,12 @@ const SocialIcons = styled.div`
 
 const Icon = styled.a`
   margin-right: 0.8rem;
+  color: ${props => props.theme.colors.neutral400};
+  transition: 0.2s color ease-in-out;
+
+  &:hover {
+    color: ${props => props.theme.colors.primary};
+  }
 `;
 
 export default SocialLinks;

@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
   html {
@@ -7,13 +7,13 @@ const GlobalStyle = createGlobalStyle`
     font-size: 1rem;
     line-height: 1.8rem;
     min-height:100%;
-
+    
   }
-
+  
   body {
-    background-color: ${(props) => props.theme.neutralDark};
-    color: ${(props) => props.theme.whiteDark};
-    font-family: ${(props) => props.theme.fontFamilyText};
+    background-color: ${props => props.theme.colors.neutral800};
+    color: ${props => props.theme.colors.neutral300};
+    font-family: ${props => props.theme.fonts.content};
     height:100vh;
     width:100%;
     margin:0;
@@ -35,20 +35,20 @@ const GlobalStyle = createGlobalStyle`
   }
 
   ::-webkit-scrollbar-track {
-    background: ${(props) => props.theme.neutralLighter};
+    background: ${props => props.theme.colors.neutral400};
   }
 
   ::-webkit-scrollbar-thumb {
-    background: ${(props) => props.theme.neutralLight};
+    background: ${props => props.theme.colors.neutral500};
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: ${(props) => props.theme.js};
+    background: ${props => props.theme.colors.primary};
   }
 
   h1, h2, h3, h4 {
-    color: ${(props) => props.theme.whiteMed};
-    font-family: ${(props) => props.theme.fontFamilyText};
+    color: ${props => props.theme.colors.neutral200};
+    font-family: ${props => props.theme.fonts.title};
     text-rendering: optimizeLegibility;
     margin-top:0;
   }
@@ -76,6 +76,12 @@ const GlobalStyle = createGlobalStyle`
     list-style: none;
     margin:0;
     padding:0;
+  }
+
+  .project, .post, .service {
+    a {
+      color: ${props => props.theme.colors.primary}
+    }
   }
 `;
 

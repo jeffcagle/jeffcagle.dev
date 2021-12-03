@@ -46,8 +46,8 @@ const Btn = styled(Link)<ButtonProps>`
   justify-content: center;
   position: relative;
   font-weight: bold;
-  background-color: ${props => props.theme.colorD};
-  color: white;
+  background-color: ${props => props.theme.colors.secondary};
+  color: ${props => props.theme.colors.neutral100};
 
   ${props =>
     props.type === 'primary' &&
@@ -59,7 +59,7 @@ const Btn = styled(Link)<ButtonProps>`
 
     &:hover {
       padding: 0.6rem 2rem;
-      background-color: ${props.theme.colorC};
+      background-color: ${props.theme.colors.accent3};
       letter-spacing: .1rem;
     }
   `}

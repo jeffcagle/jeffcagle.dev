@@ -49,8 +49,8 @@ const Card = ({ to, image, alt, title, summary, tooltip }: CardProps) => (
 const CardItem = styled(Link)`
   padding: 0.7rem;
   text-align: center;
-  background: ${props => props.theme.neutralMed};
-  border: 2px solid ${props => props.theme.neutralMed};
+  background: ${props => props.theme.colors.neutral700};
+  border: 2px solid ${props => props.theme.colors.neutral700};
   border-radius: 10px;
   display: flex;
   flex-direction: column;
@@ -63,7 +63,7 @@ const CardItem = styled(Link)`
     0.2s cubic-bezier(0.37, 0, 0.65, 1);
 
   &:hover {
-    border: 2px solid ${props => props.theme.colorD};
+    border: 2px solid ${props => props.theme.colors.secondary};
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
     top: -5px;
   }
@@ -88,18 +88,18 @@ const CardContent = styled.div`
 
 const Title = styled.span`
   font-weight: bold;
-  color: ${props => props.theme.whiteDark};
+  color: ${props => props.theme.colors.neutral300};
   transition: 0.2s ease-in-out;
 
   ${CardItem}:hover & {
-    color: ${props => props.theme.js};
+    color: ${props => props.theme.colors.primary};
   }
 `;
 
 const Summary = styled.span`
   font-style: italic;
   font-size: 0.9rem;
-  color: ${props => props.theme.neutralLighter};
+  color: ${props => props.theme.colors.neutral400};
   line-height: 1.7rem;
   margin-top: 0.2rem;
 `;
