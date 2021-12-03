@@ -1,5 +1,5 @@
 import * as React from 'react';
-import styled from 'styled-components';
+import styled, { ThemeContext } from 'styled-components';
 import { useStaticQuery, graphql } from 'gatsby';
 
 interface ToolsContainerProps {
@@ -15,11 +15,7 @@ interface ToolListProps extends ToolsContainerProps {
 interface ToolProps {
   id: string;
   name: string;
-  pillColor: string;
-}
-
-interface SingleToolColor {
-  color: string;
+  toolColor: string;
 }
 
 /**
@@ -39,7 +35,7 @@ const ListTools = ({ startText, items, unstyled, mb }: ToolListProps) => {
         nodes {
           id
           name
-          pillColor
+          toolColor
         }
       }
     }
@@ -50,6 +46,12 @@ const ListTools = ({ startText, items, unstyled, mb }: ToolListProps) => {
   );
 
   const lastToolIndex = tools.length - 1;
+
+  const handleToolColor = (colorName: string) => {
+    const themeContext = React.useContext(ThemeContext);
+    // @ts-ignore
+    return themeContext.colors[colorName];
+  };
 
   if (unstyled) {
     return (
@@ -71,7 +73,10 @@ const ListTools = ({ startText, items, unstyled, mb }: ToolListProps) => {
       <StartText>{startText}</StartText>
       <ToolGroup>
         {tools.map((tool: ToolProps) => (
-          <SingleTool key={tool.id} color={tool.pillColor}>
+          <SingleTool
+            key={tool.id}
+            color={handleToolColor(`${tool.toolColor}`)}
+          >
             {tool.name}
           </SingleTool>
         ))}
@@ -90,7 +95,7 @@ const StartText = styled.div`
   margin-right: 0.8rem;
   font-weight: bold;
   font-style: italic;
-  color: ${props => props.theme.neutralLight};
+  color: ${props => props.theme.colors.neutral500};
 `;
 
 const ToolGroup = styled.ul`
@@ -101,11 +106,13 @@ const ToolGroup = styled.ul`
   flex-wrap: wrap;
 `;
 
-const SingleTool = styled.li<SingleToolColor>`
-  background-color: ${props => props.theme[props.color]};
+const SingleTool = styled.li`
+  background-color: ${props => props.color};
   transition: 200ms ease;
   color: ${props =>
-    props.color === 'js' ? props.theme.yellowToolText : 'white'};
+    props.color === props.theme.colors.primary
+      ? props.theme.colors.jsToolFont
+      : props.theme.colors.neutral100};
   border-radius: 5px;
   padding: 0.05rem 0.5rem;
   font-size: 1rem;
@@ -115,8 +122,8 @@ const SingleTool = styled.li<SingleToolColor>`
   font-weight: bold;
 
   &:hover {
-    background-color: ${props => props.theme.neutralLighter};
-    color: white;
+    background-color: ${props => props.theme.colors.neutral400};
+    color: ${props => props.theme.colors.neutral100};
   }
 `;
 
