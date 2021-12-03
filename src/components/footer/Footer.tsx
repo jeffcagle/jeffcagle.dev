@@ -59,7 +59,7 @@ const FooterBar = styled.div`
 
     a {
       color: ${props => props.theme.colors.neutral400};
-      transition: 0.2s color ease-in-out;
+      transition: 0.2s ease-in-out;
 
       &:hover {
         color: ${props => props.theme.colors.primary};

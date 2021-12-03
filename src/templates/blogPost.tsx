@@ -118,28 +118,19 @@ const PrevNextPost = styled(Link)`
   display: flex;
   align-items: center;
   padding: 0.7rem;
-  color: ${props => props.theme.colors.neutral300};
   background: ${props => props.theme.colors.neutral700};
   border: 2px solid ${props => props.theme.colors.neutral700};
   border-radius: 10px;
   position: relative;
   width: 100%;
-  margin-top: 0;
-  margin-bottom: 0;
-  margin-left: 0;
-  margin-right: 0;
+  top: 0;
   transition: width 0.2s, height 0.2s, margin 0.2s,
     0.2s cubic-bezier(0.37, 0, 0.65, 1);
 
   &:hover {
-    color: ${props => props.theme.colors.primary};
     border: 2px solid ${props => props.theme.colors.secondary};
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
-    width: 102%;
-    margin-top: -1%;
-    margin-bottom: 0.7%;
-    margin-left: -1%;
-    margin-right: -1%;
+    top: -5px;
   }
 `;
 
