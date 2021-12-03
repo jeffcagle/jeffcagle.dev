@@ -17,6 +17,7 @@ const jcTheme: DefaultTheme = {
     neutral550: '#424242',
     neutral600: '#2e2e2e',
     neutral700: '#2a2a2a',
+    neutral750: '#272727',
     neutral800: '#222222',
 
     jsToolFont: '#241f00',

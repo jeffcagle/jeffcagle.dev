@@ -18,6 +18,7 @@ declare module 'styled-components' {
       neutral550: string;
       neutral600: string;
       neutral700: string;
+      neutral750: string;
       neutral800: string;
 
       jsToolFont: string;
