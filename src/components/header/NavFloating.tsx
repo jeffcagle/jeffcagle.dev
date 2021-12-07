@@ -125,11 +125,11 @@ const Menu = styled.ul`
       @keyframes animateIn {
         from {
           opacity: 0;
-          transform: translate3d(-200%, 0, 0);
+          /* transform: translate3d(-200%, 0, 0); */
         }
         to {
           opacity: 1;
-          transform: none;
+          /* transform: none; */
         }
       }
     }
