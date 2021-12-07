@@ -52,8 +52,8 @@ const Btn = styled(Link)<ButtonProps>`
   ${props =>
     props.type === 'primary' &&
     `
-    padding: 0.6rem 1.4rem;
-    border-radius: 10px;
+    padding: 0.6rem 1.7rem;
+    // border-radius: 10px;
     transition: .5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
 
