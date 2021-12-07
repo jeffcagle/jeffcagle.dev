@@ -1,12 +1,10 @@
 import * as React from 'react';
-import { graphql } from 'gatsby';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBlog } from '@fortawesome/free-solid-svg-icons';
+import styled from 'styled-components';
+import { graphql, Link } from 'gatsby';
 import { Box } from '../components/shared/Ui';
 import { Row, Column } from '../components/shared/Columns';
-import Card from '../components/shared/Card';
-import HeroBar from '../components/shared/HeroBar';
 import Pagination from '../components/shared/Pagination';
+import { GatsbyImage, getImage, GatsbyImageProps } from 'gatsby-plugin-image';
 
 interface PageContextProps {
   pageContext: {
@@ -26,8 +24,9 @@ interface BlogListProps extends PageContextProps {
           frontmatter: {
             id: string;
             title: string;
+            excerpt: string;
             slug: string;
-            coverImage: string;
+            coverImage: GatsbyImageProps['image'];
           };
         }
       ];
@@ -41,23 +40,25 @@ const BlogList = ({ data, pageContext }: BlogListProps) => {
 
   return (
     <>
-      <HeroBar flex py={3}>
-        <FontAwesomeIcon icon={faBlog} size="4x" />
-        <Box pl={2}>
-          <h1>Dev Blog</h1>
-          <p>These are my blog posts...</p>
-        </Box>
-      </HeroBar>
+      <Box withContainer mt={3}>
+        <h1>Dev Blog.</h1>
+      </Box>
       <Box withContainer mt={3}>
         <Row>
           {posts.map(post => (
             <Column width={33.333} key={post.id}>
-              <Card
+              <BlogPost
                 to={`/blog/${post.frontmatter.slug}`}
-                image={post.frontmatter.coverImage}
-                alt={post.frontmatter.title}
                 title={post.frontmatter.title}
-              />
+              >
+                <Image
+                  // @ts-ignore
+                  image={getImage(post.frontmatter.coverImage)}
+                  alt={post.frontmatter.title}
+                />
+                <Title>{post.frontmatter.title}</Title>
+                <Excerpt>{post.frontmatter.excerpt}</Excerpt>
+              </BlogPost>
             </Column>
           ))}
         </Row>
@@ -66,6 +67,36 @@ const BlogList = ({ data, pageContext }: BlogListProps) => {
     </>
   );
 };
+
+const BlogPost = styled(Link)`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
+
+const Image = styled(GatsbyImage)`
+  margin-bottom: 1.2rem;
+`;
+
+const Title = styled.h2`
+  font-size: 1rem;
+  color: ${props => props.theme.colors.neutral300};
+  line-height: 1.8;
+  margin-bottom: 0;
+  transition: 0.2s color ease-in-out;
+
+  ${BlogPost}:hover & {
+    color: ${props => props.theme.colors.primary};
+  }
+`;
+
+const Excerpt = styled.p`
+  color: ${props => props.theme.colors.neutral400};
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+  font-style: italic;
+`;
 
 export const blogQuery = graphql`
   query getPostsList($skip: Int!, $limit: Int!) {
@@ -80,6 +111,7 @@ export const blogQuery = graphql`
         frontmatter {
           title
           slug
+          excerpt
           coverImage {
             childImageSharp {
               gatsbyImageData(
