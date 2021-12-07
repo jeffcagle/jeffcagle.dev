@@ -84,9 +84,9 @@ const Item = styled.li`
       }
     }
 
-    &.hasSub.active:after {
+    /* &.hasSub.active:after {
       border-bottom: 12px solid ${props => props.theme.colors.neutral800};
-    }
+    } */
 
     &.active:after {
       content: '';
@@ -97,7 +97,7 @@ const Item = styled.li`
       height: 0;
       border-left: 12px solid transparent;
       border-right: 12px solid transparent;
-      border-bottom: 12px solid ${props => props.theme.colors.neutral700};
+      border-bottom: 12px solid ${props => props.theme.colors.neutral800};
     }
   }
 `;
