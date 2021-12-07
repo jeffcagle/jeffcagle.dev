@@ -78,6 +78,12 @@
     "toolColor": "accent3"
   },
   {
+    "name": "GraphQL",
+    "desc": "A free and open-source content management system written in PHP and paired with a MySQL or MariaDB database.",
+    "skillLvl": 35,
+    "toolColor": "accent1"
+  },
+  {
     "name": "GraphCMS",
     "desc": "A free and open-source content management system written in PHP and paired with a MySQL or MariaDB database.",
     "skillLvl": 35,
@@ -154,5 +160,17 @@
     "desc": "A free and open-source content management system written in PHP and paired with a MySQL or MariaDB database.",
     "skillLvl": 25,
     "toolColor": "secondary"
+  },
+  {
+    "name": "Linux",
+    "desc": "A free and open-source content management system written in PHP and paired with a MySQL or MariaDB database.",
+    "skillLvl": 25,
+    "toolColor": "accent2"
+  },
+  {
+    "name": "VSCode",
+    "desc": "A free and open-source content management system written in PHP and paired with a MySQL or MariaDB database.",
+    "skillLvl": 25,
+    "toolColor": "accent1"
   }
 ]
