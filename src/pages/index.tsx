@@ -1,6 +1,5 @@
 import * as React from 'react';
 import ListTools from '../components/lists/ListTools';
-import ListProjectsAsCards from '../components/lists/ListProjectsAsCards';
 import ListExperiments from '../components/lists/ListExperiments';
 import ListPosts from '../components/lists/ListPosts';
 import { Row, Column } from '../components/shared/Columns';
@@ -9,12 +8,13 @@ import { Section, Box } from '../components/shared/Ui';
 import HeroBar from '../components/shared/HeroBar';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCoffee } from '@fortawesome/free-solid-svg-icons';
+import ListProjects from '../components/lists/ListProjects';
 
 const Index = () => {
   const tools = [
     'JavaScript',
     'React',
-    'Gatsby',
+    'Next.js',
     'TypeScript',
     'Python',
     'Figma',
@@ -36,7 +36,7 @@ const Index = () => {
         </Box>
       </HeroBar>
       <Section h2="Current Projects">
-        <ListProjectsAsCards excludeDev mt={2} />
+        <ListProjects limit={3} exclude="JeffCagle.dev" />
         <Button type="primary" centered to="/projects" mt={1}>
           All Projects
         </Button>
@@ -47,7 +47,7 @@ const Index = () => {
             <ListExperiments />
           </Column>
           <Column title="Dev Blog" width={50}>
-            <ListPosts limit={5} withIcon allPostsLink />
+            <ListPosts type="list" limit={5} allPostsLink />
           </Column>
         </Row>
       </Section>
