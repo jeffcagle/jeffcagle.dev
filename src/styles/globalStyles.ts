@@ -83,6 +83,20 @@ const GlobalStyle = createGlobalStyle`
       color: ${props => props.theme.colors.primary}
     }
   }
+
+  .card {
+    cursor: pointer;
+    background-color: ${props => props.theme.colors.neutral700};
+    border-bottom: .4rem solid transparent;
+    position: relative;
+    top: 0;
+    transition: 0.2s ease-in-out;
+
+    &:hover {
+      border-bottom: .4rem solid ${props => props.theme.colors.secondary};
+      top: -.4rem;
+    }
+  }
 `;
 
 export default GlobalStyle;
