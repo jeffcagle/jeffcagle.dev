@@ -5,8 +5,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFileAlt } from '@fortawesome/free-solid-svg-icons';
 
 interface ListPostsProps {
-  limit?: number;
-  withIcon?: boolean;
+  type?: 'list' | 'grid';
+  limit?: 1 | 2 | 3 | 4 | 5 | 6;
   allPostsLink?: boolean;
 }
 
@@ -22,14 +22,13 @@ interface PostProps {
  *
  * Display a list of blog posts.
  *
- * @param limit Number of posts to return. Default: 1000.
- * @param withIcon Show Icon before post text.
+ * @param limit Up to 6 posts. Default: 6.
  * @param allPostsLink Show link to all posts.
  * @returns An unordered list of blog posts.
  */
 const ListPosts = ({
-  limit = 1000,
-  withIcon,
+  type = 'grid',
+  limit = 6,
   allPostsLink,
 }: ListPostsProps) => {
   const data = useStaticQuery(graphql`
@@ -37,6 +36,7 @@ const ListPosts = ({
       allMarkdownRemark(
         filter: { frontmatter: { templateKey: { in: "blog" } } }
         sort: { fields: [frontmatter___date], order: ASC }
+        limit: 6
       ) {
         nodes {
           id
@@ -51,40 +51,48 @@ const ListPosts = ({
 
   const posts = data.allMarkdownRemark.nodes;
 
-  return (
-    <>
-      <Items>
-        {posts.map(
-          (post: PostProps, index: number) =>
-            index < limit && (
-              <Item key={post.id}>
-                <ItemLink
-                  to={`/blog/${post.frontmatter.slug}`}
-                  title={post.frontmatter.title}
-                >
-                  {withIcon && <FontAwesomeIcon icon={faFileAlt} size="xs" />}{' '}
-                  {post.frontmatter.title}
-                </ItemLink>
-              </Item>
-            )
+  if (type === 'grid') {
+    return <div>Grid</div>;
+  }
+
+  if (type === 'list') {
+    return (
+      <>
+        <BlogPosts>
+          {posts.map(
+            (post: PostProps, index: number) =>
+              index < limit && (
+                <BlogPost key={post.id}>
+                  <BlogPostLink
+                    to={`/blog/${post.frontmatter.slug}`}
+                    title={post.frontmatter.title}
+                  >
+                    <FontAwesomeIcon icon={faFileAlt} size="xs" />{' '}
+                    {post.frontmatter.title}
+                  </BlogPostLink>
+                </BlogPost>
+              )
+          )}
+        </BlogPosts>
+        {allPostsLink && (
+          <MoreLink to="/blog/" title="All Posts">
+            All Posts &raquo;
+          </MoreLink>
         )}
-      </Items>
-      {allPostsLink && (
-        <MoreLink to="/blog/" title="All Posts">
-          All Posts &raquo;
-        </MoreLink>
-      )}
-    </>
-  );
+      </>
+    );
+  }
+
+  return null;
 };
 
-const Items = styled.ul``;
+const BlogPosts = styled.ul``;
 
-const Item = styled.li`
+const BlogPost = styled.li`
   border-bottom: 1px dashed ${props => props.theme.colors.neutral550};
 `;
 
-const ItemLink = styled(Link)`
+const BlogPostLink = styled(Link)`
   padding: 0.2rem;
   display: block;
   text-overflow: ellipsis;

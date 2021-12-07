@@ -70,7 +70,7 @@ const ListTools = ({ startText, items, unstyled, mb }: ToolListProps) => {
 
   return (
     <ToolsContainer mb={mb}>
-      <StartText>{startText}</StartText>
+      {startText && <StartText>{startText}</StartText>}
       <ToolGroup>
         {tools.map((tool: ToolProps) => (
           <SingleTool
@@ -113,7 +113,7 @@ const SingleTool = styled.li`
     props.color === props.theme.colors.primary
       ? props.theme.colors.jsToolFont
       : props.theme.colors.neutral100};
-  border-radius: 5px;
+  /* border-radius: 5px; */
   padding: 0.05rem 0.5rem;
   font-size: 1rem;
   margin-right: 0.2rem;

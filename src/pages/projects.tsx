@@ -2,8 +2,8 @@ import * as React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCode } from '@fortawesome/free-solid-svg-icons';
 import { Box } from '../components/shared/Ui';
-import ListProjectsAsCards from '../components/lists/ListProjectsAsCards';
 import HeroBar from '../components/shared/HeroBar';
+import ListProjects from '../components/lists/ListProjects';
 
 const Projects = () => (
   <>
@@ -18,7 +18,7 @@ const Projects = () => (
       </Box>
     </HeroBar>
     <Box withContainer mt={3}>
-      <ListProjectsAsCards />
+      <ListProjects />
     </Box>
   </>
 );

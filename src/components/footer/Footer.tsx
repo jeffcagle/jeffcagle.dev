@@ -31,11 +31,11 @@ const Footer = () => (
         </Column>
         <Column width={33.333}>
           <h3>Services</h3>
-          <ListServices />
+          <ListServices type="list" limit={5} />
         </Column>
         <Column width={33.333}>
           <h3>Latest Dev Blog</h3>
-          <ListPosts limit={4} withIcon />
+          <ListPosts type="list" limit={4} />
         </Column>
       </Row>
     </FooterContainer>

@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLaptopCode } from '@fortawesome/free-solid-svg-icons';
 import { Box } from '../components/shared/Ui';
 import HeroBar from '../components/shared/HeroBar';
-import ListServicesAsCards from '../components/lists/ListServicesAsCards';
+import ListServices from '../components/lists/ListServices';
 
 const Services = () => (
   <>
@@ -18,7 +18,7 @@ const Services = () => (
       </Box>
     </HeroBar>
     <Box withContainer mt={3}>
-      <ListServicesAsCards />
+      <ListServices />
     </Box>
   </>
 );
