@@ -1,5 +1,6 @@
 ---
 title: 'Launching Your First Website - A Guide For Small Business Owners'
+excerpt: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorem officiis corrupti velit incidunt beatae commodi odio sed...'
 date: '2021-06-11'
 coverImage: './small-business-owner.jpg'
 slug: 'post-1'

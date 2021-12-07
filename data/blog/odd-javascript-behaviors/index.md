@@ -1,5 +1,6 @@
 ---
 title: 'Weird JavaScript Behaviors All JS Developers Should Know'
+excerpt: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorem officiis corrupti velit incidunt beatae commodi odio sed...'
 date: '2021-06-21'
 coverImage: './javascript-code2.jpg'
 slug: 'post-3'

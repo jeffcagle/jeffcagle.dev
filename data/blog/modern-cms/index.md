@@ -1,5 +1,6 @@
 ---
 title: '5 Modern Headless CMS Tools Compared'
+excerpt: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorem officiis corrupti velit incidunt beatae commodi odio sed...'
 date: '2021-06-18'
 coverImage: './contentful.png'
 slug: 'post-2'
