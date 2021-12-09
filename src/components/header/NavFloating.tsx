@@ -147,9 +147,10 @@ const MenuLink = styled(Link)`
   width: 50px;
   max-width: 50px;
   border-radius: 25px;
-  transition: 200ms ease;
+  transition: 0.2s ease;
   position: relative;
   font-weight: bold;
+  overflow: hidden;
 
   span {
     display: none;
