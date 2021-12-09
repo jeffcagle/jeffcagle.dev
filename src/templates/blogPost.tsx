@@ -44,9 +44,10 @@ function BlogPost({ data }: PostProps) {
           <Row>
             <Column width={50}>
               {previous && (
-                <>
+                <PrevPost>
                   <Prev>Previous Post</Prev>
-                  <PrevNextPost
+                  <PrevCard
+                    className="card"
                     to={`/blog/${previous.frontmatter.slug}`}
                     title={previous.frontmatter.title}
                   >
@@ -58,15 +59,16 @@ function BlogPost({ data }: PostProps) {
                       />
                     </PostImageContainer>
                     <PostTitle>{previous.frontmatter.title}</PostTitle>
-                  </PrevNextPost>
-                </>
+                  </PrevCard>
+                </PrevPost>
               )}
             </Column>
             <Column width={50}>
               {next && (
-                <>
+                <NextPost>
                   <Next>Next Post</Next>
-                  <PrevNextPost
+                  <NextCard
+                    className="card"
                     to={`/blog/${next.frontmatter.slug}`}
                     title={next.frontmatter.title}
                   >
@@ -78,8 +80,8 @@ function BlogPost({ data }: PostProps) {
                       />
                     </PostImageContainer>
                     <PostTitle>{next.frontmatter.title}</PostTitle>
-                  </PrevNextPost>
-                </>
+                  </NextCard>
+                </NextPost>
               )}
             </Column>
           </Row>
@@ -98,6 +100,13 @@ const PrevNext = styled.div`
   padding-top: 1rem;
 `;
 
+const PrevPost = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+const NextPost = styled(PrevPost)``;
+
 const Prev = styled.div`
   margin-bottom: 1rem;
   color: ${props => props.theme.colors.neutral500};
@@ -114,41 +123,35 @@ const Next = styled.div`
   text-align: right;
 `;
 
-const PrevNextPost = styled(Link)`
+const PrevCard = styled(Link)`
+  padding: 1rem 1rem 0.6rem 1rem;
   display: flex;
-  align-items: center;
-  padding: 0.7rem;
-  background: ${props => props.theme.colors.neutral700};
-  border: 2px solid ${props => props.theme.colors.neutral700};
-  border-radius: 10px;
-  position: relative;
-  width: 100%;
-  top: 0;
-  transition: width 0.2s, height 0.2s, margin 0.2s,
-    0.2s cubic-bezier(0.37, 0, 0.65, 1);
-
-  &:hover {
-    border: 2px solid ${props => props.theme.colors.secondary};
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
-    top: -5px;
-  }
 `;
 
+const NextCard = styled(PrevCard)``;
+
 const PostImageContainer = styled.div`
-  width: 80px;
+  min-width: 60px;
+  width: 60px;
+  height: 60px;
   margin-right: 1rem;
-  border-radius: 5px;
-  overflow: hidden;
 `;
 
 const PostImage = styled(GatsbyImage)``;
 
 const PostTitle = styled.span`
   color: ${props => props.theme.colors.neutral400};
-  display: block;
-  text-overflow: ellipsis;
+  transition: 0.2s color ease-in-out;
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  /* text-overflow: ellipsis;
   white-space: nowrap;
-  overflow: hidden;
+  overflow: hidden; */
+
+  ${PrevCard}:hover & {
+    color: ${props => props.theme.colors.primary};
+  }
 `;
 
 export const query = graphql`
