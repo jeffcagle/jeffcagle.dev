@@ -15,6 +15,7 @@ interface ToolListProps extends ToolsContainerProps {
 interface ToolProps {
   id: string;
   name: string;
+  desc: string;
   toolColor: string;
 }
 
@@ -35,6 +36,7 @@ function ListTools({ startText, items, unstyled, mb }: ToolListProps) {
         nodes {
           id
           name
+          desc
           toolColor
         }
       }
@@ -78,6 +80,10 @@ function ListTools({ startText, items, unstyled, mb }: ToolListProps) {
             color={handleToolColor(`${tool.toolColor}`)}
           >
             {tool.name}
+            <ToolDetails>
+              <ToolName>{tool.name}</ToolName>
+              <ToolDesc>{tool.desc}</ToolDesc>
+            </ToolDetails>
           </SingleTool>
         ))}
       </ToolGroup>
@@ -113,18 +119,66 @@ const SingleTool = styled.li`
     props.color === props.theme.colors.primary
       ? props.theme.colors.jsToolFont
       : props.theme.colors.neutral100};
-  /* border-radius: 5px; */
   padding: 0.05rem 0.5rem;
   font-size: 1rem;
   margin-right: 0.2rem;
   margin-bottom: 0.2rem;
   cursor: pointer;
   font-weight: bold;
+  position: relative;
 
   &:hover {
-    background-color: ${props => props.theme.colors.neutral400};
+    background-color: ${props => props.theme.colors.secondary};
     color: ${props => props.theme.colors.neutral100};
   }
+`;
+
+const ToolDetails = styled.div`
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  bottom: 100%;
+  left: 50%;
+  width: 350px;
+  height: auto;
+  padding: 1rem;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.3s cubic-bezier(0.44, 0, 0.4, 1.29);
+  transform: scaleY(0) translate(-50%, 20%);
+
+  ${SingleTool}:hover & {
+    background-color: ${props => props.theme.colors.neutral550};
+    border-radius: 10px;
+    visibility: visible;
+    opacity: 1;
+    transform: scaleY(1) translate(-50%, -1.2rem);
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -10px;
+    width: 0;
+    height: 0;
+    border-top: 10px solid ${props => props.theme.colors.neutral550};
+    border-right: 10px solid transparent;
+    border-left: 10px solid transparent;
+  }
+`;
+
+const ToolName = styled.span`
+  margin-bottom: 0.3rem;
+  color: ${props => props.theme.colors.neutral200};
+`;
+
+const ToolDesc = styled.span`
+  font-weight: normal;
+  font-style: italic;
+  font-size: 0.9rem;
+  color: ${props => props.theme.colors.neutral300};
 `;
 
 export default ListTools;
