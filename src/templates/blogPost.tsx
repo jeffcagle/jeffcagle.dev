@@ -26,7 +26,7 @@ interface PrevNextProps {
   };
 }
 
-const BlogPost = ({ data }: PostProps) => {
+function BlogPost({ data }: PostProps) {
   const post = data.markdownRemark;
   const { previous, next } = data;
 
@@ -87,7 +87,7 @@ const BlogPost = ({ data }: PostProps) => {
       </Box>
     </article>
   );
-};
+}
 
 const PostMeta = styled.span`
   color: ${props => props.theme.colors.neutral400};

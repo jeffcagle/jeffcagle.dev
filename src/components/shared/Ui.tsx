@@ -15,14 +15,16 @@ interface SectionProps {
  * @param flex Optional flexbox for section content.
  * @returns A section element.
  */
-export const Section = ({ h2, flex, children }: SectionProps) => (
-  <SectionItem>
-    <SectionContainer flex={flex}>
-      {h2 && <h2>{h2}</h2>}
-      {children}
-    </SectionContainer>
-  </SectionItem>
-);
+export function Section({ h2, flex, children }: SectionProps) {
+  return (
+    <SectionItem>
+      <SectionContainer flex={flex}>
+        {h2 && <h2>{h2}</h2>}
+        {children}
+      </SectionContainer>
+    </SectionItem>
+  );
+}
 
 const SectionItem = styled.section`
   margin-top: 3rem;
@@ -74,27 +76,29 @@ interface BoxProps {
  * @param pb Optional bottom padding.
  * @returns A div element.
  */
-export const Box = (props: BoxProps) => (
-  <BoxItem
-    flex={props.flex}
-    flexSpace={props.flexSpace}
-    justifyRight={props.justifyRight}
-    mt={props.mt}
-    mr={props.mr}
-    ml={props.ml}
-    mb={props.mb}
-    pt={props.pt}
-    pr={props.pr}
-    pl={props.pl}
-    pb={props.pb}
-  >
-    {props.withContainer ? (
-      <BoxContainer>{props.children}</BoxContainer>
-    ) : (
-      props.children
-    )}
-  </BoxItem>
-);
+export function Box(props: BoxProps) {
+  return (
+    <BoxItem
+      flex={props.flex}
+      flexSpace={props.flexSpace}
+      justifyRight={props.justifyRight}
+      mt={props.mt}
+      mr={props.mr}
+      ml={props.ml}
+      mb={props.mb}
+      pt={props.pt}
+      pr={props.pr}
+      pl={props.pl}
+      pb={props.pb}
+    >
+      {props.withContainer ? (
+        <BoxContainer>{props.children}</BoxContainer>
+      ) : (
+        props.children
+      )}
+    </BoxItem>
+  );
+}
 
 const BoxItem = styled.div<BoxProps>`
   margin-top: ${props => (props.mt ? `${props.mt}rem` : '0')};

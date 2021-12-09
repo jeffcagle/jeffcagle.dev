@@ -21,30 +21,32 @@ export interface MenuItemProps {
  * @param menu The main array of menu objects from mainMenu.json.
  * @returns The main menu.
  */
-const NavMain = ({ menu }: MenuProps) => (
-  <nav>
-    <Menu>
-      {menu.map((menuItem: MenuItemProps) => (
-        <Item key={menuItem.id}>
-          <Link
-            to={`${menuItem.slug}`}
-            activeClassName="active"
-            partiallyActive
-            className={menuItem.hasSubMenu ? 'hasSub' : ''}
-            title={menuItem.name}
-          >
-            {menuItem.name}
-          </Link>
-          {menuItem.hasSubMenu && (
-            <SubMenu>
-              <NavSub parentSlug={`${menuItem.name.toLowerCase()}`} />
-            </SubMenu>
-          )}
-        </Item>
-      ))}
-    </Menu>
-  </nav>
-);
+function NavMain({ menu }: MenuProps) {
+  return (
+    <nav>
+      <Menu>
+        {menu.map((menuItem: MenuItemProps) => (
+          <Item key={menuItem.id}>
+            <Link
+              to={`${menuItem.slug}`}
+              activeClassName="active"
+              partiallyActive
+              className={menuItem.hasSubMenu ? 'hasSub' : ''}
+              title={menuItem.name}
+            >
+              {menuItem.name}
+            </Link>
+            {menuItem.hasSubMenu && (
+              <SubMenu>
+                <NavSub parentSlug={`${menuItem.name.toLowerCase()}`} />
+              </SubMenu>
+            )}
+          </Item>
+        ))}
+      </Menu>
+    </nav>
+  );
+}
 
 const Menu = styled.ul`
   display: flex;

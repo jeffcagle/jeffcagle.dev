@@ -17,20 +17,22 @@ interface HeaderBarProps {
  * @param menu An array of menu objects from mainMenu.json.
  * @returns The website header element.
  */
-const HeaderBar = ({ menu }: HeaderBarProps) => (
-  <Header>
-    <div className="bg" />
-    <div className="bg bg2" />
-    <div className="bg bg3" />
-    <Box withContainer>
-      <HeaderContainer>
-        <NavFloating menu={menu} />
-        <Brand />
-        <NavMain menu={menu} />
-      </HeaderContainer>
-    </Box>
-  </Header>
-);
+function HeaderBar({ menu }: HeaderBarProps) {
+  return (
+    <Header>
+      <div className="bg" />
+      <div className="bg bg2" />
+      <div className="bg bg3" />
+      <Box withContainer>
+        <HeaderContainer>
+          <NavFloating menu={menu} />
+          <Brand />
+          <NavMain menu={menu} />
+        </HeaderContainer>
+      </Box>
+    </Header>
+  );
+}
 
 const Header = styled.header`
   position: relative;

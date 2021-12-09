@@ -10,25 +10,27 @@ import { Link } from 'gatsby';
  *
  * @returns An unordered list of experiments.
  */
-const ListExperiments = () => (
-  <ExperimentGroup>
-    <Experiment>
-      <Link to="/" title="Chat App">
-        <FontAwesomeIcon icon={faFlask} size="xs" /> Chat App
-      </Link>
-    </Experiment>
-    <Experiment>
-      <Link to="/" title="Experiment Two">
-        <FontAwesomeIcon icon={faFlask} size="xs" /> Experiment Two
-      </Link>
-    </Experiment>
-    <Experiment>
-      <Link to="/" title="Experiment Three">
-        <FontAwesomeIcon icon={faFlask} size="xs" /> Experiment Three
-      </Link>
-    </Experiment>
-  </ExperimentGroup>
-);
+function ListExperiments() {
+  return (
+    <ExperimentGroup>
+      <Experiment>
+        <Link to="/" title="Chat App">
+          <FontAwesomeIcon icon={faFlask} size="xs" /> Chat App
+        </Link>
+      </Experiment>
+      <Experiment>
+        <Link to="/" title="Experiment Two">
+          <FontAwesomeIcon icon={faFlask} size="xs" /> Experiment Two
+        </Link>
+      </Experiment>
+      <Experiment>
+        <Link to="/" title="Experiment Three">
+          <FontAwesomeIcon icon={faFlask} size="xs" /> Experiment Three
+        </Link>
+      </Experiment>
+    </ExperimentGroup>
+  );
+}
 
 const ExperimentGroup = styled.ul`
   list-style: none;

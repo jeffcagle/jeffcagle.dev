@@ -18,25 +18,27 @@ interface SocialLinksProps {
  *
  * @returns Social links as icons.
  */
-const SocialLinks = ({ startText }: SocialLinksProps) => (
-  <SocialWrap>
-    {startText && <Text>{startText}</Text>}
-    <SocialIcons>
-      <Icon href="/" title="GitHub">
-        <FontAwesomeIcon icon={faGithub} />
-      </Icon>
-      <Icon href="/" title="LinkedIn">
-        <FontAwesomeIcon icon={faLinkedin} />
-      </Icon>
-      <Icon href="/" title="Facebook">
-        <FontAwesomeIcon icon={faFacebook} />
-      </Icon>
-      <Icon href="/" title="Instagram">
-        <FontAwesomeIcon icon={faInstagram} />
-      </Icon>
-    </SocialIcons>
-  </SocialWrap>
-);
+function SocialLinks({ startText }: SocialLinksProps) {
+  return (
+    <SocialWrap>
+      {startText && <Text>{startText}</Text>}
+      <SocialIcons>
+        <Icon href="/" title="GitHub">
+          <FontAwesomeIcon icon={faGithub} />
+        </Icon>
+        <Icon href="/" title="LinkedIn">
+          <FontAwesomeIcon icon={faLinkedin} />
+        </Icon>
+        <Icon href="/" title="Facebook">
+          <FontAwesomeIcon icon={faFacebook} />
+        </Icon>
+        <Icon href="/" title="Instagram">
+          <FontAwesomeIcon icon={faInstagram} />
+        </Icon>
+      </SocialIcons>
+    </SocialWrap>
+  );
+}
 
 const SocialWrap = styled.div`
   display: flex;

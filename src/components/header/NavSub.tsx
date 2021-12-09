@@ -24,7 +24,7 @@ interface SubMenuItemProps {
  * @param parentSlug The parent link path.
  * @returns The main nav sub-menu.
  */
-const NavSub = ({ parentSlug }: NavSubProps) => {
+function NavSub({ parentSlug }: NavSubProps) {
   const data = useStaticQuery(graphql`
     query fetchSubNav {
       allMarkdownRemark(
@@ -72,7 +72,7 @@ const NavSub = ({ parentSlug }: NavSubProps) => {
       </Box>
     </SubNav>
   );
-};
+}
 
 NavSub.propTypes = {
   parentSlug: PropTypes.string.isRequired,

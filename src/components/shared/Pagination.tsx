@@ -7,7 +7,7 @@ interface PaginationProps {
   numberOfPages: number;
 }
 
-const Pagination = ({ currentPage, numberOfPages }: PaginationProps) => {
+function Pagination({ currentPage, numberOfPages }: PaginationProps) {
   const isFirstPage = currentPage === 1;
   const isNextToFirstPage = currentPage === 2;
   const isLastPage = currentPage === numberOfPages;
@@ -62,7 +62,7 @@ const Pagination = ({ currentPage, numberOfPages }: PaginationProps) => {
       )}
     </PageLinks>
   );
-};
+}
 
 const PageLinks = styled.div`
   display: flex;

@@ -12,7 +12,7 @@ interface BookProps {
   image: GatsbyImageProps['image'];
 }
 
-const ListBooks = () => {
+function ListBooks() {
   const data = useStaticQuery(graphql`
     query getFavBooks {
       allBooksJson {
@@ -55,7 +55,7 @@ const ListBooks = () => {
       ))}
     </Row>
   );
-};
+}
 
 const Book = styled(Link)``;
 

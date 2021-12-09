@@ -23,7 +23,7 @@ interface MenuProps {
  * @param menu The main array of menu objects from mainMenu.json.
  * @returns The floating menu.
  */
-const NavFloating = ({ menu }: MenuProps) => {
+function NavFloating({ menu }: MenuProps) {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
@@ -73,7 +73,7 @@ const NavFloating = ({ menu }: MenuProps) => {
       </Nav>
     </FloatingNav>
   );
-};
+}
 
 const FloatingNav = styled.div`
   top: 30vh;

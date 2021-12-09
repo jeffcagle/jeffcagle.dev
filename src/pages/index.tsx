@@ -10,7 +10,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 import ListProjects from '../components/lists/ListProjects';
 
-const Index = () => {
+function Index() {
   const tools = [
     'JavaScript',
     'React',
@@ -53,6 +53,6 @@ const Index = () => {
       </Section>
     </>
   );
-};
+}
 
 export default Index;

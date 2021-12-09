@@ -19,7 +19,7 @@ interface ProjectProps {
   };
 }
 
-const Project = ({ data }: ProjectProps) => {
+function Project({ data }: ProjectProps) {
   const project = data.markdownRemark;
 
   return (
@@ -46,7 +46,7 @@ const Project = ({ data }: ProjectProps) => {
       </Box>
     </>
   );
-};
+}
 
 export const query = graphql`
   query Project($id: String!) {

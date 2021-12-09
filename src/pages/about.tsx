@@ -6,7 +6,7 @@ import { Box, Section } from '../components/shared/Ui';
 import { Row, Column } from '../components/shared/Columns';
 import ListBooks from '../components/lists/ListBooks';
 
-const About = () => {
+function About() {
   return (
     <>
       <Section>
@@ -63,7 +63,7 @@ const About = () => {
       </Section>
     </>
   );
-};
+}
 
 const ProfileImage = styled.div`
   width: 250px;

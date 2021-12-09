@@ -28,7 +28,7 @@ interface ToolProps {
  * @param mb Optional bottom margin.
  * @returns A list of tools, styled or unstyled.
  */
-const ListTools = ({ startText, items, unstyled, mb }: ToolListProps) => {
+function ListTools({ startText, items, unstyled, mb }: ToolListProps) {
   const data = useStaticQuery(graphql`
     query getTools {
       allToolsJson {
@@ -83,7 +83,7 @@ const ListTools = ({ startText, items, unstyled, mb }: ToolListProps) => {
       </ToolGroup>
     </ToolsContainer>
   );
-};
+}
 
 const ToolsContainer = styled.div<ToolsContainerProps>`
   display: flex;

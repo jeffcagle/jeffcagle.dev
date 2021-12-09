@@ -22,11 +22,13 @@ interface TooTipProps extends ToolTipWrapperProps {
  * @param className Optional class for the tooltip.
  * @returns A tooltip element.
  */
-const ToolTip = ({ position, delay = 0, className, children }: TooTipProps) => (
-  <ToolTipWrapper position={position} delay={delay} className={className}>
-    {children}
-  </ToolTipWrapper>
-);
+function ToolTip({ position, delay = 0, className, children }: TooTipProps) {
+  return (
+    <ToolTipWrapper position={position} delay={delay} className={className}>
+      {children}
+    </ToolTipWrapper>
+  );
+}
 
 const ToolTipWrapper = styled.div<ToolTipWrapperProps>`
   /* width: 250px; */

@@ -26,11 +26,7 @@ interface PostProps {
  * @param allPostsLink Show link to all posts.
  * @returns An unordered list of blog posts.
  */
-const ListPosts = ({
-  type = 'grid',
-  limit = 6,
-  allPostsLink,
-}: ListPostsProps) => {
+function ListPosts({ type = 'grid', limit = 6, allPostsLink }: ListPostsProps) {
   const data = useStaticQuery(graphql`
     query getPosts {
       allMarkdownRemark(
@@ -84,7 +80,7 @@ const ListPosts = ({
   }
 
   return null;
-};
+}
 
 const BlogPosts = styled.ul``;
 

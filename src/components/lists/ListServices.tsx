@@ -24,7 +24,7 @@ interface ListServicesProps {
  * @param {boolean} unstyled Add prop to retreive an unstyled list.
  * @returns A list of services.
  */
-const ListServices = ({ type = 'grid', limit = 8 }: ListServicesProps) => {
+function ListServices({ type = 'grid', limit = 8 }: ListServicesProps) {
   const data = useStaticQuery(graphql`
     query getServices {
       allMarkdownRemark(
@@ -89,7 +89,7 @@ const ListServices = ({ type = 'grid', limit = 8 }: ListServicesProps) => {
   }
 
   return null;
-};
+}
 
 const Service = styled(Link)`
   display: flex;

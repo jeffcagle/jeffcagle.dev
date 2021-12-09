@@ -25,11 +25,11 @@ interface ListProjectsProps {
   exclude?: string;
 }
 
-const ListProjects = ({
+function ListProjects({
   type = 'grid',
   limit = 8,
   exclude = '',
-}: ListProjectsProps) => {
+}: ListProjectsProps) {
   const data = useStaticQuery(graphql`
     query getProjects {
       allMarkdownRemark(
@@ -133,7 +133,7 @@ const ListProjects = ({
   }
 
   return null;
-};
+}
 
 const Project = styled(Link)`
   display: flex;

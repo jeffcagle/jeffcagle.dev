@@ -23,11 +23,13 @@ interface HeroBarProps extends HeroBarContainer, HeroBarWrapperProps {
  * @param flex Optional flexbox.
  * @returns A hero element.
  */
-const HeroBar = ({ hasSubMenu, py = 4, flex, children }: HeroBarProps) => (
-  <Wrapper hasSubMenu={hasSubMenu} py={py}>
-    <Container flex={flex}>{children}</Container>
-  </Wrapper>
-);
+function HeroBar({ hasSubMenu, py = 4, flex, children }: HeroBarProps) {
+  return (
+    <Wrapper hasSubMenu={hasSubMenu} py={py}>
+      <Container flex={flex}>{children}</Container>
+    </Wrapper>
+  );
+}
 
 const Wrapper = styled.div<HeroBarWrapperProps>`
   background-color: ${props => props.theme.colors.neutral700};

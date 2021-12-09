@@ -10,7 +10,7 @@ interface LayoutProps {
   children: React.ReactNode;
 }
 
-const Layout = ({ children }: LayoutProps) => {
+function Layout({ children }: LayoutProps) {
   const data = useStaticQuery(graphql`
     query getMenu {
       allMainMenuJson {
@@ -36,7 +36,7 @@ const Layout = ({ children }: LayoutProps) => {
       </ScreenWrap>
     </ThemeProvider>
   );
-};
+}
 
 const Main = styled.div`
   padding-bottom: 5rem;

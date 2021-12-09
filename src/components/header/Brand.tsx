@@ -8,7 +8,7 @@ import { Link } from 'gatsby';
  *
  * @returns JeffCagle.dev logo.
  */
-const Brand = () => {
+function Brand() {
   const [brandAnimated, setBrandAnimated] = useState(false);
 
   const handleAnimate = () => {
@@ -34,7 +34,7 @@ const Brand = () => {
       </Link>
     </Name>
   );
-};
+}
 
 const Dev = styled.div`
   margin-left: 18px;

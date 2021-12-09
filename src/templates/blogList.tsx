@@ -34,7 +34,7 @@ interface BlogListProps extends PageContextProps {
   };
 }
 
-const BlogList = ({ data, pageContext }: BlogListProps) => {
+function BlogList({ data, pageContext }: BlogListProps) {
   const posts = data.allMarkdownRemark.nodes;
   const { currentPage, numberOfPages } = pageContext;
 
@@ -66,7 +66,7 @@ const BlogList = ({ data, pageContext }: BlogListProps) => {
       </Box>
     </>
   );
-};
+}
 
 const BlogPost = styled(Link)`
   display: flex;

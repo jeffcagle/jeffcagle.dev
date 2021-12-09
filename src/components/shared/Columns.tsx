@@ -15,11 +15,13 @@ interface RowProps {
  * @param mb Optional bottom margin.
  * @returns A row element.
  */
-export const Row = ({ mt, mb, children }: RowProps) => (
-  <RowItem mt={mt} mb={mb}>
-    {children}
-  </RowItem>
-);
+export function Row({ mt, mb, children }: RowProps) {
+  return (
+    <RowItem mt={mt} mb={mb}>
+      {children}
+    </RowItem>
+  );
+}
 
 const RowItem = styled.div<RowProps>`
   display: flex;
@@ -45,12 +47,14 @@ interface ColumnProps {
  * @param title Optional h2 for the column.
  * @returns A column element.
  */
-export const Column = ({ title, width = 100, children }: ColumnProps) => (
-  <ColumnItem width={width}>
-    {title && <h2>{title}</h2>}
-    {children}
-  </ColumnItem>
-);
+export function Column({ title, width = 100, children }: ColumnProps) {
+  return (
+    <ColumnItem width={width}>
+      {title && <h2>{title}</h2>}
+      {children}
+    </ColumnItem>
+  );
+}
 
 const ColumnItem = styled.div<ColumnProps>`
   width: ${props => `${props.width}%`};

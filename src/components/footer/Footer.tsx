@@ -11,36 +11,38 @@ import { Row, Column } from '../shared/Columns';
  *
  * @returns A footer element.
  */
-const Footer = () => (
-  <FooterBar>
-    <FooterContainer>
-      <Row>
-        <Column width={33.333}>
-          <h3>Contact</h3>
-          <ul>
-            <li>
-              <SocialLinks />
-            </li>
-            <li>
-              <p>
-                Find me on <a href="/">GitHub</a> and social
-                <br /> media, or send me an <a href="/">email</a>.
-              </p>
-            </li>
-          </ul>
-        </Column>
-        <Column width={33.333}>
-          <h3>Services</h3>
-          <ListServices type="list" limit={5} />
-        </Column>
-        <Column width={33.333}>
-          <h3>Latest Dev Blog</h3>
-          <ListPosts type="list" limit={4} />
-        </Column>
-      </Row>
-    </FooterContainer>
-  </FooterBar>
-);
+function Footer() {
+  return (
+    <FooterBar>
+      <FooterContainer>
+        <Row>
+          <Column width={33.333}>
+            <h3>Contact</h3>
+            <ul>
+              <li>
+                <SocialLinks />
+              </li>
+              <li>
+                <p>
+                  Find me on <a href="/">GitHub</a> and social
+                  <br /> media, or send me an <a href="/">email</a>.
+                </p>
+              </li>
+            </ul>
+          </Column>
+          <Column width={33.333}>
+            <h3>Services</h3>
+            <ListServices type="list" limit={5} />
+          </Column>
+          <Column width={33.333}>
+            <h3>Latest Dev Blog</h3>
+            <ListPosts type="list" limit={4} />
+          </Column>
+        </Row>
+      </FooterContainer>
+    </FooterBar>
+  );
+}
 
 const FooterBar = styled.div`
   width: 100%;

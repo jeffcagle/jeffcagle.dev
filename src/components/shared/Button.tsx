@@ -25,13 +25,15 @@ interface ButtonProps extends BtnContainerProps {
  * @param mb Optional bottom margin.
  * @returns A button element.
  */
-const Button = ({ type, to, centered, mt, mb, children }: ButtonProps) => (
-  <BtnContainer centered={centered} mt={mt} mb={mb}>
-    <Btn type={type} to={to}>
-      {children}
-    </Btn>
-  </BtnContainer>
-);
+function Button({ type, to, centered, mt, mb, children }: ButtonProps) {
+  return (
+    <BtnContainer centered={centered} mt={mt} mb={mb}>
+      <Btn type={type} to={to}>
+        {children}
+      </Btn>
+    </BtnContainer>
+  );
+}
 
 const BtnContainer = styled.div<BtnContainerProps>`
   display: flex;

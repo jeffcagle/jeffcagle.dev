@@ -18,7 +18,7 @@ interface ServiceProps {
   };
 }
 
-const Service = ({ data }: ServiceProps) => {
+function Service({ data }: ServiceProps) {
   const service = data.markdownRemark;
 
   return (
@@ -38,7 +38,7 @@ const Service = ({ data }: ServiceProps) => {
       </Box>
     </>
   );
-};
+}
 
 export const query = graphql`
   query Service($id: String!) {
