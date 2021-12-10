@@ -1,8 +1,9 @@
+import * as React from 'react';
+import styled from 'styled-components';
+import breakpoint from '../styles/breakpoints';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import * as React from 'react';
-import styled from 'styled-components';
 import { Column, Row } from '../components/shared/Columns';
 import { Box } from '../components/shared/Ui';
 
@@ -14,7 +15,7 @@ function Contact() {
       </Box>
       <Box withContainer mt={3}>
         <Row>
-          <Column width={60}>
+          <Column mediumWidth={60}>
             <Form>
               <Label htmlFor="name">Name</Label>
               <TextInput id="name" placeholder="Your name." type="text" />
@@ -41,7 +42,7 @@ function Contact() {
               </ButtonContainer>
             </Form>
           </Column>
-          <Column width={40}>
+          <Column mediumWidth={40}>
             <h2>Get In Touch</h2>
             <p>Project consultations are free of charge.</p>
             <ContactOptions>
@@ -83,7 +84,10 @@ function Contact() {
 const Form = styled.form`
   display: flex;
   flex-direction: column;
-  padding-right: 2rem;
+
+  @media only screen and ${breakpoint.device.medium} {
+    padding-right: 2rem;
+  }
 `;
 
 const Label = styled.label`

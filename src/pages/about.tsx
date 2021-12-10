@@ -12,7 +12,7 @@ function About() {
       <Section>
         <h1>About</h1>
         <Row>
-          <Column width={50}>
+          <Column mediumWidth={50}>
             <p>
               Lorem, ipsum dolor sit amet consectetur adipisicing elit.
               Molestias aut, repellat ipsum facere voluptate dicta obcaecati
@@ -26,7 +26,7 @@ function About() {
               deserunt nobis suscipit eaque.
             </p>
           </Column>
-          <Column width={50}>
+          <Column mediumWidth={50}>
             <Box flex justifyRight>
               <ProfileImage>
                 <StaticImage
@@ -58,7 +58,7 @@ function About() {
         />
       </Section>
 
-      <Section h2="Books I Like">
+      <Section h2="Recent Reads">
         <ListBooks />
       </Section>
     </>

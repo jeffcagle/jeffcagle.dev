@@ -1,5 +1,6 @@
 import * as React from 'react';
 import styled from 'styled-components';
+import breakpoint from '../../styles/breakpoints';
 import ListServices from '../lists/ListServices';
 import ListPosts from '../lists/ListPosts';
 import SocialLinks from '../shared/SocialLinks';
@@ -16,7 +17,7 @@ function Footer() {
     <FooterBar>
       <FooterContainer>
         <Row>
-          <Column width={33.333}>
+          <Column mediumWidth={33.333}>
             <h3>Contact</h3>
             <ul>
               <li>
@@ -30,11 +31,11 @@ function Footer() {
               </li>
             </ul>
           </Column>
-          <Column width={33.333}>
+          <Column mediumWidth={33.333}>
             <h3>Services</h3>
             <ListServices type="list" limit={5} />
           </Column>
-          <Column width={33.333}>
+          <Column mediumWidth={33.333}>
             <h3>Latest Dev Blog</h3>
             <ListPosts type="list" limit={4} />
           </Column>
@@ -48,6 +49,10 @@ const FooterBar = styled.div`
   width: 100%;
   background-color: ${props => props.theme.colors.neutral700};
   border-top: 3px solid ${props => props.theme.colors.secondary};
+
+  @media only screen and ${breakpoint.device.small} {
+    padding: 0 1rem;
+  }
 
   h3 {
     color: ${props => props.theme.colors.neutral300};
@@ -71,7 +76,16 @@ const FooterBar = styled.div`
 `;
 
 const FooterContainer = styled.div`
-  max-width: ${props => props.theme.sizes.containerWidth};
+  max-width: ${props => props.theme.sizes.containerWidthSmall};
+
+  @media only screen and ${breakpoint.device.medium} {
+    max-width: ${props => props.theme.sizes.containerWidthMedium};
+  }
+
+  @media only screen and ${breakpoint.device.large} {
+    max-width: ${props => props.theme.sizes.containerWidth};
+  }
+
   margin: 0 auto;
   padding: 4rem 0;
   color: ${props => props.theme.colors.neutral500};

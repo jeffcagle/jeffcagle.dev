@@ -48,8 +48,8 @@ function ListProjects({
             coverImage {
               childImageSharp {
                 gatsbyImageData(
-                  width: 300
-                  height: 200
+                  width: 400
+                  height: 267
                   transformOptions: { cropFocus: CENTER }
                   quality: 50
                   formats: [AUTO, WEBP, AVIF]
@@ -101,7 +101,7 @@ function ListProjects({
         {projects.map(
           (project: ProjectProps, index: number) =>
             index < limit && (
-              <Column width={33.333} key={project.id}>
+              <Column mediumWidth={50} largeWidth={33.333} key={project.id}>
                 <Project
                   className="card"
                   to={`/projects/${project.frontmatter.slug}`}

@@ -27,7 +27,7 @@ function Service({ data }: ServiceProps) {
         <h1>{service.frontmatter.longTitle}</h1>
         <p>{service.frontmatter.summary}</p>
         <Box flex mt={0.8} mb={0.5}>
-          <ListTools startText="Tools: " items={service.frontmatter.tools} />
+          <ListTools startText="My tools: " items={service.frontmatter.tools} />
         </Box>
       </HeroBar>
       <Box withContainer mt={3}>

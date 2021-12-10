@@ -1,5 +1,6 @@
 import * as React from 'react';
 import styled from 'styled-components';
+import breakpoint from '../../styles/breakpoints';
 import NavFloating from './NavFloating';
 import NavMain from './NavMain';
 import Brand from './Brand';
@@ -41,6 +42,10 @@ const Header = styled.header`
   background-size: 400% 400%;
   animation: gradient 15s ease infinite;
 
+  @media only screen and ${breakpoint.device.small} {
+    padding: 0 1rem;
+  }
+
   @keyframes gradient {
     0% {
       background-position: 0% 50%;
@@ -58,6 +63,7 @@ const HeaderContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  height: 86px;
 `;
 
 export default HeaderBar;

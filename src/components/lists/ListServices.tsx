@@ -72,7 +72,7 @@ function ListServices({ type = 'grid', limit = 8 }: ListServicesProps) {
         {services.map(
           (service: ServiceProps, index: number) =>
             index < limit && (
-              <Column key={service.id} width={33.333}>
+              <Column key={service.id} mediumWidth={50} largeWidth={33.333}>
                 <Service
                   className="card"
                   to={`/services/${service.frontmatter.slug}`}

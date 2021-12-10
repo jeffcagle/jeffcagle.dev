@@ -40,8 +40,8 @@ function ListBooks() {
   return (
     <Row mt={3}>
       {books.map((book: BookProps) => (
-        <Column key={book.id} width={20}>
-          <Book to={book.amazonUrl} title={book.title}>
+        <Column key={book.id} mediumWidth={33.333} largeWidth={20}>
+          <Book href={book.amazonUrl} target="_blank" title={book.title}>
             <Image>
               {
                 // @ts-ignore
@@ -57,10 +57,12 @@ function ListBooks() {
   );
 }
 
-const Book = styled(Link)``;
+const Book = styled.a``;
 
 const Image = styled.div`
   margin-bottom: 1rem;
+  display: flex;
+  justify-content: center;
 `;
 
 const Title = styled.div`

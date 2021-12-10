@@ -4,10 +4,10 @@ date: '2021-09-04'
 templateKey: 'projects'
 slug: 'modern-wordpress-website'
 shortTitle: 'Consolidated Label'
-longTitle: 'Consolidated Label WordPress App'
-summary: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.'
-frontendTools: ['JavaScript', 'jQuery', 'SASS']
-backendTools: ['WordPress', 'PHP', 'MySQL']
+longTitle: 'Consolidated Label WordPress Website'
+summary: 'A brochure & client portal website with 20k+ daily unique visitors.'
+frontendTools: ['HTML5', 'JavaScript', 'jQuery', 'SASS']
+backendTools: ['WordPress', 'PHP', 'MySQL', 'Linux']
 coverImage: './cl-main.png'
 ---
 

@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import styled, { ThemeProvider } from 'styled-components';
+import breakpoint from '../styles/breakpoints';
 import GlobalStyle from '../styles/globalStyles';
 import HeaderBar from '../components/header/HeaderBar';
 import jcTheme from '../styles/theme';
@@ -41,6 +42,10 @@ function Layout({ children }: LayoutProps) {
 const Main = styled.div`
   padding-bottom: 5rem;
   flex-grow: 1;
+
+  @media only screen and ${breakpoint.device.small} {
+    padding: 0 1rem;
+  }
 `;
 
 const ScreenWrap = styled.div`

@@ -46,7 +46,7 @@ function BlogList({ data, pageContext }: BlogListProps) {
       <Box withContainer mt={3}>
         <Row>
           {posts.map(post => (
-            <Column width={33.333} key={post.id}>
+            <Column mediumWidth={50} largeWidth={33.333} key={post.id}>
               <BlogPost
                 to={`/blog/${post.frontmatter.slug}`}
                 title={post.frontmatter.title}

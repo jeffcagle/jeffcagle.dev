@@ -1,5 +1,6 @@
 import * as React from 'react';
 import styled from 'styled-components';
+import breakpoint from '../../styles/breakpoints';
 
 interface SectionProps {
   h2?: string;
@@ -31,7 +32,16 @@ const SectionItem = styled.section`
 `;
 
 const SectionContainer = styled.div<SectionProps>`
-  max-width: ${props => props.theme.sizes.containerWidth};
+  max-width: ${props => props.theme.sizes.containerWidthSmall};
+
+  @media only screen and ${breakpoint.device.medium} {
+    max-width: ${props => props.theme.sizes.containerWidthMedium};
+  }
+
+  @media only screen and ${breakpoint.device.large} {
+    max-width: ${props => props.theme.sizes.containerWidth};
+  }
+
   margin: 0 auto;
 
   ${props =>
@@ -115,6 +125,10 @@ const BoxItem = styled.div<BoxProps>`
     `
     display:flex;
     align-items:center;
+
+    @media only screen and ${breakpoint.device.small} {
+      flex-direction:column;
+    }
   `}
 
   ${props =>
@@ -126,12 +140,25 @@ const BoxItem = styled.div<BoxProps>`
 ${props =>
     props.justifyRight &&
     `
-    justify-content:right;
+    @media only screen and ${breakpoint.device.small} {
+      justify-content:center;
+    }
+    @media only screen and ${breakpoint.device.medium} {
+      justify-content:right;
+    }
   `}
 `;
 
 const BoxContainer = styled.div`
-  max-width: ${props => props.theme.sizes.containerWidth};
+  max-width: ${props => props.theme.sizes.containerWidthSmall};
+
+  @media only screen and ${breakpoint.device.medium} {
+    max-width: ${props => props.theme.sizes.containerWidthMedium};
+  }
+
+  @media only screen and ${breakpoint.device.large} {
+    max-width: ${props => props.theme.sizes.containerWidth};
+  }
   margin: 0 auto;
 
   .gatsby-resp-image-wrapper {

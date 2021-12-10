@@ -1,7 +1,11 @@
 import * as React from 'react';
+import breakpoint from '../../styles/breakpoints';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
 import NavSub from './NavSub';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
+import { propTypes } from 'gatsby-plugin-image/dist/src/components/gatsby-image.server';
 
 interface MenuProps {
   menu: MenuItemProps[];
@@ -23,7 +27,7 @@ export interface MenuItemProps {
  */
 function NavMain({ menu }: MenuProps) {
   return (
-    <nav>
+    <Nav>
       <Menu>
         {menu.map((menuItem: MenuItemProps) => (
           <Item key={menuItem.id}>
@@ -44,12 +48,31 @@ function NavMain({ menu }: MenuProps) {
           </Item>
         ))}
       </Menu>
-    </nav>
+      <MobileMenu>
+        <Link to="#">
+          <FontAwesomeIcon icon={faBars} size="2x" color="white" />
+        </Link>
+      </MobileMenu>
+    </Nav>
   );
 }
 
+const Nav = styled.nav``;
+
 const Menu = styled.ul`
-  display: flex;
+  display: none;
+
+  @media only screen and ${breakpoint.device.large} {
+    display: flex;
+  }
+`;
+
+const MobileMenu = styled.div`
+  display: initial;
+
+  @media only screen and ${breakpoint.device.large} {
+    display: none;
+  }
 `;
 
 const SubMenu = styled.div`

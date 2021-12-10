@@ -11,6 +11,7 @@ declare module 'styled-components' {
       accent4: string;
 
       neutral100: string;
+      neutral150: string;
       neutral200: string;
       neutral300: string;
       neutral400: string;
@@ -31,6 +32,8 @@ declare module 'styled-components' {
 
     sizes: {
       containerWidth: string;
+      containerWidthMedium: string;
+      containerWidthSmall: string;
     };
   }
 }

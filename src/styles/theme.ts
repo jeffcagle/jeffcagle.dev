@@ -10,6 +10,7 @@ const jcTheme: DefaultTheme = {
     accent4: '#60BDFD',
 
     neutral100: '#ffffff',
+    neutral150: '#eeeeee',
     neutral200: '#dbdbdb',
     neutral300: '#c4c4c4',
     neutral400: '#999999',
@@ -32,6 +33,8 @@ const jcTheme: DefaultTheme = {
 
   sizes: {
     containerWidth: '928px',
+    containerWidthMedium: '700px',
+    containerWidthSmall: '400px',
   },
 
   // Theme 4 - Blue 2

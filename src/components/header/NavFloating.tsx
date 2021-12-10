@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import breakpoint from '../../styles/breakpoints';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -80,6 +81,12 @@ const FloatingNav = styled.div`
   left: 50%;
   margin-left: -650px;
   position: fixed;
+
+  display: none;
+
+  @media only screen and ${breakpoint.device.large} {
+    display: initial;
+  }
 `;
 
 const Nav = styled.nav`
@@ -147,7 +154,7 @@ const MenuLink = styled(Link)`
   width: 50px;
   max-width: 50px;
   border-radius: 25px;
-  transition: 0.2s ease;
+  transition: 0.5s ease;
   position: relative;
   font-weight: bold;
   overflow: hidden;

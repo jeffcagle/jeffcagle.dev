@@ -1,5 +1,6 @@
 import * as React from 'react';
 import styled from 'styled-components';
+import breakpoint from '../../styles/breakpoints';
 
 interface HeroBarWrapperProps {
   hasSubMenu?: boolean;
@@ -39,12 +40,23 @@ const Wrapper = styled.div<HeroBarWrapperProps>`
   ${props =>
     props.hasSubMenu &&
     `
-      margin-top:45px;
+      @media only screen and ${breakpoint.device.large} {
+        margin-top:45px;
+      }
   `}
 `;
 
 const Container = styled.div<HeroBarContainer>`
-  max-width: ${props => props.theme.sizes.containerWidth};
+  max-width: ${props => props.theme.sizes.containerWidthSmall};
+
+  @media only screen and ${breakpoint.device.medium} {
+    max-width: ${props => props.theme.sizes.containerWidthMedium};
+  }
+
+  @media only screen and ${breakpoint.device.large} {
+    max-width: ${props => props.theme.sizes.containerWidth};
+  }
+
   margin: 0 auto;
 
   h1 {
@@ -67,6 +79,10 @@ const Container = styled.div<HeroBarContainer>`
     `
     display:flex;
     align-items:center;
+
+    @media only screen and ${breakpoint.device.small} {
+      flex-direction:column;
+    }
   `}
 `;
 

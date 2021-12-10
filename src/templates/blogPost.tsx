@@ -42,7 +42,7 @@ function BlogPost({ data }: PostProps) {
       <Box withContainer mt={3}>
         <PrevNext>
           <Row>
-            <Column width={50}>
+            <Column mediumWidth={50}>
               {previous && (
                 <PrevPost>
                   <Prev>Previous Post</Prev>
@@ -63,7 +63,7 @@ function BlogPost({ data }: PostProps) {
                 </PrevPost>
               )}
             </Column>
-            <Column width={50}>
+            <Column mediumWidth={50}>
               {next && (
                 <NextPost>
                   <Next>Next Post</Next>

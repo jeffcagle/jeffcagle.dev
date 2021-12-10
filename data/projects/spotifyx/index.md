@@ -4,10 +4,10 @@ date: '2021-09-05'
 templateKey: 'projects'
 slug: 'spotify-react-redux'
 shortTitle: 'Spotify Redux'
-longTitle: 'Spotify 2: React With Redux'
-summary: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.'
-frontendTools: ['JavaScript', 'React', 'Redux', 'Styled Components']
-backendTools: ['Firebase']
+longTitle: 'Spotify Redux'
+summary: 'A re-creation of the Spotify Web App using React with Redux.'
+frontendTools: ['HTML5', 'JavaScript', 'React', 'Redux', 'SASS']
+backendTools: ['Firebase', 'Spotify API']
 coverImage: './spotify-redux.jpg'
 ---
 

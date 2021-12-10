@@ -1,5 +1,6 @@
 import * as React from 'react';
 import styled from 'styled-components';
+import breakpoint from '../../styles/breakpoints';
 
 interface RowProps {
   mt?: number;
@@ -35,6 +36,8 @@ const RowItem = styled.div<RowProps>`
 
 interface ColumnProps {
   title?: string;
+  mediumWidth?: number;
+  largeWidth?: number;
   width?: number;
   children?: any;
 }
@@ -47,9 +50,15 @@ interface ColumnProps {
  * @param title Optional h2 for the column.
  * @returns A column element.
  */
-export function Column({ title, width = 100, children }: ColumnProps) {
+export function Column({
+  title,
+  width = 100,
+  mediumWidth,
+  largeWidth,
+  children,
+}: ColumnProps) {
   return (
-    <ColumnItem width={width}>
+    <ColumnItem width={width} mediumWidth={mediumWidth} largeWidth={largeWidth}>
       {title && <h2>{title}</h2>}
       {children}
     </ColumnItem>
@@ -58,6 +67,23 @@ export function Column({ title, width = 100, children }: ColumnProps) {
 
 const ColumnItem = styled.div<ColumnProps>`
   width: ${props => `${props.width}%`};
+
+  ${props =>
+    props.mediumWidth &&
+    `
+  @media only screen and ${breakpoint.device.medium} {
+    width: ${props.mediumWidth}%;
+  }
+  `}
+
+  ${props =>
+    props.largeWidth &&
+    `
+  @media only screen and ${breakpoint.device.large} {
+    width: ${props.largeWidth}%;
+  }
+  `}
+
   margin-bottom: 2rem;
   padding: 0 1rem;
 `;

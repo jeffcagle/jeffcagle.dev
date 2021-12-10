@@ -43,10 +43,10 @@ function Index() {
       </Section>
       <Section>
         <Row>
-          <Column title="Experiments" width={50}>
+          <Column title="Experiments" mediumWidth={50}>
             <ListExperiments />
           </Column>
-          <Column title="Dev Blog" width={50}>
+          <Column title="Dev Blog" mediumWidth={50}>
             <ListPosts type="list" limit={5} allPostsLink />
           </Column>
         </Row>
