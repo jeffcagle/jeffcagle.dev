@@ -1,6 +1,8 @@
 import * as React from 'react';
 import styled, { ThemeContext } from 'styled-components';
+import breakpoint from '../../styles/breakpoints';
 import { useStaticQuery, graphql } from 'gatsby';
+import { GatsbyImage, GatsbyImageProps, getImage } from 'gatsby-plugin-image';
 
 interface ToolsContainerProps {
   mb?: number;
@@ -16,7 +18,9 @@ interface ToolProps {
   id: string;
   name: string;
   desc: string;
+  url: string;
   toolColor: string;
+  icon: GatsbyImageProps['image'];
 }
 
 /**
@@ -37,7 +41,18 @@ function ListTools({ startText, items, unstyled, mb }: ToolListProps) {
           id
           name
           desc
+          url
           toolColor
+          icon {
+            childImageSharp {
+              gatsbyImageData(
+                width: 25
+                height: 25
+                quality: 50
+                formats: [AUTO, WEBP, AVIF]
+              )
+            }
+          }
         }
       }
     }
@@ -81,8 +96,24 @@ function ListTools({ startText, items, unstyled, mb }: ToolListProps) {
           >
             {tool.name}
             <ToolDetails>
-              <ToolName>{tool.name}</ToolName>
-              <ToolDesc>{tool.desc}</ToolDesc>
+              <ToolText>
+                <ToolName>
+                  {tool.icon && (
+                    <Image>
+                      <GatsbyImage
+                        // @ts-ignore
+                        image={getImage(tool.icon)}
+                        alt={tool.name}
+                      />
+                    </Image>
+                  )}
+                  {tool.name}
+                </ToolName>
+                <ToolDesc>{tool.desc}</ToolDesc>
+              </ToolText>
+              <ToolUrl href={tool.url} target="_blank">
+                {tool.url}
+              </ToolUrl>
             </ToolDetails>
           </SingleTool>
         ))}
@@ -95,6 +126,10 @@ const ToolsContainer = styled.div<ToolsContainerProps>`
   display: flex;
   align-items: center;
   margin-bottom: ${props => (props.mb ? `${props.mb}rem` : '0')};
+
+  @media only screen and ${breakpoint.device.small} {
+    flex-direction: column;
+  }
 `;
 
 const StartText = styled.div`
@@ -141,14 +176,15 @@ const ToolDetails = styled.div`
   left: 50%;
   width: 350px;
   height: auto;
-  padding: 1rem;
+  /* padding: 1rem; */
   visibility: hidden;
   opacity: 0;
   transition: 0.3s cubic-bezier(0.44, 0, 0.4, 1.29);
   transform: scaleY(0) translate(-50%, 20%);
 
   ${SingleTool}:hover & {
-    background-color: ${props => props.theme.colors.neutral550};
+    background-color: ${props => props.theme.colors.neutral100};
+    box-shadow: 3px 2px 10px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
     visibility: visible;
     opacity: 1;
@@ -158,27 +194,54 @@ const ToolDetails = styled.div`
   &:after {
     content: '';
     position: absolute;
-    top: 100%;
+    top: 99%;
     left: 50%;
     margin-left: -10px;
     width: 0;
     height: 0;
-    border-top: 10px solid ${props => props.theme.colors.neutral550};
+    border-top: 10px solid ${props => props.theme.colors.neutral150};
     border-right: 10px solid transparent;
     border-left: 10px solid transparent;
   }
 `;
 
+const ToolText = styled.div`
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+`;
+
 const ToolName = styled.span`
+  display: flex;
+  align-items: center;
   margin-bottom: 0.3rem;
-  color: ${props => props.theme.colors.neutral200};
+  color: ${props => props.theme.colors.neutral600};
+`;
+
+const Image = styled.div`
+  margin-right: 0.5rem;
 `;
 
 const ToolDesc = styled.span`
   font-weight: normal;
   font-style: italic;
   font-size: 0.9rem;
-  color: ${props => props.theme.colors.neutral300};
+  color: ${props => props.theme.colors.neutral500};
+`;
+
+const ToolUrl = styled.a`
+  border-top: 1px dashed ${props => props.theme.colors.neutral400};
+  background-color: ${props => props.theme.colors.neutral150};
+  color: ${props => props.theme.colors.secondary};
+  padding: 0.5rem 1rem;
+  /* font-weight: normal; */
+  font-size: 0.9rem;
+  border-radius: 0 0 10px 10px;
+  transition: 0.2s ease-in-out;
+
+  &:hover {
+    color: ${props => props.theme.colors.neutral700};
+  }
 `;
 
 export default ListTools;

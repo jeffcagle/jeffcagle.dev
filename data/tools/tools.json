@@ -1,27 +1,35 @@
 [
   {
     "name": "HTML5",
-    "desc": "An open source frontend framework for creating dynamic, optimized websites.",
+    "desc": "A markup language used for structuring and presenting content on the World Wide Web.",
     "skillLvl": 95,
-    "toolColor": "secondary"
+    "toolColor": "accent1",
+    "url": "https://whatwg.org/",
+    "icon": "./icons/icon-html.png"
   },
   {
     "name": "CSS3",
-    "desc": "An open source frontend framework for creating dynamic, optimized websites.",
+    "desc": "A style sheet language used for describing the presentation of a document written in a markup language such as HTML.",
     "skillLvl": 98,
-    "toolColor": "accent1"
+    "toolColor": "accent1",
+    "url": "https://www.w3.org/",
+    "icon": "./icons/icon-css.png"
   },
   {
     "name": "SASS",
-    "desc": "An open source frontend framework for creating dynamic, optimized websites.",
+    "desc": "A preprocessor scripting language that is interpreted or compiled into Cascading Style Sheets.",
     "skillLvl": 97,
-    "toolColor": "secondary"
+    "toolColor": "secondary",
+    "url": "https://sass-lang.com/",
+    "icon": "./icons/icon-sass.png"
   },
   {
     "name": "Tailwind",
-    "desc": "An open source frontend framework for creating dynamic, optimized websites.",
+    "desc": "A utility-first CSS framework that can be composed directly in the HTML markup.",
     "skillLvl": 97,
-    "toolColor": "accent3"
+    "toolColor": "accent3",
+    "url": "https://tailwindcss.com/",
+    "icon": "./icons/icon-sass.png"
   },
   {
     "name": "Bootstrap",
@@ -33,55 +41,73 @@
     "name": "JavaScript",
     "desc": "A high-level, just-in-time compiled, multi-paradigm programming language.",
     "skillLvl": 86,
-    "toolColor": "primary"
+    "toolColor": "primary",
+    "url": "https://www.javascript.com/",
+    "icon": "./icons/icon-javascript.png"
   },
   {
     "name": "TypeScript",
-    "desc": "A high-level, just-in-time compiled, multi-paradigm programming language.",
+    "desc": "A strict syntactical superset of JavaScript which adds optional static typing to the language.",
     "skillLvl": 42,
-    "toolColor": "accent1"
+    "toolColor": "accent1",
+    "url": "https://www.typescriptlang.org/",
+    "icon": "./icons/icon-javascript.png"
   },
   {
     "name": "jQuery",
-    "desc": "An open source frontend framework for creating dynamic, optimized websites.",
+    "desc": "A JavaScript library designed to simplify HTML DOM tree traversal and manipulation, as well as event handling, CSS animation, and Ajax.",
     "skillLvl": 88,
-    "toolColor": "accent2"
+    "toolColor": "accent2",
+    "url": "https://jquery.com/",
+    "icon": "./icons/icon-jquery.png"
   },
   {
     "name": "React",
-    "desc": "An open-source front-end JavaScript library for building user interfaces.",
+    "desc": "A front-end JavaScript library for building user interfaces based on UI components.",
     "skillLvl": 81,
-    "toolColor": "accent3"
+    "toolColor": "accent3",
+    "url": "https://reactjs.org/",
+    "icon": "./icons/icon-react.png"
   },
   {
     "name": "Gatsby",
-    "desc": "An open source frontend framework for creating dynamic, optimized websites.",
+    "desc": "A frontend JavaScript framework for creating SSR or static websites with React components.",
     "skillLvl": 76,
-    "toolColor": "secondary"
+    "toolColor": "secondary",
+    "url": "https://www.gatsbyjs.com/",
+    "icon": "./icons/icon-gatsby.png"
   },
   {
     "name": "Next.js",
-    "desc": "An open source frontend framework for creating dynamic, optimized websites.",
+    "desc": "A React framework built on top of Node.js which enables the creation of server-side and static websites.",
     "skillLvl": 55,
-    "toolColor": "accent3"
+    "toolColor": "accent3",
+    "url": "https://nextjs.org/",
+    "icon": "./icons/icon-nextjs.png"
   },
   {
     "name": "Styled Components",
-    "desc": "An open source frontend framework for creating dynamic, optimized websites.",
+    "desc": "A library built for React which allows for component-level styles in applications (CSS-in-JS).",
     "skillLvl": 90,
-    "toolColor": "accent2"
+    "toolColor": "accent2",
+    "url": "https://www.styled-components.com/",
+    "icon": "./icons/icon-styled-components.png"
   },
   {
     "name": "Node",
-    "desc": "A free and open-source content management system written in PHP and paired with a MySQL or MariaDB database.",
+    "desc": "A back-end JavaScript runtime environment that runs on the V8 engine and executes JavaScript code outside a web browser.",
     "skillLvl": 35,
-    "toolColor": "accent3"
+    "toolColor": "accent3",
+    "url": "https://nodejs.org/",
+    "icon": "./icons/icon-node.png"
   },
   {
     "name": "GraphQL",
-    "desc": "A free and open-source content management system written in PHP and paired with a MySQL or MariaDB database.",
+    "desc": "A data query and manipulation language for APIs, and a runtime for fulfilling queries with existing data.",
     "skillLvl": 35,
-    "toolColor": "accent1"
+    "toolColor": "accent1",
+    "url": "https://graphql.org/",
+    "icon": "./icons/icon-graphql.png"
   },
   {
     "name": "GraphCMS",
@@ -91,86 +117,130 @@
   },
   {
     "name": "Redux",
-    "desc": "An open source frontend framework for creating dynamic, optimized websites.",
+    "desc": "A JavaScript library for managing and centralizing application state.",
     "skillLvl": 50,
-    "toolColor": "secondary"
+    "toolColor": "secondary",
+    "url": "https://redux.js.org/",
+    "icon": "./icons/icon-redux.png"
   },
   {
     "name": "Python",
-    "desc": "A free and open-source content management system written in PHP and paired with a MySQL or MariaDB database.",
+    "desc": "An interpreted high-level general-purpose programming language.",
     "skillLvl": 35,
-    "toolColor": "accent2"
+    "toolColor": "accent2",
+    "url": "https://www.python.org/",
+    "icon": "./icons/icon-redux.png"
   },
   {
     "name": "WordPress",
     "desc": "A free and open-source content management system written in PHP and paired with a MySQL or MariaDB database.",
     "skillLvl": 92,
-    "toolColor": "accent1"
+    "toolColor": "accent1",
+    "url": "https://wordpress.org/",
+    "icon": "./icons/icon-wordpress.png"
   },
   {
     "name": "WooCommerce",
-    "desc": "A free and open-source content management system written in PHP and paired with a MySQL or MariaDB database.",
+    "desc": "An e-commerce plugin designed for small to large-sized online merchants using WordPress.",
     "skillLvl": 70,
-    "toolColor": "accent1"
+    "toolColor": "accent1",
+    "url": "https://woocommerce.com/",
+    "icon": "./icons/icon-woocommerce.png"
   },
   {
     "name": "PHP",
-    "desc": "A free and open-source content management system written in PHP and paired with a MySQL or MariaDB database.",
+    "desc": "A general-purpose scripting language geared towards web development.",
     "skillLvl": 75,
-    "toolColor": "accent3"
+    "toolColor": "accent3",
+    "url": "https://www.php.net/",
+    "icon": "./icons/icon-php.png"
   },
   {
     "name": "MySQL",
-    "desc": "A free and open-source content management system written in PHP and paired with a MySQL or MariaDB database.",
+    "desc": "A relational database management system.",
     "skillLvl": 60,
-    "toolColor": "secondary"
+    "toolColor": "secondary",
+    "url": "https://www.mysql.com/",
+    "icon": "./icons/icon-mysql.png"
   },
   {
     "name": "Figma",
-    "desc": "A high-level, just-in-time compiled, multi-paradigm programming language.",
+    "desc": "A vector graphics editor and prototyping tool for web and mobile applications.",
     "skillLvl": 91,
-    "toolColor": "secondary"
+    "toolColor": "secondary",
+    "url": "https://www.figma.com/",
+    "icon": "./icons/icon-figma.png"
   },
   {
     "name": "Photoshop",
-    "desc": "An open source frontend framework for creating dynamic, optimized websites.",
+    "desc": "A raster graphics editor developed and published by Adobe Inc.",
     "skillLvl": 99,
-    "toolColor": "accent1"
+    "toolColor": "accent1",
+    "url": "https://www.adobe.com/",
+    "icon": "./icons/icon-photoshop.png"
   },
   {
     "name": "Adobe XD",
-    "desc": "A high-level, just-in-time compiled, multi-paradigm programming language.",
+    "desc": "A vector-based user experience design tool for web apps and mobile apps.",
     "skillLvl": 72,
-    "toolColor": "accent3"
+    "toolColor": "accent3",
+    "url": "https://www.adobe.com/",
+    "icon": "./icons/icon-adobe-xd.png"
   },
   {
     "name": "Lightroom",
-    "desc": "An open source frontend framework for creating dynamic, optimized websites.",
+    "desc": "A creative image organization and image manipulation software.",
     "skillLvl": 99,
-    "toolColor": "accent1"
+    "toolColor": "accent1",
+    "url": "https://lightroom.adobe.com/",
+    "icon": "./icons/icon-lightroom.png"
   },
   {
     "name": "Capture One",
-    "desc": "An open source frontend framework for creating dynamic, optimized websites.",
+    "desc": "A professional photo editing software, which offers image cataloguing, raw image file processing, and tethered photography.",
     "skillLvl": 99,
-    "toolColor": "secondary"
+    "toolColor": "secondary",
+    "url": "https://www.captureone.com/",
+    "icon": "./icons/icon-capture-one.png"
   },
   {
     "name": "Firebase",
-    "desc": "A free and open-source content management system written in PHP and paired with a MySQL or MariaDB database.",
+    "desc": "A platform developed by Google for creating mobile and web applications.",
     "skillLvl": 25,
-    "toolColor": "secondary"
+    "toolColor": "secondary",
+    "url": "https://firebase.google.com/",
+    "icon": "./icons/icon-firebase.png"
   },
   {
     "name": "Linux",
-    "desc": "A free and open-source content management system written in PHP and paired with a MySQL or MariaDB database.",
+    "desc": "A family of open-source Unix-like operating systems based on the Linux kernel.",
     "skillLvl": 25,
-    "toolColor": "accent2"
+    "toolColor": "accent2",
+    "url": "https://www.linux.org/",
+    "icon": "./icons/icon-firebase.png"
   },
   {
     "name": "VSCode",
-    "desc": "A free and open-source content management system written in PHP and paired with a MySQL or MariaDB database.",
+    "desc": "A source-code editor with support for debugging, syntax highlighting, intelligent code completion, snippets, code refactoring, and embedded Git.",
     "skillLvl": 25,
-    "toolColor": "accent1"
+    "toolColor": "accent1",
+    "url": "https://code.visualstudio.com/",
+    "icon": "./icons/icon-firebase.png"
+  },
+  {
+    "name": "Spotify API",
+    "desc": "Based on simple REST principles, the Spotify Web API endpoints return JSON metadata about music artists, albums, and tracks, directly from the Spotify Data Catalogue.",
+    "skillLvl": 25,
+    "toolColor": "accent1",
+    "url": "https://developer.spotify.com/",
+    "icon": "./icons/icon-firebase.png"
+  },
+  {
+    "name": "Netlify",
+    "desc": "A San Francisco-based cloud computing company that offers hosting and serverless backend services for web applications and static websites.",
+    "skillLvl": 25,
+    "toolColor": "accent2",
+    "url": "https://www.netlify.com/",
+    "icon": "./icons/icon-firebase.png"
   }
 ]
