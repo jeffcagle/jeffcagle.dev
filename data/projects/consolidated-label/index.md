@@ -8,7 +8,12 @@ longTitle: 'Consolidated Label WordPress Website'
 summary: 'A brochure & client portal website with 20k+ daily unique visitors.'
 frontendTools: ['HTML5', 'JavaScript', 'jQuery', 'SASS']
 backendTools: ['WordPress', 'PHP', 'MySQL', 'Linux']
-coverImage: './cl-main.png'
+image: './cl-main.png'
+
+codeUrl: 'https://www.github.com'
+codeUnavailable: false
+siteUrl: 'https://consolidatedlabel.com'
+siteUnavailable: false
 ---
 
 ![This is the alt tag](./cl-main.png 'This is the title')

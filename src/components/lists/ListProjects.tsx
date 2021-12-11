@@ -13,7 +13,7 @@ interface ProjectProps {
     slug: string;
     shortTitle: string;
     summary: string;
-    coverImage: GatsbyImageProps['image'];
+    image: GatsbyImageProps['image'];
     frontendTools: string[];
     backendTools: string[];
   };
@@ -45,7 +45,7 @@ function ListProjects({
             slug
             frontendTools
             backendTools
-            coverImage {
+            image {
               childImageSharp {
                 gatsbyImageData(
                   width: 400
@@ -110,7 +110,7 @@ function ListProjects({
                     <GatsbyImage
                       to={project.frontmatter.slug}
                       // @ts-ignore
-                      image={getImage(project.frontmatter.coverImage)}
+                      image={getImage(project.frontmatter.image)}
                       alt={project.frontmatter.shortTitle}
                     />
                   </Image>

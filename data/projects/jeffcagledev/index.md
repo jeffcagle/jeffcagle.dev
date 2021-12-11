@@ -8,7 +8,12 @@ longTitle: 'Gatsby Static Website'
 summary: 'A serverless JAMStack website created with Gatsby.js.'
 frontendTools: ['HTML5', 'JavaScript', 'React', 'Gatsby', 'Styled Components']
 backendTools: ['Node', 'Netlify']
-coverImage: './jc-dev.png'
+image: './jc-dev.png'
+
+codeUrl: 'https://www.github.com'
+codeUnavailable: false
+siteUrl: 'https://www.jeffcagle.dev'
+siteUnavailable: false
 ---
 
 Jeff Cagle

@@ -180,7 +180,7 @@ const ToolDetails = styled.div`
   visibility: hidden;
   opacity: 0;
   transition: 0.3s cubic-bezier(0.44, 0, 0.4, 1.29);
-  transform: scaleY(0) translate(-50%, 20%);
+  transform: translate(-50%, 20%) scale(0);
 
   ${SingleTool}:hover & {
     background-color: ${props => props.theme.colors.neutral100};
@@ -188,7 +188,7 @@ const ToolDetails = styled.div`
     border-radius: 10px;
     visibility: visible;
     opacity: 1;
-    transform: scaleY(1) translate(-50%, -1.2rem);
+    transform: translate(-50%, -1.2rem) scale(1);
   }
 
   &:after {

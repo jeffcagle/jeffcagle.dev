@@ -2,7 +2,7 @@
 title: 'Should You Be Using WordPress In 2021?'
 excerpt: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorem officiis corrupti velit incidunt beatae commodi odio sed...'
 date: '2021-05-13'
-coverImage: './wordpress-blog.png'
+image: './wordpress-blog.png'
 slug: 'post-4'
 templateKey: 'blog'
 ---

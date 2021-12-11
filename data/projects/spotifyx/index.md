@@ -8,7 +8,12 @@ longTitle: 'Spotify Redux'
 summary: 'A re-creation of the Spotify Web App using React with Redux.'
 frontendTools: ['HTML5', 'JavaScript', 'React', 'Redux', 'SASS']
 backendTools: ['Firebase', 'Spotify API']
-coverImage: './spotify-redux.jpg'
+image: './spotify-redux.jpg'
+
+codeUrl: 'https://www.github.com'
+codeUnavailable: false
+siteUrl: 'https://spotifyredux.jeffcagle.dev'
+siteUnavailable: true
 ---
 
 ## Design

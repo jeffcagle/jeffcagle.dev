@@ -52,7 +52,7 @@ interface ColumnProps {
  */
 export function Column({
   title,
-  width = 100,
+  width,
   mediumWidth,
   largeWidth,
   children,
@@ -66,7 +66,7 @@ export function Column({
 }
 
 const ColumnItem = styled.div<ColumnProps>`
-  width: ${props => `${props.width}%`};
+  width: 100%;
 
   ${props =>
     props.mediumWidth &&
