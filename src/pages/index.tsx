@@ -9,6 +9,7 @@ import HeroBar from '../components/shared/HeroBar';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 import ListProjects from '../components/lists/ListProjects';
+import Seo from '../components/shared/Seo';
 
 function Index() {
   const tools = [
@@ -22,6 +23,7 @@ function Index() {
 
   return (
     <>
+      <Seo />
       <HeroBar flex>
         <FontAwesomeIcon icon={faCoffee} size="8x" />
         <Box pl={2}>
@@ -37,7 +39,7 @@ function Index() {
       </HeroBar>
       <Section h2="Current Projects">
         <ListProjects limit={3} exclude="JeffCagle.dev" />
-        <Button type="primary" centered to="/projects" mt={1}>
+        <Button variant="primary" centered to="/projects" mt={1}>
           All Projects
         </Button>
       </Section>

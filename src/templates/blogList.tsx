@@ -5,6 +5,7 @@ import { Box } from '../components/shared/Ui';
 import { Row, Column } from '../components/shared/Columns';
 import Pagination from '../components/shared/Pagination';
 import { GatsbyImage, getImage, GatsbyImageProps } from 'gatsby-plugin-image';
+import Seo from '../components/shared/Seo';
 
 interface PageContextProps {
   pageContext: {
@@ -26,7 +27,7 @@ interface BlogListProps extends PageContextProps {
             title: string;
             excerpt: string;
             slug: string;
-            coverImage: GatsbyImageProps['image'];
+            image: GatsbyImageProps['image'];
           };
         }
       ];
@@ -40,6 +41,10 @@ function BlogList({ data, pageContext }: BlogListProps) {
 
   return (
     <>
+      <Seo
+        title="Developer Blog"
+        description="A bi-weekly blog covering a range of topics for modern web developers and small to medium-sized businesses looking to create or update their website."
+      />
       <Box withContainer mt={3}>
         <h1>Dev Blog.</h1>
       </Box>
@@ -53,7 +58,7 @@ function BlogList({ data, pageContext }: BlogListProps) {
               >
                 <Image
                   // @ts-ignore
-                  image={getImage(post.frontmatter.coverImage)}
+                  image={getImage(post.frontmatter.image)}
                   alt={post.frontmatter.title}
                 />
                 <Title>{post.frontmatter.title}</Title>
@@ -112,7 +117,7 @@ export const blogQuery = graphql`
           title
           slug
           excerpt
-          coverImage {
+          image {
             childImageSharp {
               gatsbyImageData(
                 aspectRatio: 1.5

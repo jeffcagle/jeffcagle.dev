@@ -5,10 +5,15 @@ import ListTools from '../components/lists/ListTools';
 import { Box, Section } from '../components/shared/Ui';
 import { Row, Column } from '../components/shared/Columns';
 import ListBooks from '../components/lists/ListBooks';
+import Seo from '../components/shared/Seo';
 
 function About() {
   return (
     <>
+      <Seo
+        title="About Me"
+        description="I am a freelance modern JavaScript Developer &amp; Designer from the USA who has been working in the industry for more than 15 years."
+      />
       <Section>
         <h1>About</h1>
         <Row>

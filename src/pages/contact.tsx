@@ -6,10 +6,15 @@ import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Column, Row } from '../components/shared/Columns';
 import { Box } from '../components/shared/Ui';
+import Seo from '../components/shared/Seo';
 
 function Contact() {
   return (
     <>
+      <Seo
+        title="Get In Touch With Me"
+        description="Do you need a freelancer to design &amp; develop your website or web application? Contact me. All project consultations are free of charge."
+      />
       <Box withContainer mt={3}>
         <h1>Contact</h1>
       </Box>
@@ -124,6 +129,11 @@ const TextArea = styled.textarea`
   line-height: 1.6;
   padding: 0.6rem;
   outline: none;
+
+  &:focus,
+  &:active {
+    border: 1px solid ${props => props.theme.colors.secondary};
+  }
 `;
 
 const ButtonContainer = styled.div`
@@ -136,22 +146,36 @@ const InputButton = styled.input`
   align-items: center;
   justify-content: center;
   position: relative;
+  font-weight: bold;
+  padding: 0.6rem 1.7rem;
+  transition: 0.2s ease-in-out;
+  border: none;
+  outline: none;
   font-size: 1rem;
   line-height: 1.8;
-  font-weight: bold;
-  background-color: ${props => props.theme.colors.secondary};
-  color: ${props => props.theme.colors.neutral100};
-  padding: 0.6rem 1.7rem;
-  transition: 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  outline: none;
-  border: none;
   cursor: pointer;
 
-  &:hover {
-    padding: 0.6rem 2rem;
-    background-color: ${props => props.theme.colors.accent3};
-    letter-spacing: 0.1rem;
+  svg {
+    margin-right: 0.5rem;
   }
+
+  background-color: ${props => props.theme.buttons.primary.bgColor};
+  color: ${props => props.theme.buttons.primary.color};
+
+  &:hover {
+    background-color: ${props => props.theme.buttons.primary.bgColorHover};
+    letter-spacing: 0.03rem;
+    border-radius: 5px;
+  }
+
+  ${props =>
+    props.disabled &&
+    `
+    pointer-events: none;
+    background-color:${props.theme.colors.neutral600};
+    color:${props.theme.colors.neutral500};
+    text-decoration: line-through;
+  `}
 `;
 
 const ContactOptions = styled.div`

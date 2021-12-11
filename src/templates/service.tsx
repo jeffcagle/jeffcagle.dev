@@ -3,6 +3,7 @@ import { graphql } from 'gatsby';
 import ListTools from '../components/lists/ListTools';
 import { Box } from '../components/shared/Ui';
 import HeroBar from '../components/shared/HeroBar';
+import Seo from '../components/shared/Seo';
 
 interface ServiceProps {
   data: {
@@ -23,6 +24,10 @@ function Service({ data }: ServiceProps) {
 
   return (
     <>
+      <Seo
+        title={service.frontmatter.longTitle}
+        description={service.frontmatter.summary}
+      />
       <HeroBar py={2} hasSubMenu>
         <h1>{service.frontmatter.longTitle}</h1>
         <p>{service.frontmatter.summary}</p>

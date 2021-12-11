@@ -1,14 +1,22 @@
 module.exports = {
   siteMetadata: {
-    title: 'Jeff Cagle Dev',
-    description: `Freelance JavaScript / Wordpress development and modern UI / UX Design by Jeff Cagle.`,
+    title: 'Freelance Web Developer & Designer',
+    titleTemplate: '%s | Jeff Cagle',
+    description: `I build fast & responsive modern web applications using React & WordPress. I have 15+ years of professional experience, and serve clients globally.`,
     author: {
       name: `Jeff Cagle`,
-      summary: `who lives and works in the US building fast and modern web apps.`,
+      summary: `Building fast and modern web apps using JavaScript & Wordpress.`,
     },
-    siteUrl: 'https://www.jeffcagle.dev',
+    url: 'https://www.jeffcagle.dev',
+    image: '/jeff_cagle.jpg',
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        icon: 'src/images/icon-javascript.png',
+      },
+    },
     'gatsby-plugin-styled-components',
     `gatsby-transformer-json`,
     'gatsby-plugin-sitemap',

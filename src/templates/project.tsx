@@ -1,11 +1,17 @@
 import * as React from 'react';
 import styled from 'styled-components';
 import { graphql } from 'gatsby';
+import { GatsbyImageProps } from 'gatsby-plugin-image';
 import ListTools from '../components/lists/ListTools';
 import { Box } from '../components/shared/Ui';
 import HeroBar from '../components/shared/HeroBar';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHandPointer } from '@fortawesome/free-solid-svg-icons';
+import Seo from '../components/shared/Seo';
+import PrevNextItem from '../components/shared/PrevNextItem';
+import { Row, Column } from '../components/shared/Columns';
+import Button from '../components/shared/Button';
+import { faChrome, faGithub } from '@fortawesome/free-brands-svg-icons';
 
 interface ProjectProps {
   data: {
@@ -17,16 +23,35 @@ interface ProjectProps {
         summary: string;
         frontendTools: string[];
         backendTools: string[];
+        codeUrl: string;
+        codeUnavailable: boolean;
+        siteUrl: string;
+        siteUnavailable: boolean;
       };
     };
+    next: PrevNextProps;
+    previous: PrevNextProps;
+  };
+}
+
+interface PrevNextProps {
+  frontmatter: {
+    shortTitle: string;
+    slug: string;
+    image: GatsbyImageProps['image'];
   };
 }
 
 function Project({ data }: ProjectProps) {
   const project = data.markdownRemark;
+  const { previous, next } = data;
 
   return (
     <>
+      <Seo
+        title={project.frontmatter.longTitle}
+        description={project.frontmatter.summary}
+      />
       <HeroBar py={2} hasSubMenu>
         <h1 style={{ textAlign: 'center', marginBottom: 0 }}>
           {project.frontmatter.longTitle}
@@ -56,6 +81,42 @@ function Project({ data }: ProjectProps) {
           dangerouslySetInnerHTML={{ __html: project.html }}
         />
       </Box>
+      <Box withContainer mt={3}>
+        <Explore>
+          {!project.frontmatter.codeUnavailable ||
+          !project.frontmatter.siteUnavailable
+            ? 'Explore Further!'
+            : 'Coming Soon!'}
+        </Explore>
+        <Row>
+          <Column mediumWidth={50}>
+            <Button
+              externalLink
+              variant="primary"
+              to={project.frontmatter.codeUrl}
+              disabled={project.frontmatter.codeUnavailable}
+            >
+              <FontAwesomeIcon icon={faGithub} /> Project Code
+            </Button>
+          </Column>
+          <Column mediumWidth={50}>
+            <Button
+              externalLink
+              variant="secondary"
+              to={project.frontmatter.siteUrl}
+              disabled={project.frontmatter.siteUnavailable}
+            >
+              <FontAwesomeIcon icon={faChrome} /> Live Site
+            </Button>
+          </Column>
+        </Row>
+      </Box>
+      <PrevNextItem
+        slugBase="projects"
+        type="Project"
+        previous={previous}
+        next={next}
+      />
     </>
   );
 }
@@ -94,8 +155,17 @@ const Hover = styled.span`
   }
 `;
 
+const Explore = styled.span`
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: ${props => props.theme.colors.neutral300};
+`;
+
 export const query = graphql`
-  query Project($id: String!) {
+  query Project($id: String!, $previousPostId: String, $nextPostId: String) {
     markdownRemark(id: { eq: $id }) {
       html
       frontmatter {
@@ -104,6 +174,40 @@ export const query = graphql`
         summary
         frontendTools
         backendTools
+        codeUrl
+        codeUnavailable
+        siteUrl
+        siteUnavailable
+      }
+    }
+    previous: markdownRemark(id: { eq: $previousPostId }) {
+      frontmatter {
+        longTitle
+        slug
+        image {
+          childImageSharp {
+            gatsbyImageData(
+              aspectRatio: 1
+              width: 60
+              transformOptions: { cropFocus: CENTER }
+            )
+          }
+        }
+      }
+    }
+    next: markdownRemark(id: { eq: $nextPostId }) {
+      frontmatter {
+        longTitle
+        slug
+        image {
+          childImageSharp {
+            gatsbyImageData(
+              aspectRatio: 1
+              width: 60
+              transformOptions: { cropFocus: CENTER }
+            )
+          }
+        }
       }
     }
   }
