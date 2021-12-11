@@ -5,7 +5,7 @@ templateKey: 'projects'
 slug: 'modern-wordpress-website'
 shortTitle: 'Consolidated Label'
 longTitle: 'Consolidated Label WordPress Website'
-summary: 'A brochure & client portal website with 20k+ daily unique visitors.'
+summary: 'A brochure & client portal website with 25k+ monthly unique visitors.'
 frontendTools: ['HTML5', 'JavaScript', 'jQuery', 'SASS']
 backendTools: ['WordPress', 'PHP', 'MySQL', 'Linux']
 image: './cl-main.png'
