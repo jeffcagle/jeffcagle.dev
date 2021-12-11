@@ -9,8 +9,10 @@ interface BtnContainerProps {
 }
 
 interface ButtonProps extends BtnContainerProps {
-  type: 'primary' | 'secondary';
-  to: string;
+  variant: 'primary' | 'secondary';
+  to?: string;
+  disabled?: boolean;
+  externalLink?: boolean;
   children: React.ReactNode;
 }
 
@@ -18,20 +20,50 @@ interface ButtonProps extends BtnContainerProps {
  *
  * Display a Button component.
  *
- * @param type Button style type (primary || secondary).
+ * @param variant Button style variant (primary || secondary).
  * @param to Destination path.
  * @param centered Optional center positioned button.
  * @param mt Optional top margin.
  * @param mb Optional bottom margin.
  * @returns A button element.
  */
-function Button({ type, to, centered, mt, mb, children }: ButtonProps) {
-  return (
-    <BtnContainer centered={centered} mt={mt} mb={mb}>
-      <Btn type={type} to={to}>
+function Button({
+  variant,
+  to = '',
+  disabled = false,
+  centered,
+  mt,
+  mb,
+  externalLink = false,
+  children,
+}: ButtonProps) {
+  if (centered) {
+    return (
+      <BtnContainer centered={centered} mt={mt} mb={mb}>
+        <Btn variant={variant} to={to} disabled={disabled}>
+          {children}
+        </Btn>
+      </BtnContainer>
+    );
+  }
+
+  if (externalLink) {
+    return (
+      <BtnExternal
+        variant={variant}
+        href={to}
+        target="_blank"
+        disabled={disabled}
+      >
         {children}
-      </Btn>
-    </BtnContainer>
+      </BtnExternal>
+    );
+  }
+
+  return (
+    <Btn variant={variant} to={to} disabled={disabled}>
+      {children}
+    </Btn>
   );
 }
 
@@ -48,22 +80,86 @@ const Btn = styled(Link)<ButtonProps>`
   justify-content: center;
   position: relative;
   font-weight: bold;
-  background-color: ${props => props.theme.colors.secondary};
-  color: ${props => props.theme.colors.neutral100};
+  padding: 0.6rem 1.7rem;
+  transition: 0.2s ease-in-out;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  line-height: 1.8;
+  cursor: pointer;
+
+  svg {
+    margin-right: 0.5rem;
+  }
+
+  background-color: ${props =>
+    props.variant === 'primary'
+      ? props.theme.buttons.primary.bgColor
+      : props.theme.buttons.secondary.bgColor};
+  color: ${props => props.theme.buttons.primary.color};
+
+  &:hover {
+    background-color: ${props =>
+      props.variant === 'primary'
+        ? props.theme.buttons.primary.bgColorHover
+        : props.theme.buttons.secondary.bgColorHover};
+    letter-spacing: 0.03rem;
+    border-radius: 5px;
+  }
 
   ${props =>
-    props.type === 'primary' &&
+    props.disabled &&
     `
-    padding: 0.6rem 1.7rem;
-    // border-radius: 10px;
-    transition: .5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    pointer-events: none;
+    background-color:${props.theme.colors.neutral600};
+    color:${props.theme.colors.neutral500};
+    text-decoration: line-through;
+  `}
+`;
 
+const BtnExternal = styled.a<ButtonProps>`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  font-weight: bold;
+  padding: 0.6rem 1.7rem;
+  transition: 0.2s ease-in-out;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  line-height: 1.8;
+  cursor: pointer;
 
-    &:hover {
-      padding: 0.6rem 2rem;
-      background-color: ${props.theme.colors.accent3};
-      letter-spacing: .1rem;
-    }
+  svg {
+    margin-right: 0.5rem;
+  }
+
+  background-color: ${props =>
+    props.variant === 'primary'
+      ? props.theme.buttons.primary.bgColor
+      : props.theme.buttons.secondary.bgColor};
+  color: ${props =>
+    props.variant === 'primary'
+      ? props.theme.buttons.primary.color
+      : props.theme.buttons.secondary.color};
+
+  &:hover {
+    background-color: ${props =>
+      props.variant === 'primary'
+        ? props.theme.buttons.primary.bgColorHover
+        : props.theme.buttons.secondary.bgColorHover};
+    letter-spacing: 0.03rem;
+    border-radius: 5px;
+  }
+
+  ${props =>
+    props.disabled &&
+    `
+    pointer-events: none;
+    background-color:${props.theme.colors.neutral600};
+    color:${props.theme.colors.neutral500};
+    text-decoration: line-through;
   `}
 `;
 

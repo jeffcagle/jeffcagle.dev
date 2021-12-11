@@ -35,5 +35,18 @@ declare module 'styled-components' {
       containerWidthMedium: string;
       containerWidthSmall: string;
     };
+
+    buttons: {
+      primary: {
+        color: string;
+        bgColor: string;
+        bgColorHover: string;
+      };
+      secondary: {
+        color: string;
+        bgColor: string;
+        bgColorHover: string;
+      };
+    };
   }
 }

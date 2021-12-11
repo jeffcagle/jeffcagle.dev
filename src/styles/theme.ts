@@ -37,6 +37,19 @@ const jcTheme: DefaultTheme = {
     containerWidthSmall: '400px',
   },
 
+  buttons: {
+    primary: {
+      color: '#ffffff',
+      bgColor: '#5685E3',
+      bgColorHover: '#476cba',
+    },
+    secondary: {
+      color: '#ffffff',
+      bgColor: '#7356E3',
+      bgColorHover: '#624ac2',
+    },
+  },
+
   // Theme 4 - Blue 2
 
   // secondary: "#4D6DC4",
