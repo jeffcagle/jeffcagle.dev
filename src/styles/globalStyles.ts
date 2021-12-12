@@ -70,6 +70,12 @@ const GlobalStyle = createGlobalStyle`
 
   a {
     text-decoration:none;
+    color: ${props => props.theme.colors.neutral300};
+    transition:.2s color ease-in-out;
+
+    &:hover {
+    color: ${props => props.theme.colors.primary};
+    }
   }
 
   ul {
