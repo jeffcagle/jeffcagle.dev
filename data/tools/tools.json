@@ -32,12 +32,6 @@
     "icon": "./icons/icon-sass.png"
   },
   {
-    "name": "Bootstrap",
-    "desc": "An open source frontend framework for creating dynamic, optimized websites.",
-    "skillLvl": 97,
-    "toolColor": "secondary"
-  },
-  {
     "name": "JavaScript",
     "desc": "A high-level, just-in-time compiled, multi-paradigm programming language.",
     "skillLvl": 86,
