@@ -13,82 +13,57 @@ interface ServiceProps {
 }
 
 interface ListServicesProps {
-  type?: 'list' | 'grid';
-  limit?: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8;
+  unstyled?: boolean;
 }
 
 /**
  *
  * Displays a list of services.
  *
- * @param {boolean} unstyled Add prop to retreive an unstyled list.
+ * @param {boolean} unstyled Add to retreive an unstyled list.
  * @returns A list of services.
  */
-function ListServices({ type = 'grid', limit = 8 }: ListServicesProps) {
-  const data = useStaticQuery(graphql`
-    query getServices {
-      allMarkdownRemark(
-        filter: { frontmatter: { templateKey: { in: "services" } } }
-        sort: { fields: [frontmatter___order], order: ASC }
-        limit: 8
-      ) {
-        nodes {
-          id
-          frontmatter {
-            shortTitle
-            slug
-            summary
-          }
-        }
-      }
-    }
-  `);
+function ListServices({ unstyled = false }: ListServicesProps) {
+  const { allMarkdownRemark } = useStaticQuery(query);
+  const services = allMarkdownRemark.nodes;
 
-  const services = data.allMarkdownRemark.nodes;
-
-  if (type === 'list') {
-    return (
-      <ul>
-        {services.map(
-          (service: ServiceProps, index: number) =>
-            index < limit && (
-              <li key={service.id}>
-                <Link
-                  to={`/services/${service.frontmatter.slug}`}
-                  title={service.frontmatter.shortTitle}
-                >
-                  {service.frontmatter.shortTitle}
-                </Link>
-              </li>
-            )
-        )}
-      </ul>
-    );
+  if (unstyled) {
+    return <>{handleServicesList(services)}</>;
   }
 
-  if (type === 'grid') {
-    return (
-      <Row>
-        {services.map(
-          (service: ServiceProps, index: number) =>
-            index < limit && (
-              <Column key={service.id} mediumWidth={50} largeWidth={33.333}>
-                <Service
-                  className="card"
-                  to={`/services/${service.frontmatter.slug}`}
-                  title={service.frontmatter.shortTitle}
-                >
-                  <Title>{service.frontmatter.shortTitle}</Title>
-                  <Summary>{service.frontmatter.summary}</Summary>
-                </Service>
-              </Column>
-            )
-        )}
-      </Row>
-    );
-  }
+  return (
+    <Row>
+      {services.map((service: ServiceProps) => (
+        <Column key={service.id} mediumWidth={50} largeWidth={33.333}>
+          <Service
+            className="card"
+            to={`/services/${service.frontmatter.slug}`}
+            title={service.frontmatter.shortTitle}
+          >
+            <Title>{service.frontmatter.shortTitle}</Title>
+            <Summary>{service.frontmatter.summary}</Summary>
+          </Service>
+        </Column>
+      ))}
+    </Row>
+  );
+}
 
-  return null;
+function handleServicesList(services: ServiceProps[]) {
+  return (
+    <ul>
+      {services.map((service: ServiceProps) => (
+        <li key={service.id}>
+          <Link
+            to={`/services/${service.frontmatter.slug}`}
+            title={service.frontmatter.shortTitle}
+          >
+            {service.frontmatter.shortTitle}
+          </Link>
+        </li>
+      ))}
+    </ul>
+  );
 }
 
 const Service = styled(Link)`
@@ -118,3 +93,21 @@ const Summary = styled.span`
 `;
 
 export default ListServices;
+
+const query = graphql`
+  query {
+    allMarkdownRemark(
+      filter: { frontmatter: { templateKey: { in: "services" } } }
+      sort: { fields: [frontmatter___order], order: ASC }
+    ) {
+      nodes {
+        id
+        frontmatter {
+          shortTitle
+          slug
+          summary
+        }
+      }
+    }
+  }
+`;

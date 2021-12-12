@@ -1,5 +1,5 @@
 import React from 'react';
-import { useStaticQuery, graphql, Link } from 'gatsby';
+import { useStaticQuery, graphql } from 'gatsby';
 import { GatsbyImageProps, GatsbyImage, getImage } from 'gatsby-plugin-image';
 import styled from 'styled-components';
 import { Column, Row } from '../shared/Columns';
@@ -13,29 +13,8 @@ interface BookProps {
 }
 
 function ListBooks() {
-  const data = useStaticQuery(graphql`
-    query getFavBooks {
-      allBooksJson {
-        nodes {
-          id
-          title
-          author
-          image {
-            childImageSharp {
-              gatsbyImageData(
-                width: 250
-                height: 350
-                transformOptions: { cropFocus: CENTER }
-              )
-            }
-          }
-          amazonUrl
-        }
-      }
-    }
-  `);
-
-  const books = data.allBooksJson.nodes;
+  const { allBooksJson } = useStaticQuery(query);
+  const books = allBooksJson.nodes;
 
   return (
     <Row mt={3}>
@@ -84,3 +63,25 @@ const Author = styled.div`
 `;
 
 export default ListBooks;
+
+const query = graphql`
+  query {
+    allBooksJson {
+      nodes {
+        id
+        title
+        author
+        image {
+          childImageSharp {
+            gatsbyImageData(
+              width: 250
+              height: 350
+              transformOptions: { cropFocus: CENTER }
+            )
+          }
+        }
+        amazonUrl
+      }
+    }
+  }
+`;

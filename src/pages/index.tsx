@@ -10,6 +10,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 import ListProjects from '../components/lists/ListProjects';
 import Seo from '../components/shared/Seo';
+import { Link } from 'gatsby';
 
 function Index() {
   const tools = [
@@ -38,7 +39,7 @@ function Index() {
         </Box>
       </HeroBar>
       <Section h2="Current Projects">
-        <ListProjects limit={3} exclude="JeffCagle.dev" />
+        <ListProjects exclude={['JeffCagle.dev']} />
         <Button variant="primary" centered to="/projects" mt={1}>
           All Projects
         </Button>
@@ -49,7 +50,8 @@ function Index() {
             <ListExperiments />
           </Column>
           <Column title="Dev Blog" mediumWidth={50}>
-            <ListPosts type="list" limit={5} allPostsLink />
+            <ListPosts />
+            <Link to="/blog">All Posts &raquo;</Link>
           </Column>
         </Row>
       </Section>

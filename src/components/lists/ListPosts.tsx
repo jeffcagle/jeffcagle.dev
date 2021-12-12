@@ -4,12 +4,6 @@ import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFileAlt } from '@fortawesome/free-solid-svg-icons';
 
-interface ListPostsProps {
-  type?: 'list' | 'grid';
-  limit?: 1 | 2 | 3 | 4 | 5 | 6;
-  allPostsLink?: boolean;
-}
-
 interface PostProps {
   id: string;
   frontmatter: {
@@ -22,67 +16,34 @@ interface PostProps {
  *
  * Display a list of blog posts.
  *
- * @param limit Up to 6 posts. Default: 6.
- * @param allPostsLink Show link to all posts.
  * @returns An unordered list of blog posts.
  */
-function ListPosts({ type = 'grid', limit = 6, allPostsLink }: ListPostsProps) {
-  const data = useStaticQuery(graphql`
-    query getPosts {
-      allMarkdownRemark(
-        filter: { frontmatter: { templateKey: { in: "blog" } } }
-        sort: { fields: [frontmatter___date], order: ASC }
-        limit: 6
-      ) {
-        nodes {
-          id
-          frontmatter {
-            title
-            slug
-          }
-        }
-      }
-    }
-  `);
+function ListPosts() {
+  const { allMarkdownRemark } = useStaticQuery(query);
+  const posts = allMarkdownRemark.nodes;
 
-  const posts = data.allMarkdownRemark.nodes;
-
-  if (type === 'grid') {
-    return <div>Grid</div>;
-  }
-
-  if (type === 'list') {
-    return (
-      <>
-        <BlogPosts>
-          {posts.map(
-            (post: PostProps, index: number) =>
-              index < limit && (
-                <BlogPost key={post.id}>
-                  <BlogPostLink
-                    to={`/blog/${post.frontmatter.slug}`}
-                    title={post.frontmatter.title}
-                  >
-                    <FontAwesomeIcon icon={faFileAlt} size="xs" />{' '}
-                    {post.frontmatter.title}
-                  </BlogPostLink>
-                </BlogPost>
-              )
-          )}
-        </BlogPosts>
-        {allPostsLink && (
-          <MoreLink to="/blog/" title="All Posts">
-            All Posts &raquo;
-          </MoreLink>
-        )}
-      </>
-    );
-  }
-
-  return null;
+  return (
+    <>
+      <BlogPosts>
+        {posts.map((post: PostProps) => (
+          <BlogPost key={post.id}>
+            <BlogPostLink
+              to={`/blog/${post.frontmatter.slug}`}
+              title={post.frontmatter.title}
+            >
+              <FontAwesomeIcon icon={faFileAlt} size="xs" />{' '}
+              {post.frontmatter.title}
+            </BlogPostLink>
+          </BlogPost>
+        ))}
+      </BlogPosts>
+    </>
+  );
 }
 
-const BlogPosts = styled.ul``;
+const BlogPosts = styled.ul`
+  margin-bottom: 1rem;
+`;
 
 const BlogPost = styled.li`
   border-bottom: 1px dashed ${props => props.theme.colors.neutral550};
@@ -118,3 +79,21 @@ const MoreLink = styled(Link)`
 `;
 
 export default ListPosts;
+
+const query = graphql`
+  query {
+    allMarkdownRemark(
+      filter: { frontmatter: { templateKey: { in: "blog" } } }
+      sort: { fields: [frontmatter___date], order: ASC }
+      limit: 4
+    ) {
+      nodes {
+        id
+        frontmatter {
+          title
+          slug
+        }
+      }
+    }
+  }
+`;

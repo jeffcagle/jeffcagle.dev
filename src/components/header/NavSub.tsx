@@ -1,5 +1,4 @@
 import * as React from 'react';
-import PropTypes from 'prop-types';
 import { useStaticQuery, graphql, Link } from 'gatsby';
 import styled from 'styled-components';
 import { Box } from '../shared/Ui';
@@ -8,7 +7,7 @@ interface NavSubProps {
   parentSlug: string;
 }
 
-interface SubMenuItemProps {
+interface ProjectServiceProps {
   id: string;
   frontmatter: {
     shortTitle: string;
@@ -25,38 +24,17 @@ interface SubMenuItemProps {
  * @returns The main nav sub-menu.
  */
 function NavSub({ parentSlug }: NavSubProps) {
-  const data = useStaticQuery(graphql`
-    query fetchSubNav {
-      allMarkdownRemark(
-        filter: {
-          frontmatter: { templateKey: { in: ["services", "projects"] } }
-        }
-        sort: { fields: [frontmatter___order], order: ASC }
-        limit: 1000
-      ) {
-        nodes {
-          id
-          frontmatter {
-            templateKey
-            shortTitle
-            slug
-          }
-        }
-      }
-    }
-  `);
-
-  const subMenuItems = data.allMarkdownRemark.nodes;
-
-  const subMenuLinks = subMenuItems.filter(
-    (item: SubMenuItemProps) => item.frontmatter.templateKey === parentSlug
+  const { allMarkdownRemark } = useStaticQuery(query);
+  const projectsAndServices = allMarkdownRemark.nodes;
+  const currentSubMenu = projectsAndServices.filter(
+    (item: ProjectServiceProps) => item.frontmatter.templateKey === parentSlug
   );
 
   return (
     <SubNav>
       <Box withContainer>
         <Menu>
-          {subMenuLinks.map((link: SubMenuItemProps) => (
+          {currentSubMenu.map((link: ProjectServiceProps) => (
             <MenuItem key={link.id}>
               <Link
                 activeClassName="active"
@@ -73,10 +51,6 @@ function NavSub({ parentSlug }: NavSubProps) {
     </SubNav>
   );
 }
-
-NavSub.propTypes = {
-  parentSlug: PropTypes.string.isRequired,
-};
 
 const SubNav = styled.div`
   background-color: ${props => props.theme.colors.neutral800};
@@ -111,3 +85,22 @@ const MenuItem = styled.li`
 `;
 
 export default NavSub;
+
+const query = graphql`
+  query {
+    allMarkdownRemark(
+      filter: { frontmatter: { templateKey: { in: ["services", "projects"] } } }
+      sort: { fields: [frontmatter___order], order: ASC }
+      limit: 1000
+    ) {
+      nodes {
+        id
+        frontmatter {
+          templateKey
+          shortTitle
+          slug
+        }
+      }
+    }
+  }
+`;

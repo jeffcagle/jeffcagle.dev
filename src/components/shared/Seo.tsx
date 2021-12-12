@@ -16,20 +16,6 @@ function Seo({
   image = null,
   article = false,
 }: SeoProps) {
-  const query = graphql`
-    query SEO {
-      site {
-        siteMetadata {
-          defaultTitle: title
-          titleTemplate
-          defaultDescription: description
-          siteUrl: url
-          defaultImage: image
-        }
-      }
-    }
-  `;
-
   const { pathname } = useLocation();
   const { site } = useStaticQuery(query);
 
@@ -70,3 +56,17 @@ function Seo({
 }
 
 export default Seo;
+
+const query = graphql`
+  query {
+    site {
+      siteMetadata {
+        defaultTitle: title
+        titleTemplate
+        defaultDescription: description
+        siteUrl: url
+        defaultImage: image
+      }
+    }
+  }
+`;

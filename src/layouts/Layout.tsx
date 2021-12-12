@@ -12,20 +12,8 @@ interface LayoutProps {
 }
 
 function Layout({ children }: LayoutProps) {
-  const data = useStaticQuery(graphql`
-    query getMenu {
-      allMainMenuJson {
-        nodes {
-          id
-          name
-          slug
-          hasSubMenu
-        }
-      }
-    }
-  `);
-
-  const menu = data.allMainMenuJson.nodes;
+  const { allMainMenuJson } = useStaticQuery(query);
+  const menu = allMainMenuJson.nodes;
 
   return (
     <ThemeProvider theme={jcTheme}>
@@ -55,3 +43,16 @@ const ScreenWrap = styled.div`
 `;
 
 export default Layout;
+
+const query = graphql`
+  query {
+    allMainMenuJson {
+      nodes {
+        id
+        name
+        slug
+        hasSubMenu
+      }
+    }
+  }
+`;

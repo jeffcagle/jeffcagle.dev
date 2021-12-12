@@ -33,11 +33,11 @@ function Footer() {
           </Column>
           <Column mediumWidth={33.333}>
             <h3>Services</h3>
-            <ListServices type="list" limit={5} />
+            <ListServices unstyled />
           </Column>
           <Column mediumWidth={33.333}>
             <h3>Latest Dev Blog</h3>
-            <ListPosts type="list" limit={4} />
+            <ListPosts />
           </Column>
         </Row>
       </FooterContainer>

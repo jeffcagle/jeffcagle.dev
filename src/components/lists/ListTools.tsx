@@ -33,56 +33,14 @@ interface ToolProps {
  * @param mb Optional bottom margin.
  * @returns A list of tools, styled or unstyled.
  */
-function ListTools({ startText, items, unstyled, mb }: ToolListProps) {
-  const data = useStaticQuery(graphql`
-    query getTools {
-      allToolsJson {
-        nodes {
-          id
-          name
-          desc
-          url
-          toolColor
-          icon {
-            childImageSharp {
-              gatsbyImageData(
-                width: 25
-                height: 25
-                quality: 50
-                formats: [AUTO, WEBP, AVIF]
-              )
-            }
-          }
-        }
-      }
-    }
-  `);
-
-  const tools = data.allToolsJson.nodes.filter((tool: ToolProps) =>
+function ListTools({ startText = '', items, unstyled, mb }: ToolListProps) {
+  const { allToolsJson } = useStaticQuery(query);
+  const tools = allToolsJson.nodes.filter((tool: ToolProps) =>
     items.includes(tool.name)
   );
 
-  const lastToolIndex = tools.length - 1;
-
-  const handleToolColor = (colorName: string) => {
-    const themeContext = React.useContext(ThemeContext);
-    // @ts-ignore
-    return themeContext.colors[colorName];
-  };
-
   if (unstyled) {
-    return (
-      <>
-        <strong>{startText}</strong>&nbsp;
-        {tools.map((tool: ToolProps, index: number) => (
-          <span key={tool.id}>
-            {index === lastToolIndex && <>&amp; </>}
-            {tool.name}
-            {index !== lastToolIndex && <>,&nbsp;</>}
-          </span>
-        ))}
-      </>
-    );
+    return <>{handleToolsTextList(tools, startText)}</>;
   }
 
   return (
@@ -120,6 +78,29 @@ function ListTools({ startText, items, unstyled, mb }: ToolListProps) {
       </ToolGroup>
     </ToolsContainer>
   );
+}
+
+function handleToolsTextList(tools: ToolProps[], startText: string) {
+  const lastToolIndex = tools.length - 1;
+
+  return (
+    <>
+      <strong>{startText}</strong>&nbsp;
+      {tools.map((tool: ToolProps, index: number) => (
+        <span key={tool.id}>
+          {index === lastToolIndex && <>&amp; </>}
+          {tool.name}
+          {index !== lastToolIndex && <>,&nbsp;</>}
+        </span>
+      ))}
+    </>
+  );
+}
+
+function handleToolColor(colorName: string) {
+  const themeContext = React.useContext(ThemeContext);
+  // @ts-ignore
+  return themeContext.colors[colorName];
 }
 
 const ToolsContainer = styled.div<ToolsContainerProps>`
@@ -245,3 +226,27 @@ const ToolUrl = styled.a`
 `;
 
 export default ListTools;
+
+const query = graphql`
+  query {
+    allToolsJson {
+      nodes {
+        id
+        name
+        desc
+        url
+        toolColor
+        icon {
+          childImageSharp {
+            gatsbyImageData(
+              width: 25
+              height: 25
+              quality: 50
+              formats: [AUTO, WEBP, AVIF]
+            )
+          }
+        }
+      }
+    }
+  }
+`;

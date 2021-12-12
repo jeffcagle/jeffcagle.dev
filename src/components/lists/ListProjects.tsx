@@ -20,119 +20,51 @@ interface ProjectProps {
 }
 
 interface ListProjectsProps {
-  type?: 'list' | 'grid';
-  limit?: 1 | 2 | 3 | 5 | 6 | 7 | 8;
-  exclude?: string;
+  exclude?: string[];
 }
 
-function ListProjects({
-  type = 'grid',
-  limit = 8,
-  exclude = '',
-}: ListProjectsProps) {
-  const data = useStaticQuery(graphql`
-    query getProjects {
-      allMarkdownRemark(
-        filter: { frontmatter: { templateKey: { in: "projects" } } }
-        sort: { fields: [frontmatter___order], order: ASC }
-        limit: 8
-      ) {
-        nodes {
-          id
-          frontmatter {
-            shortTitle
-            summary
-            slug
-            frontendTools
-            backendTools
-            image {
-              childImageSharp {
-                gatsbyImageData(
-                  width: 400
-                  height: 267
-                  transformOptions: { cropFocus: CENTER }
-                  quality: 50
-                  formats: [AUTO, WEBP, AVIF]
-                )
-              }
-            }
-          }
-        }
-      }
-    }
-  `);
+function ListProjects({ exclude = [] }: ListProjectsProps) {
+  const { allMarkdownRemark } = useStaticQuery(query);
+  const projects = allMarkdownRemark.nodes.filter(
+    (project: ProjectProps) => !exclude.includes(project.frontmatter.shortTitle)
+  );
 
-  let projects = data.allMarkdownRemark.nodes;
+  return (
+    <Row>
+      {projects.map((project: ProjectProps) => (
+        <Column mediumWidth={50} largeWidth={33.333} key={project.id}>
+          <Project
+            className="card"
+            to={`/projects/${project.frontmatter.slug}`}
+          >
+            <Image>
+              <GatsbyImage
+                to={project.frontmatter.slug}
+                // @ts-ignore
+                image={getImage(project.frontmatter.image)}
+                alt={project.frontmatter.shortTitle}
+              />
+            </Image>
+            <Content>
+              <Title>{project.frontmatter.shortTitle}</Title>
+              <Summary>{project.frontmatter.summary}</Summary>
+            </Content>
+            <Tooltip position="top" delay={0.3}>
+              {handleToolTip(
+                project.frontmatter.frontendTools,
+                project.frontmatter.backendTools
+              )}
+            </Tooltip>
+          </Project>
+        </Column>
+      ))}
+    </Row>
+  );
+}
 
-  if (exclude) {
-    projects = data.allMarkdownRemark.nodes.filter(
-      (project: ProjectProps) => project.frontmatter.shortTitle !== exclude
-    );
-  }
-
-  const handleToolTip = (frontend: string[], backend: string[]) => {
-    const tools = [...frontend, ...backend];
-    return <ListTools startText="Built with:" unstyled items={tools} />;
-  };
-
-  if (type === 'list') {
-    return (
-      <ul>
-        {projects.map(
-          (project: ProjectProps, index: number) =>
-            index < limit && (
-              <li key={project.id}>
-                <Link
-                  to={`/projects/${project.frontmatter.slug}`}
-                  title={project.frontmatter.shortTitle}
-                >
-                  {project.frontmatter.shortTitle}
-                </Link>
-              </li>
-            )
-        )}
-      </ul>
-    );
-  }
-
-  if (type === 'grid') {
-    return (
-      <Row>
-        {projects.map(
-          (project: ProjectProps, index: number) =>
-            index < limit && (
-              <Column mediumWidth={50} largeWidth={33.333} key={project.id}>
-                <Project
-                  className="card"
-                  to={`/projects/${project.frontmatter.slug}`}
-                >
-                  <Image>
-                    <GatsbyImage
-                      to={project.frontmatter.slug}
-                      // @ts-ignore
-                      image={getImage(project.frontmatter.image)}
-                      alt={project.frontmatter.shortTitle}
-                    />
-                  </Image>
-                  <Content>
-                    <Title>{project.frontmatter.shortTitle}</Title>
-                    <Summary>{project.frontmatter.summary}</Summary>
-                  </Content>
-                  <Tooltip position="top" delay={0.3}>
-                    {handleToolTip(
-                      project.frontmatter.frontendTools,
-                      project.frontmatter.backendTools
-                    )}
-                  </Tooltip>
-                </Project>
-              </Column>
-            )
-        )}
-      </Row>
-    );
-  }
-
-  return null;
+function handleToolTip(frontend: string[], backend: string[]) {
+  const tools = [...frontend, ...backend];
+  return <ListTools startText="Built with:" unstyled items={tools} />;
 }
 
 const Project = styled(Link)`
@@ -183,3 +115,34 @@ const Tooltip = styled(ToolTip)`
 `;
 
 export default ListProjects;
+
+const query = graphql`
+  query {
+    allMarkdownRemark(
+      filter: { frontmatter: { templateKey: { in: "projects" } } }
+      sort: { fields: [frontmatter___order], order: ASC }
+    ) {
+      nodes {
+        id
+        frontmatter {
+          shortTitle
+          summary
+          slug
+          frontendTools
+          backendTools
+          image {
+            childImageSharp {
+              gatsbyImageData(
+                width: 400
+                height: 267
+                transformOptions: { cropFocus: CENTER }
+                quality: 50
+                formats: [AUTO, WEBP, AVIF]
+              )
+            }
+          }
+        }
+      }
+    }
+  }
+`;
