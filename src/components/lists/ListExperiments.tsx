@@ -2,7 +2,13 @@ import * as React from 'react';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFlask } from '@fortawesome/free-solid-svg-icons';
-import { Link } from 'gatsby';
+import { useStaticQuery, graphql } from 'gatsby';
+
+interface ExperimentProps {
+  id: string;
+  name: string;
+  url: string;
+}
 
 /**
  *
@@ -11,23 +17,18 @@ import { Link } from 'gatsby';
  * @returns An unordered list of experiments.
  */
 function ListExperiments() {
+  const { allExperimentsJson } = useStaticQuery(query);
+  const experiments = allExperimentsJson.nodes;
+
   return (
     <ExperimentGroup>
-      <Experiment>
-        <Link to="/" title="Chat App">
-          <FontAwesomeIcon icon={faFlask} size="xs" /> Chat App
-        </Link>
-      </Experiment>
-      <Experiment>
-        <Link to="/" title="Experiment Two">
-          <FontAwesomeIcon icon={faFlask} size="xs" /> Experiment Two
-        </Link>
-      </Experiment>
-      <Experiment>
-        <Link to="/" title="Experiment Three">
-          <FontAwesomeIcon icon={faFlask} size="xs" /> Experiment Three
-        </Link>
-      </Experiment>
+      {experiments.map((experiment: ExperimentProps) => (
+        <Experiment key={experiment.id}>
+          <a href={experiment.url} title="Chat App" target="_blank">
+            <FontAwesomeIcon icon={faFlask} size="xs" /> {experiment.name}
+          </a>
+        </Experiment>
+      ))}
     </ExperimentGroup>
   );
 }
@@ -66,3 +67,15 @@ const Experiment = styled.li`
 `;
 
 export default ListExperiments;
+
+const query = graphql`
+  query {
+    allExperimentsJson {
+      nodes {
+        id
+        name
+        url
+      }
+    }
+  }
+`;
