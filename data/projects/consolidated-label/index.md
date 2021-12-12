@@ -11,7 +11,7 @@ backendTools: ['WordPress', 'PHP', 'MySQL', 'Linux']
 image: './cl-main.png'
 
 codeUrl: 'https://www.github.com'
-codeUnavailable: false
+codeUnavailable: true
 siteUrl: 'https://consolidatedlabel.com'
 siteUnavailable: false
 ---
