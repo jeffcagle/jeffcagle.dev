@@ -9,7 +9,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHandPointer } from '@fortawesome/free-solid-svg-icons';
 import Seo from '../components/shared/Seo';
 import PrevNextItem from '../components/shared/PrevNextItem';
-import { Row, Column } from '../components/shared/Columns';
 import Button from '../components/shared/Button';
 import { faChrome, faGithub } from '@fortawesome/free-brands-svg-icons';
 
@@ -88,28 +87,24 @@ function Project({ data }: ProjectProps) {
             ? 'Explore Further!'
             : 'Coming Soon!'}
         </Explore>
-        <Row>
-          <Column mediumWidth={50}>
-            <Button
-              externalLink
-              variant="primary"
-              to={project.frontmatter.codeUrl}
-              disabled={project.frontmatter.codeUnavailable}
-            >
-              <FontAwesomeIcon icon={faGithub} /> Project Code
-            </Button>
-          </Column>
-          <Column mediumWidth={50}>
-            <Button
-              externalLink
-              variant="secondary"
-              to={project.frontmatter.siteUrl}
-              disabled={project.frontmatter.siteUnavailable}
-            >
-              <FontAwesomeIcon icon={faChrome} /> Live Site
-            </Button>
-          </Column>
-        </Row>
+        <MoreButtons>
+          <Button
+            externalLink
+            variant="primary"
+            to={project.frontmatter.codeUrl}
+            disabled={project.frontmatter.codeUnavailable}
+          >
+            <FontAwesomeIcon icon={faGithub} /> Project Code
+          </Button>
+          <Button
+            externalLink
+            variant="secondary"
+            to={project.frontmatter.siteUrl}
+            disabled={project.frontmatter.siteUnavailable}
+          >
+            <FontAwesomeIcon icon={faChrome} /> Live Site
+          </Button>
+        </MoreButtons>
       </Box>
       <PrevNextItem
         slugBase="projects"
@@ -134,7 +129,7 @@ const BuiltWith = styled.span`
   text-align: center;
   font-weight: bold;
   font-size: 1.1rem;
-  border-top: 1px dashed #5e5e5e;
+  border-top: 1px dashed ${props => props.theme.colors.neutral500};
   padding-top: 1.5rem;
   margin-top: 2rem;
   width: 200px;
@@ -157,11 +152,20 @@ const Hover = styled.span`
 
 const Explore = styled.span`
   display: flex;
-  justify-content: center;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   font-size: 1.2rem;
   font-weight: bold;
   color: ${props => props.theme.colors.neutral300};
+  border-top: 3px solid ${props => props.theme.colors.neutral550};
+  padding-top: 1rem;
+`;
+
+const MoreButtons = styled.div`
+  margin-bottom: 2rem;
+
+  a:first-of-type {
+    margin-right: 2rem;
+  }
 `;
 
 export const query = graphql`
