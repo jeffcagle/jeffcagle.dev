@@ -142,7 +142,7 @@ const ButtonContainer = styled.div`
 `;
 
 const InputButton = styled.input`
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   position: relative;
@@ -164,6 +164,7 @@ const InputButton = styled.input`
 
   &:hover {
     background-color: ${props => props.theme.buttons.primary.bgColorHover};
+    color: ${props => props.theme.buttons.primary.color};
     letter-spacing: 0.03rem;
     border-radius: 5px;
   }

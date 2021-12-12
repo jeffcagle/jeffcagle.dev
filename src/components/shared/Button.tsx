@@ -8,9 +8,17 @@ interface BtnContainerProps {
   mb?: number;
 }
 
+interface BtnExternalProps {
+  variant: 'primary' | 'secondary';
+  href: string;
+  disabled?: boolean;
+  externalLink?: boolean;
+  children: React.ReactNode;
+}
+
 interface ButtonProps extends BtnContainerProps {
   variant: 'primary' | 'secondary';
-  to?: string;
+  to: string;
   disabled?: boolean;
   externalLink?: boolean;
   children: React.ReactNode;
@@ -29,7 +37,7 @@ interface ButtonProps extends BtnContainerProps {
  */
 function Button({
   variant,
-  to = '',
+  to,
   disabled = false,
   centered,
   mt,
@@ -75,7 +83,7 @@ const BtnContainer = styled.div<BtnContainerProps>`
 `;
 
 const Btn = styled(Link)<ButtonProps>`
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   position: relative;
@@ -103,6 +111,7 @@ const Btn = styled(Link)<ButtonProps>`
       props.variant === 'primary'
         ? props.theme.buttons.primary.bgColorHover
         : props.theme.buttons.secondary.bgColorHover};
+    color: ${props => props.theme.buttons.primary.color};
     letter-spacing: 0.03rem;
     border-radius: 5px;
   }
@@ -117,8 +126,8 @@ const Btn = styled(Link)<ButtonProps>`
   `}
 `;
 
-const BtnExternal = styled.a<ButtonProps>`
-  display: flex;
+const BtnExternal = styled.a<BtnExternalProps>`
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   position: relative;
@@ -149,6 +158,7 @@ const BtnExternal = styled.a<ButtonProps>`
       props.variant === 'primary'
         ? props.theme.buttons.primary.bgColorHover
         : props.theme.buttons.secondary.bgColorHover};
+    color: ${props => props.theme.buttons.primary.color};
     letter-spacing: 0.03rem;
     border-radius: 5px;
   }
