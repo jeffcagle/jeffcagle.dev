@@ -17,7 +17,7 @@ function Footer() {
     <FooterBar>
       <FooterContainer>
         <Row>
-          <Column mediumWidth={33.333}>
+          <Column mediumWidth={33.333} largeWidth={30}>
             <h3>Contact</h3>
             <ul>
               <li>
@@ -31,11 +31,11 @@ function Footer() {
               </li>
             </ul>
           </Column>
-          <Column mediumWidth={33.333}>
+          <Column mediumWidth={33.333} largeWidth={20}>
             <h3>Services</h3>
             <ListServices unstyled />
           </Column>
-          <Column mediumWidth={33.333}>
+          <Column mediumWidth={33.333} largeWidth={50}>
             <h3>Latest Dev Blog</h3>
             <ListPosts />
           </Column>
