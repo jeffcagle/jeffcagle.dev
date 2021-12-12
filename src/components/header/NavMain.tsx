@@ -3,9 +3,7 @@ import breakpoint from '../../styles/breakpoints';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
 import NavSub from './NavSub';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars } from '@fortawesome/free-solid-svg-icons';
-import { propTypes } from 'gatsby-plugin-image/dist/src/components/gatsby-image.server';
+import NavMobile from './NavMobile';
 
 interface MenuProps {
   menu: MenuItemProps[];
@@ -48,11 +46,7 @@ function NavMain({ menu }: MenuProps) {
           </Item>
         ))}
       </Menu>
-      <MobileMenu>
-        <Link to="#">
-          <FontAwesomeIcon icon={faBars} size="2x" color="white" />
-        </Link>
-      </MobileMenu>
+      <NavMobile menu={menu} />
     </Nav>
   );
 }
@@ -64,14 +58,6 @@ const Menu = styled.ul`
 
   @media only screen and ${breakpoint.device.large} {
     display: flex;
-  }
-`;
-
-const MobileMenu = styled.div`
-  display: initial;
-
-  @media only screen and ${breakpoint.device.large} {
-    display: none;
   }
 `;
 

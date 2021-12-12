@@ -64,6 +64,7 @@ const HeaderContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   height: 86px;
+  position: relative;
 `;
 
 export default HeaderBar;
