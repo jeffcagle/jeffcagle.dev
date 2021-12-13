@@ -3,8 +3,19 @@ import styled from 'styled-components';
 import breakpoint from '../../styles/breakpoints';
 import ListServices from '../lists/ListServices';
 import ListPosts from '../lists/ListPosts';
-import SocialLinks from '../shared/SocialLinks';
 import { Row, Column } from '../shared/Columns';
+import { Link } from 'gatsby';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+
+interface DevProps {
+  dev: {
+    social: {
+      gitHub: string;
+      linkedIn: string;
+    };
+  };
+}
 
 /**
  *
@@ -12,7 +23,8 @@ import { Row, Column } from '../shared/Columns';
  *
  * @returns A footer element.
  */
-function Footer() {
+function Footer({ dev }: DevProps) {
+  // console.log(dev);
   return (
     <FooterBar>
       <FooterContainer>
@@ -21,12 +33,36 @@ function Footer() {
             <h3>Contact</h3>
             <ul>
               <li>
-                <SocialLinks />
+                <SocialWrap>
+                  <SocialIcons>
+                    <Icon
+                      href={dev.social.gitHub}
+                      title="GitHub"
+                      target="_blank"
+                    >
+                      <FontAwesomeIcon icon={faGithub} />
+                    </Icon>
+                    <Icon
+                      href={dev.social.linkedIn}
+                      title="LinkedIn"
+                      target="_blank"
+                    >
+                      <FontAwesomeIcon icon={faLinkedin} />
+                    </Icon>
+                  </SocialIcons>
+                </SocialWrap>
               </li>
               <li>
                 <p>
-                  Find me on <a href="/">GitHub</a> and social
-                  <br /> media, or send me an <a href="/">email</a>.
+                  Find me on{' '}
+                  <a href={dev.social.gitHub} target="_blank">
+                    GitHub
+                  </a>{' '}
+                  &amp;{' '}
+                  <a href={dev.social.linkedIn} target="_blank">
+                    LinkedIn
+                  </a>
+                  , or contact me via <Link to="/contact">email</Link>.
                 </p>
               </li>
             </ul>
@@ -72,6 +108,26 @@ const FooterBar = styled.div`
         color: ${props => props.theme.colors.primary};
       }
     }
+  }
+`;
+
+const SocialWrap = styled.div`
+  display: flex;
+`;
+
+const SocialIcons = styled.div`
+  display: flex;
+  font-size: 1.8rem;
+  margin-bottom: 0.7rem;
+`;
+
+const Icon = styled.a`
+  margin-right: 0.8rem;
+  color: ${props => props.theme.colors.neutral400};
+  transition: 0.2s color ease-in-out;
+
+  &:hover {
+    color: ${props => props.theme.colors.primary};
   }
 `;
 
