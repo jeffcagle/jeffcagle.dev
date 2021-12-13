@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
 import styled, { ThemeProvider } from 'styled-components';
 import breakpoint from '../styles/breakpoints';
 import GlobalStyle from '../styles/globalStyles';
@@ -12,14 +11,11 @@ interface LayoutProps {
 }
 
 function Layout({ children }: LayoutProps) {
-  const { allMainMenuJson } = useStaticQuery(query);
-  const menu = allMainMenuJson.nodes;
-
   return (
     <ThemeProvider theme={jcTheme}>
       <GlobalStyle />
       <ScreenWrap>
-        <HeaderBar menu={menu} />
+        <HeaderBar />
         <Main>{children}</Main>
         <Footer />
       </ScreenWrap>
@@ -43,16 +39,3 @@ const ScreenWrap = styled.div`
 `;
 
 export default Layout;
-
-const query = graphql`
-  query {
-    allMainMenuJson {
-      nodes {
-        id
-        name
-        slug
-        hasSubMenu
-      }
-    }
-  }
-`;

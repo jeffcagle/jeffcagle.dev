@@ -1,24 +1,22 @@
 import * as React from 'react';
 import styled from 'styled-components';
+import { useStaticQuery, graphql } from 'gatsby';
 import breakpoint from '../../styles/breakpoints';
 import NavFloating from './NavFloating';
 import NavMain from './NavMain';
 import Brand from './Brand';
 import { Box } from '../shared/Ui';
-import { MenuItemProps } from './NavMain';
-
-interface HeaderBarProps {
-  menu: MenuItemProps[];
-}
 
 /**
  *
  * The main header bar.
  *
- * @param menu An array of menu objects from mainMenu.json.
  * @returns The website header element.
  */
-function HeaderBar({ menu }: HeaderBarProps) {
+function HeaderBar() {
+  const { allMainMenuJson } = useStaticQuery(query);
+  const menu = allMainMenuJson.nodes;
+
   return (
     <Header>
       <div className="bg" />
@@ -68,3 +66,16 @@ const HeaderContainer = styled.div`
 `;
 
 export default HeaderBar;
+
+const query = graphql`
+  query {
+    allMainMenuJson {
+      nodes {
+        id
+        name
+        slug
+        hasSubMenu
+      }
+    }
+  }
+`;
