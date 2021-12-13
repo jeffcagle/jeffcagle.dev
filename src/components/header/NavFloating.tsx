@@ -3,6 +3,7 @@ import breakpoint from '../../styles/breakpoints';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import '@fortawesome/fontawesome-svg-core/styles.css';
 import {
   faHome,
   faCode,

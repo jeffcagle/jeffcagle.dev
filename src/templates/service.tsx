@@ -9,6 +9,7 @@ import Seo from '../components/shared/Seo';
 import Button from '../components/shared/Button';
 import PrevNextItem from '../components/shared/PrevNextItem';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import '@fortawesome/fontawesome-svg-core/styles.css';
 import { faComments } from '@fortawesome/free-solid-svg-icons';
 
 interface ServiceProps {

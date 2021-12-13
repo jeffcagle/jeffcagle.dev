@@ -3,6 +3,7 @@ import styled, { css } from 'styled-components';
 import { Link } from 'gatsby';
 import breakpoint from '../../styles/breakpoints';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import '@fortawesome/fontawesome-svg-core/styles.css';
 import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 import { MenuItemProps } from './NavMain';
 

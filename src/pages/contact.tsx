@@ -4,6 +4,7 @@ import breakpoint from '../styles/breakpoints';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import '@fortawesome/fontawesome-svg-core/styles.css';
 import { Column, Row } from '../components/shared/Columns';
 import { Box } from '../components/shared/Ui';
 import Seo from '../components/shared/Seo';

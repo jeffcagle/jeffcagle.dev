@@ -8,11 +8,12 @@ import Button from '../components/shared/Button';
 import { Section, Box } from '../components/shared/Ui';
 import HeroBar from '../components/shared/HeroBar';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import '@fortawesome/fontawesome-svg-core/styles.css';
+import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import ListProjects from '../components/lists/ListProjects';
 import Seo from '../components/shared/Seo';
 import { graphql, Link } from 'gatsby';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
-import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 
 interface IndexProps {
   data: {

@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import '@fortawesome/fontawesome-svg-core/styles.css';
 import { faCode } from '@fortawesome/free-solid-svg-icons';
 import { Box } from '../components/shared/Ui';
 import HeroBar from '../components/shared/HeroBar';

@@ -6,6 +6,7 @@ import ListTools from '../components/lists/ListTools';
 import { Box } from '../components/shared/Ui';
 import HeroBar from '../components/shared/HeroBar';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import '@fortawesome/fontawesome-svg-core/styles.css';
 import { faHandPointer } from '@fortawesome/free-solid-svg-icons';
 import Seo from '../components/shared/Seo';
 import PrevNextItem from '../components/shared/PrevNextItem';

@@ -1,6 +1,7 @@
 import * as React from 'react';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import '@fortawesome/fontawesome-svg-core/styles.css';
 import { faFlask } from '@fortawesome/free-solid-svg-icons';
 import { useStaticQuery, graphql } from 'gatsby';
 

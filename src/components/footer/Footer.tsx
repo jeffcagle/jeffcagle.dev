@@ -6,6 +6,7 @@ import ListPosts from '../lists/ListPosts';
 import { Row, Column } from '../shared/Columns';
 import { Link, useStaticQuery, graphql } from 'gatsby';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import '@fortawesome/fontawesome-svg-core/styles.css';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 
 /**
