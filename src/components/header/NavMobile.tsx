@@ -33,11 +33,11 @@ function NavMobile({ menu }: NavMobileProps) {
   }, [menuRef]);
 
   return (
-    <MobileMenu>
+    <MobileMenu ref={menuRef}>
       <MenuButton onClick={() => setMenuOpen(!menuOpen)}>
         {handleMenuIcon(menuOpen)}
       </MenuButton>
-      <Menu open={menuOpen} ref={menuRef}>
+      <Menu open={menuOpen}>
         {menu.map(menuItem => (
           <MenuLink
             key={menuItem.id}
