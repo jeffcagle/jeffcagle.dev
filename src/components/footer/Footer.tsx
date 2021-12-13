@@ -4,18 +4,9 @@ import breakpoint from '../../styles/breakpoints';
 import ListServices from '../lists/ListServices';
 import ListPosts from '../lists/ListPosts';
 import { Row, Column } from '../shared/Columns';
-import { Link } from 'gatsby';
+import { Link, useStaticQuery, graphql } from 'gatsby';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
-
-interface DevProps {
-  dev: {
-    social: {
-      gitHub: string;
-      linkedIn: string;
-    };
-  };
-}
 
 /**
  *
@@ -23,8 +14,10 @@ interface DevProps {
  *
  * @returns A footer element.
  */
-function Footer({ dev }: DevProps) {
-  // console.log(dev);
+function Footer() {
+  const { allDevJson } = useStaticQuery(query);
+  const dev = allDevJson.nodes[0];
+
   return (
     <FooterBar>
       <FooterContainer>
@@ -148,3 +141,16 @@ const FooterContainer = styled.div`
 `;
 
 export default Footer;
+
+const query = graphql`
+  query {
+    allDevJson {
+      nodes {
+        social {
+          gitHub
+          linkedIn
+        }
+      }
+    }
+  }
+`;
