@@ -118,6 +118,7 @@ const StartText = styled.div`
   font-weight: bold;
   font-style: italic;
   color: ${props => props.theme.colors.neutral500};
+  white-space: nowrap;
 `;
 
 const ToolGroup = styled.ul`
