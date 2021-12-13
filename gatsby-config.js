@@ -8,6 +8,7 @@ module.exports = {
       summary: `Building fast and modern web apps using JavaScript & Wordpress.`,
     },
     url: 'https://www.jeffcagle.dev',
+    siteUrl: 'https://www.jeffcagle.dev',
     image: '/jeff_cagle.jpg',
   },
   plugins: [
