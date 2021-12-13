@@ -1,13 +1,28 @@
 import * as React from 'react';
-import styled from 'styled-components';
-import { StaticImage } from 'gatsby-plugin-image';
+import { graphql } from 'gatsby';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import ListTools from '../components/lists/ListTools';
 import { Box, Section } from '../components/shared/Ui';
 import { Row, Column } from '../components/shared/Columns';
 import ListBooks from '../components/lists/ListBooks';
 import Seo from '../components/shared/Seo';
 
-function About() {
+interface AboutProps {
+  data: {
+    allDevJson: {
+      nodes: [
+        {
+          name: string;
+          photos: string[];
+        }
+      ];
+    };
+  };
+}
+
+function About({ data }: AboutProps) {
+  const dev = data.allDevJson.nodes[0];
+
   return (
     <>
       <Seo
@@ -33,12 +48,10 @@ function About() {
           </Column>
           <Column mediumWidth={50}>
             <Box flex justifyRight>
-              <ProfileImage>
-                <StaticImage
-                  src="../images/jeff_cagle.jpg"
-                  alt="Jeff Cagle - Web Developer"
-                />
-              </ProfileImage>
+              {
+                // @ts-ignore
+                <GatsbyImage image={getImage(dev.photos[0])} alt={dev.name} />
+              }
             </Box>
           </Column>
         </Row>
@@ -70,12 +83,25 @@ function About() {
   );
 }
 
-const ProfileImage = styled.div`
-  width: 250px;
-  height: 250px;
-  border-radius: 125px;
-  overflow: hidden;
-  border: 10px solid ${props => props.theme.colors.neutral700};
-`;
-
 export default About;
+
+export const data = graphql`
+  query {
+    allDevJson {
+      nodes {
+        name
+        photos {
+          childImageSharp {
+            gatsbyImageData(
+              height: 300
+              width: 300
+              transformOptions: { cropFocus: NORTH }
+              quality: 50
+              formats: [AUTO, WEBP, AVIF]
+            )
+          }
+        }
+      }
+    }
+  }
+`;
