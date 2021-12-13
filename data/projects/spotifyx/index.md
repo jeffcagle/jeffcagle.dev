@@ -13,7 +13,7 @@ image: './spotify-redux.jpg'
 codeUrl: 'https://www.github.com'
 codeUnavailable: false
 siteUrl: 'https://spotifyredux.jeffcagle.dev'
-siteUnavailable: true
+siteUnavailable: false
 ---
 
 ## Design
