@@ -68,7 +68,7 @@ function Service({ data }: ServiceProps) {
         <Explore>{handleProText(service)}</Explore>
         <MoreButtons>
           <Button variant="primary" to="/contact">
-            <FontAwesomeIcon icon={faComments} /> Get In Touch
+            <FontAwesomeIcon icon={faComments} size="1x" /> Get In Touch
           </Button>
           <Button variant="secondary" to="/projects">
             Recent Projects

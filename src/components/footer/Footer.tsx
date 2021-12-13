@@ -33,14 +33,14 @@ function Footer() {
                       title="GitHub"
                       target="_blank"
                     >
-                      <FontAwesomeIcon icon={faGithub} />
+                      <FontAwesomeIcon icon={faGithub} size="1x" />
                     </Icon>
                     <Icon
                       href={dev.social.linkedIn}
                       title="LinkedIn"
                       target="_blank"
                     >
-                      <FontAwesomeIcon icon={faLinkedin} />
+                      <FontAwesomeIcon icon={faLinkedin} size="1x" />
                     </Icon>
                   </SocialIcons>
                 </SocialWrap>

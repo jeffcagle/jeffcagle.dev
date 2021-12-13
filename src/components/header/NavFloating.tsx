@@ -39,17 +39,17 @@ function NavFloating({ menu }: MenuProps) {
   const handleMenuIcon = (index: number) => {
     switch (index) {
       case 0:
-        return <FontAwesomeIcon icon={faCode} />;
+        return <FontAwesomeIcon icon={faCode} size="1x" />;
       case 1:
-        return <FontAwesomeIcon icon={faLaptopCode} />;
+        return <FontAwesomeIcon icon={faLaptopCode} size="1x" />;
       case 2:
-        return <FontAwesomeIcon icon={faBlog} />;
+        return <FontAwesomeIcon icon={faBlog} size="1x" />;
       case 3:
-        return <FontAwesomeIcon icon={faUserAstronaut} />;
+        return <FontAwesomeIcon icon={faUserAstronaut} size="1x" />;
       case 4:
-        return <FontAwesomeIcon icon={faIdCard} />;
+        return <FontAwesomeIcon icon={faIdCard} size="1x" />;
       default:
-        return <FontAwesomeIcon icon={faCode} />;
+        return <FontAwesomeIcon icon={faCode} size="1x" />;
     }
   };
 
@@ -59,7 +59,7 @@ function NavFloating({ menu }: MenuProps) {
         <Menu className={visible ? 'animateIn' : ''}>
           <MenuItem>
             <MenuLink to="/">
-              <FontAwesomeIcon icon={faHome} /> <span>Home</span>
+              <FontAwesomeIcon icon={faHome} size="1x" /> <span>Home</span>
             </MenuLink>
           </MenuItem>
 

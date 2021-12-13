@@ -60,11 +60,11 @@ function Index({ data }: IndexProps) {
             <FindMe>
               <span>Find me on:</span>
               <Social href={dev.social.gitHub} target="_blank">
-                <FontAwesomeIcon icon={faGithub} /> GitHub
+                <FontAwesomeIcon icon={faGithub} size="1x" /> GitHub
               </Social>
               &middot;
               <Social href={dev.social.linkedIn} target="_blank">
-                <FontAwesomeIcon icon={faLinkedin} /> LinkedIn
+                <FontAwesomeIcon icon={faLinkedin} size="1x" /> LinkedIn
               </Social>
             </FindMe>
           </Box>

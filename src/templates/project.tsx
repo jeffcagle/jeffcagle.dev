@@ -94,7 +94,7 @@ function Project({ data }: ProjectProps) {
             to={project.frontmatter.codeUrl}
             disabled={project.frontmatter.codeUnavailable}
           >
-            <FontAwesomeIcon icon={faGithub} /> Project Code
+            <FontAwesomeIcon icon={faGithub} size="1x" /> Project Code
           </Button>
           <Button
             externalLink
@@ -102,7 +102,7 @@ function Project({ data }: ProjectProps) {
             to={project.frontmatter.siteUrl}
             disabled={project.frontmatter.siteUnavailable}
           >
-            <FontAwesomeIcon icon={faChrome} /> Live Site
+            <FontAwesomeIcon icon={faChrome} size="1x" /> Live Site
           </Button>
         </MoreButtons>
       </Box>
