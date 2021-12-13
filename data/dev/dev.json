@@ -1,0 +1,25 @@
+{
+  "name": "Jeff Cagle",
+  "titles": ["Web Developer", "UX Designer"],
+  "homeCountry": "United States",
+  "toolsILove": [
+    "JavaScript",
+    "React",
+    "Next.js",
+    "TypeScript",
+    "Python",
+    "Figma",
+    "GraphQL"
+  ],
+  "photos": [
+    "./jeff-cagle.jpg",
+    "./jeff-cagle-2.jpg",
+    "./jeff-cagle-3.jpg",
+    "./jeff-cagle-4.jpg"
+  ],
+  "description": "Lorem ipsum...",
+  "social": {
+    "gitHub": "https://github.com/jeffcagle",
+    "linkedIn": "https://www.linkedin.com/in/jeffccagle/"
+  }
+}
