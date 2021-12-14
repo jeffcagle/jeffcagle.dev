@@ -22,29 +22,42 @@ function Contact() {
       <Box withContainer mt={3}>
         <Row>
           <Column mediumWidth={60}>
-            <Form>
+            <Form
+              name="contact"
+              action="/pages/success"
+              method="POST"
+              data-netlify="true"
+            >
               <Label htmlFor="name">Name</Label>
-              <TextInput id="name" placeholder="Your name." type="text" />
+              <TextInput
+                id="name"
+                name="name"
+                placeholder="Your name."
+                type="text"
+              />
               <Label htmlFor="email">Email</Label>
               <TextInput
                 id="email"
+                name="email"
                 placeholder="Your email address."
                 type="email"
               />
               <Label htmlFor="phone">Phone</Label>
               <TextInput
                 id="phone"
+                name="phone"
                 placeholder="Your phone number."
                 type="number"
               />
               <Label htmlFor="message">Message</Label>
               <TextArea
                 id="message"
+                name="message"
                 placeholder="How can I help you?"
                 rows={4}
               />
               <ButtonContainer>
-                <InputButton type="button" value="Submit" />
+                <InputButton type="submit" value="Submit" />
               </ButtonContainer>
             </Form>
           </Column>
