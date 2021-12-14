@@ -6,7 +6,7 @@ shortTitle: 'Web Developer'
 longTitle: 'Freelance Web Developer'
 summary: 'This is the summary...'
 tools: ['HTML5', 'CSS3', 'SASS', 'JavaScript', 'React', 'jQuery', 'WordPress']
-coverImage: './javascript-code-web-development.png'
+image: './cl-main.png'
 ---
 
 ## As a freelance front-end <span>web developer</span>, I create custom website applications for clients around the globe.

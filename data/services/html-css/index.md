@@ -6,7 +6,7 @@ shortTitle: 'HTML/CSS'
 longTitle: 'HTML & CSS Guru'
 summary: 'This is the summary...'
 tools: ['HTML5', 'CSS3', 'SASS', 'Styled Components', 'Tailwind', 'Bootstrap']
-coverImage: ''
+image: './cl-main.png'
 ---
 
 ## As a freelance <span>HTML & CSS guru</span>, I create custom website applications for clients around the globe.

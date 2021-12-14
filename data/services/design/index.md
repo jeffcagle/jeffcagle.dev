@@ -6,7 +6,7 @@ shortTitle: 'Design & UX'
 longTitle: 'Freelance UI / UX Designer'
 summary: 'This is the summary...'
 tools: ['Figma', 'Photoshop', 'Adobe XD', 'Lightroom', 'Capture One']
-coverImage: ''
+image: './cl-main.png'
 ---
 
 ## As a freelance <span>UI & UX designer</span>, I create custom website applications for clients around the globe.

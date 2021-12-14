@@ -6,7 +6,7 @@ shortTitle: 'WordPress'
 longTitle: 'Freelance WordPress Developer'
 summary: 'This is the summary...'
 tools: ['WordPress', 'WooCommerce', 'PHP', 'MySQL']
-coverImage: ''
+image: './cl-main.png'
 ---
 
 ## As a freelance <span>WordPress Developer</span>, I create custom website applications for clients around the globe.

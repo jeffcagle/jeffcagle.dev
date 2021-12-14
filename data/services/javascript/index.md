@@ -7,7 +7,7 @@ longTitle: 'Freelance JavaScript Developer'
 summary: 'This is the summary...'
 tools:
   ['JavaScript', 'React', 'jQuery', 'Gatsby', 'Next.js', 'TypeScript', 'Redux']
-coverImage: ''
+image: './cl-main.png'
 ---
 
 ## As a freelance <span>JavaScript Developer</span>, I create custom website applications for clients around the globe.
