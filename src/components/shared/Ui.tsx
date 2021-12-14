@@ -68,6 +68,10 @@ interface BoxProps {
   children?: React.ReactNode;
 }
 
+interface BoxContainerProps {
+  flex?: boolean;
+}
+
 /**
  *
  * Create an HTML box.
@@ -102,7 +106,7 @@ export function Box(props: BoxProps) {
       pb={props.pb}
     >
       {props.withContainer ? (
-        <BoxContainer>{props.children}</BoxContainer>
+        <BoxContainer flex={props.flex}>{props.children}</BoxContainer>
       ) : (
         props.children
       )}
@@ -149,7 +153,7 @@ ${props =>
   `}
 `;
 
-const BoxContainer = styled.div`
+const BoxContainer = styled.div<BoxContainerProps>`
   max-width: ${props => props.theme.sizes.containerWidthSmall};
 
   @media only screen and ${breakpoint.device.medium} {
@@ -164,4 +168,16 @@ const BoxContainer = styled.div`
   .gatsby-resp-image-wrapper {
     margin: 3rem 0;
   }
+
+  ${props =>
+    props.flex &&
+    `
+    display:flex;
+    align-items:center;
+
+    @media only screen and ${breakpoint.device.small} {
+      flex-direction:column;
+      text-align:center;
+    }
+  `}
 `;
