@@ -24,7 +24,7 @@ function Contact() {
           <Column mediumWidth={60}>
             <Form
               name="contact"
-              action="/success"
+              action="/success/"
               method="POST"
               data-netlify="true"
             >
