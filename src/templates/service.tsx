@@ -11,6 +11,7 @@ import PrevNextItem from '../components/shared/PrevNextItem';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import '@fortawesome/fontawesome-svg-core/styles.css';
 import { faComments } from '@fortawesome/free-solid-svg-icons';
+import breakpoint from '../styles/breakpoints';
 
 interface ServiceProps {
   data: {
@@ -112,7 +113,13 @@ const MoreButtons = styled.div`
   margin-bottom: 2rem;
 
   a:first-of-type {
-    margin-right: 2rem;
+    @media only screen and ${breakpoint.device.small} {
+      margin-bottom: 2rem;
+    }
+
+    @media only screen and ${breakpoint.device.medium} {
+      margin-right: 2rem;
+    }
   }
 `;
 

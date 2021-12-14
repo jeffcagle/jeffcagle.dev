@@ -12,6 +12,7 @@ import Seo from '../components/shared/Seo';
 import PrevNextItem from '../components/shared/PrevNextItem';
 import Button from '../components/shared/Button';
 import { faChrome, faGithub } from '@fortawesome/free-brands-svg-icons';
+import breakpoint from '../styles/breakpoints';
 
 interface ProjectProps {
   data: {
@@ -165,7 +166,13 @@ const MoreButtons = styled.div`
   margin-bottom: 2rem;
 
   a:first-of-type {
-    margin-right: 2rem;
+    @media only screen and ${breakpoint.device.small} {
+      margin-bottom: 2rem;
+    }
+
+    @media only screen and ${breakpoint.device.medium} {
+      margin-right: 2rem;
+    }
   }
 `;
 

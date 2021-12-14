@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
+import breakpoint from '../../styles/breakpoints';
 
 interface BtnContainerProps {
   centered?: boolean;
@@ -96,6 +97,12 @@ const Btn = styled(Link)<ButtonProps>`
   line-height: 1.8;
   cursor: pointer;
 
+  @media only screen and ${breakpoint.device.small} {
+    display: flex;
+    width: 100%;
+    margin: 0;
+  }
+
   svg {
     margin-right: 0.5rem;
   }
@@ -139,6 +146,12 @@ const BtnExternal = styled.a<BtnExternalProps>`
   font-size: 1rem;
   line-height: 1.8;
   cursor: pointer;
+
+  @media only screen and ${breakpoint.device.small} {
+    display: flex;
+    width: 100%;
+    margin: 0;
+  }
 
   svg {
     margin-right: 0.5rem;

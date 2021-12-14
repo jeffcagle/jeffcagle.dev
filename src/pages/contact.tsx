@@ -171,6 +171,12 @@ const InputButton = styled.button`
   line-height: 1.8;
   cursor: pointer;
 
+  @media only screen and ${breakpoint.device.small} {
+    display: flex;
+    width: 100%;
+    margin: 0;
+  }
+
   svg {
     margin-right: 0.5rem;
   }
