@@ -22,7 +22,13 @@ function Contact() {
       <Box withContainer mt={3}>
         <Row>
           <Column mediumWidth={60}>
-            <Form name="contact" method="POST" data-netlify="true">
+            <Form
+              name="contact"
+              method="post"
+              data-netlify="true"
+              data-netlify-honeypot="bot-field"
+            >
+              <input type="hidden" name="form-name" value="contact" />
               <Label htmlFor="name">Name</Label>
               <TextInput
                 id="name"
