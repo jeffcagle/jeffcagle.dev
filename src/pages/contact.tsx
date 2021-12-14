@@ -22,12 +22,7 @@ function Contact() {
       <Box withContainer mt={3}>
         <Row>
           <Column mediumWidth={60}>
-            <Form
-              name="contact"
-              action="/success/"
-              method="POST"
-              data-netlify="true"
-            >
+            <Form name="contact" method="POST" data-netlify="true">
               <Label htmlFor="name">Name</Label>
               <TextInput
                 id="name"
@@ -57,7 +52,7 @@ function Contact() {
                 rows={4}
               />
               <ButtonContainer>
-                <InputButton type="submit" value="Submit" />
+                <InputButton type="submit">Submit</InputButton>
               </ButtonContainer>
             </Form>
           </Column>
@@ -155,7 +150,7 @@ const ButtonContainer = styled.div`
   margin-top: 1rem;
 `;
 
-const InputButton = styled.input`
+const InputButton = styled.button`
   display: inline-flex;
   align-items: center;
   justify-content: center;
