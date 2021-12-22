@@ -39,7 +39,6 @@ function ListProjects({ exclude = [] }: ListProjectsProps) {
           >
             <Image>
               <GatsbyImage
-                to={project.frontmatter.slug}
                 // @ts-ignore
                 image={getImage(project.frontmatter.image)}
                 alt={project.frontmatter.shortTitle}
@@ -105,6 +104,11 @@ const Summary = styled.span`
   color: ${props => props.theme.colors.neutral400};
   line-height: 1.7rem;
   margin-top: 0.2rem;
+  transition: 0.2s ease-in-out;
+
+  ${Project}:hover & {
+    color: ${props => props.theme.colors.neutral300};
+  }
 `;
 
 const Tooltip = styled(ToolTip)`
