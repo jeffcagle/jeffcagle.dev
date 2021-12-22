@@ -2,7 +2,10 @@ import * as React from 'react';
 import styled from 'styled-components';
 import breakpoint from '../../styles/breakpoints';
 
-interface SectionProps {
+interface H2Props {
+  centered?: boolean;
+}
+interface SectionProps extends H2Props {
   h2?: string;
   flex?: boolean;
   children?: React.ReactNode;
@@ -13,14 +16,19 @@ interface SectionProps {
  * Create an HTML section element.
  *
  * @param h2 Optional h2 for the section.
+ * @param centered Optional centering for h2 element.
  * @param flex Optional flexbox for section content.
  * @returns A section element.
  */
-export function Section({ h2, flex, children }: SectionProps) {
+export function Section({ h2, centered, flex, children }: SectionProps) {
   return (
     <SectionItem>
       <SectionContainer flex={flex}>
-        {h2 && <h2>{h2}</h2>}
+        {h2 && (
+          <Title centered={centered}>
+            <span>{h2}</span>
+          </Title>
+        )}
         {children}
       </SectionContainer>
     </SectionItem>
@@ -52,10 +60,26 @@ const SectionContainer = styled.div<SectionProps>`
   `}
 `;
 
+const Title = styled.h2<H2Props>`
+  margin-bottom: 3.5rem;
+
+  span {
+    border-bottom: 2px solid ${props => props.theme.colors.neutral550};
+    padding: 1rem;
+  }
+
+  ${props =>
+    props.centered &&
+    `
+    text-align:center;
+  `}
+`;
+
 interface BoxProps {
   flex?: boolean;
   flexSpace?: boolean;
   justifyRight?: boolean;
+  justifyCenter?: boolean;
   withContainer?: boolean;
   mt?: number;
   mr?: number;
@@ -79,6 +103,7 @@ interface BoxContainerProps {
  * @param flex Optional flexbox.
  * @param flexSpace Optional justify-content:space-between rule.
  * @param justifyRight Optional justify-content:right rule.
+ * @param justifyCenter Optional justify-content:center rule.
  * @param withContainer Optional centered container.
  * @param mt Optional top margin.
  * @param mr Optional right margin.
@@ -96,6 +121,7 @@ export function Box(props: BoxProps) {
       flex={props.flex}
       flexSpace={props.flexSpace}
       justifyRight={props.justifyRight}
+      justifyCenter={props.justifyCenter}
       mt={props.mt}
       mr={props.mr}
       ml={props.ml}
@@ -150,6 +176,12 @@ ${props =>
     @media only screen and ${breakpoint.device.medium} {
       justify-content:right;
     }
+  `}
+
+${props =>
+    props.justifyCenter &&
+    `
+    justify-content:center;
   `}
 `;
 
