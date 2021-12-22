@@ -23,7 +23,7 @@ function Layout({ children }: LayoutProps) {
   );
 }
 
-const Main = styled.div`
+const Main = styled.main`
   padding-bottom: 5rem;
   flex-grow: 1;
 
