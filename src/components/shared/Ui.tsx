@@ -78,13 +78,17 @@ const Title = styled.h2<H2Props>`
 
   span {
     border-bottom: 2px solid ${props => props.theme.colors.neutral550};
-    padding: 1rem;
+    padding: 0 1rem 1rem 0;
   }
 
   ${props =>
     props.centered &&
     `
     text-align:center;
+
+    span {
+      padding: 1rem;
+    }
   `}
 `;
 
