@@ -29,7 +29,7 @@
     "skillLvl": 97,
     "toolColor": "accent3",
     "url": "https://tailwindcss.com/",
-    "icon": "./icons/icon-sass.png"
+    "icon": "./icons/icon-tailwind.png"
   },
   {
     "name": "JavaScript",
@@ -45,7 +45,7 @@
     "skillLvl": 42,
     "toolColor": "accent1",
     "url": "https://www.typescriptlang.org/",
-    "icon": "./icons/icon-javascript.png"
+    "icon": "./icons/icon-typescript.png"
   },
   {
     "name": "jQuery",
@@ -59,7 +59,7 @@
     "name": "React",
     "desc": "A front-end JavaScript library for building user interfaces based on UI components.",
     "skillLvl": 81,
-    "toolColor": "accent3",
+    "toolColor": "secondary",
     "url": "https://reactjs.org/",
     "icon": "./icons/icon-react.png"
   },
@@ -123,7 +123,7 @@
     "skillLvl": 35,
     "toolColor": "accent2",
     "url": "https://www.python.org/",
-    "icon": "./icons/icon-redux.png"
+    "icon": "./icons/icon-python.png"
   },
   {
     "name": "WordPress",
@@ -206,12 +206,12 @@
     "icon": "./icons/icon-firebase.png"
   },
   {
-    "name": "Linux",
-    "desc": "A family of open-source Unix-like operating systems based on the Linux kernel.",
+    "name": "Ubuntu",
+    "desc": "A Linux distribution based on Debian and composed mostly of free and open-source software.",
     "skillLvl": 25,
     "toolColor": "accent2",
-    "url": "https://www.linux.org/",
-    "icon": "./icons/icon-firebase.png"
+    "url": "https://ubuntu.com/",
+    "icon": "./icons/icon-linux.png"
   },
   {
     "name": "VSCode",
@@ -219,7 +219,7 @@
     "skillLvl": 25,
     "toolColor": "accent1",
     "url": "https://code.visualstudio.com/",
-    "icon": "./icons/icon-firebase.png"
+    "icon": "./icons/icon-vscode.png"
   },
   {
     "name": "Spotify API",
@@ -227,7 +227,7 @@
     "skillLvl": 25,
     "toolColor": "accent1",
     "url": "https://developer.spotify.com/",
-    "icon": "./icons/icon-firebase.png"
+    "icon": "./icons/icon-spotify.png"
   },
   {
     "name": "Netlify",
@@ -235,6 +235,6 @@
     "skillLvl": 25,
     "toolColor": "accent2",
     "url": "https://www.netlify.com/",
-    "icon": "./icons/icon-firebase.png"
+    "icon": "./icons/icon-netlify.png"
   }
 ]
