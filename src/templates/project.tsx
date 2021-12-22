@@ -136,7 +136,7 @@ const ToolWrapper = styled.div`
     ${props => props.theme.colors.neutral700};
   background-size: 5px 5px;
   border-bottom: 2px solid ${props => props.theme.colors.neutral700};
-  border-top: 2px solid ${props => props.theme.colors.neutral600};
+  border-top: 3px solid ${props => props.theme.colors.neutral800};
   padding: 1.5rem 0;
 `;
 
