@@ -118,6 +118,21 @@ const GlobalStyle = createGlobalStyle`
     ${props => props.theme.colors.neutral700};
     background-size: 5px 5px;
   }
+
+  blockquote {
+    text-align:center;
+    color: ${props => props.theme.colors.neutral300};
+    font-weight: bold;
+    font-size:1.6rem;
+    font-style: italic;
+
+    cite {
+      font-size:1rem;
+      color: ${props => props.theme.colors.neutral400};
+      font-style: normal;
+      font-weight: normal;
+    }
+  }
 `;
 
 export default GlobalStyle;
