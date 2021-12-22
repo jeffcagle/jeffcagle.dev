@@ -67,7 +67,7 @@ function About({ data }: AboutProps) {
             'TypeScript',
             'Python',
             'Figma',
-            'Linux',
+            'Ubuntu',
             'VSCode',
             'GraphQL',
             'CSS3',
