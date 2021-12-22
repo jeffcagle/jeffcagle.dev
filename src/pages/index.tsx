@@ -73,12 +73,12 @@ function Index({ data }: IndexProps) {
         </Box>
       </HeroBar>
       <Section h2="Current Projects" centered>
-        <ListProjects exclude={['JeffCagle.dev']} />
+        <ListProjects />
         <Button variant="primary" centered to="/projects" mt={1}>
           All Projects
         </Button>
       </Section>
-      <Section h2="My Services" centered alt>
+      <Section h2="My Services" centered light>
         <ListServices exclude={['WordPress']} />
         <Button variant="primary" centered to="/services" mt={1}>
           All Services
