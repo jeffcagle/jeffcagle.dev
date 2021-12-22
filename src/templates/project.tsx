@@ -58,24 +58,28 @@ function Project({ data }: ProjectProps) {
           {project.frontmatter.longTitle}
         </h1>
         <p style={{ textAlign: 'center' }}>{project.frontmatter.summary}</p>
-        <ToolIntro>
-          <BuiltWith>Built With:</BuiltWith>
-          <Hover>
-            - Hover <FontAwesomeIcon icon={faHandPointer} size="xs" /> items for
-            more info -
-          </Hover>
-        </ToolIntro>
-        <Box flex flexSpace mt={0.8} mb={0.5}>
-          <ListTools
-            startText="Frontend: "
-            items={project.frontmatter.frontendTools}
-          />
-          <ListTools
-            startText="Backend: "
-            items={project.frontmatter.backendTools}
-          />
-        </Box>
       </HeroBar>
+      <ToolWrapper>
+        <Box withContainer>
+          <ToolIntro>
+            <BuiltWith>Built With:</BuiltWith>
+            <Hover>
+              - Hover <FontAwesomeIcon icon={faHandPointer} size="xs" /> items
+              for more info -
+            </Hover>
+          </ToolIntro>
+          <Box flex flexSpace mt={0.8} mb={0.5}>
+            <ListTools
+              startText="Frontend: "
+              items={project.frontmatter.frontendTools}
+            />
+            <ListTools
+              startText="Backend: "
+              items={project.frontmatter.backendTools}
+            />
+          </Box>
+        </Box>
+      </ToolWrapper>
       <Box withContainer mt={3}>
         <div
           className="project"
@@ -118,6 +122,24 @@ function Project({ data }: ProjectProps) {
   );
 }
 
+const ToolWrapper = styled.div`
+  background: linear-gradient(
+      90deg,
+      ${props => props.theme.colors.neutral800} 46%,
+      transparent 50%
+    ),
+    linear-gradient(
+      180deg,
+      transparent 50%,
+      ${props => props.theme.colors.neutral800} 54%
+    ),
+    ${props => props.theme.colors.neutral700};
+  background-size: 5px 5px;
+  border-bottom: 2px solid ${props => props.theme.colors.neutral700};
+  border-top: 2px solid ${props => props.theme.colors.neutral600};
+  padding: 1.5rem 0;
+`;
+
 const ToolIntro = styled.div`
   display: flex;
   flex-direction: column;
@@ -130,10 +152,7 @@ const BuiltWith = styled.span`
   display: block;
   text-align: center;
   font-weight: bold;
-  font-size: 1.1rem;
-  border-top: 1px dashed ${props => props.theme.colors.neutral500};
-  padding-top: 1.5rem;
-  margin-top: 2rem;
+  font-size: 1rem;
   width: 200px;
   font-style: italic;
 `;
@@ -141,13 +160,13 @@ const BuiltWith = styled.span`
 const Hover = styled.span`
   display: block;
   text-align: center;
-  margin-bottom: 0.8rem;
+  /* margin-bottom: 0.5rem; */
   /* font-style: italic; */
   font-size: 0.9rem;
-  color: ${props => props.theme.colors.neutral400};
+  color: ${props => props.theme.colors.neutral500};
 
   svg {
-    color: ${props => props.theme.colors.neutral300};
+    color: ${props => props.theme.colors.neutral400};
     margin-bottom: 0.05rem;
   }
 `;

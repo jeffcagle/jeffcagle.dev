@@ -10,7 +10,7 @@ import Button from '../components/shared/Button';
 import PrevNextItem from '../components/shared/PrevNextItem';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import '@fortawesome/fontawesome-svg-core/styles.css';
-import { faComments } from '@fortawesome/free-solid-svg-icons';
+import { faComments, faHandPointer } from '@fortawesome/free-solid-svg-icons';
 import breakpoint from '../styles/breakpoints';
 
 interface ServiceProps {
@@ -54,12 +54,25 @@ function Service({ data }: ServiceProps) {
         description={service.frontmatter.summary}
       />
       <HeroBar py={2} hasSubMenu>
-        <h1>{service.frontmatter.longTitle}</h1>
-        <p>{service.frontmatter.summary}</p>
-        <Box flex mt={0.8} mb={0.5}>
-          <ListTools startText="My tools: " items={service.frontmatter.tools} />
-        </Box>
+        <h1 style={{ textAlign: 'center', marginBottom: 0 }}>
+          {service.frontmatter.longTitle}
+        </h1>
+        <p style={{ textAlign: 'center' }}>{service.frontmatter.summary}</p>
       </HeroBar>
+      <ToolWrapper>
+        <Box withContainer>
+          <ToolIntro>
+            <BuiltWith>{`My ${service.frontmatter.shortTitle} tools: `}</BuiltWith>
+            <Hover>
+              - Hover <FontAwesomeIcon icon={faHandPointer} size="xs" /> items
+              for more info -
+            </Hover>
+          </ToolIntro>
+          <Box flex justifyCenter mt={0.8} mb={0.5}>
+            <ListTools items={service.frontmatter.tools} />
+          </Box>
+        </Box>
+      </ToolWrapper>
       <Box withContainer mt={3}>
         <div
           className="service"
@@ -98,6 +111,55 @@ function handleProText(service: ServiceItemProps) {
 
   return `Need a ${service.frontmatter.shortTitle} professional?`;
 }
+
+const ToolWrapper = styled.div`
+  background: linear-gradient(
+      90deg,
+      ${props => props.theme.colors.neutral800} 46%,
+      transparent 50%
+    ),
+    linear-gradient(
+      180deg,
+      transparent 50%,
+      ${props => props.theme.colors.neutral800} 54%
+    ),
+    ${props => props.theme.colors.neutral700};
+  background-size: 5px 5px;
+  border-bottom: 2px solid ${props => props.theme.colors.neutral700};
+  border-top: 2px solid ${props => props.theme.colors.neutral600};
+  padding: 1.5rem 0;
+`;
+
+const ToolIntro = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+`;
+
+const BuiltWith = styled.span`
+  display: block;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1rem;
+  width: 200px;
+  font-style: italic;
+`;
+
+const Hover = styled.span`
+  display: block;
+  text-align: center;
+  /* margin-bottom: 0.5rem; */
+  /* font-style: italic; */
+  font-size: 0.9rem;
+  color: ${props => props.theme.colors.neutral500};
+
+  svg {
+    color: ${props => props.theme.colors.neutral400};
+    margin-bottom: 0.05rem;
+  }
+`;
 
 const Explore = styled.span`
   display: flex;
