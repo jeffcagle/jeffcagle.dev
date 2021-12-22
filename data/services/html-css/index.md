@@ -4,7 +4,7 @@ templateKey: 'services'
 slug: 'html-css-website-design'
 shortTitle: 'HTML/CSS'
 longTitle: 'HTML & CSS Guru'
-summary: 'This is the summary...'
+summary: 'Mobile-first, responsive styling with accessability in mind.'
 tools: ['HTML5', 'CSS3', 'SASS', 'Styled Components', 'Tailwind', 'Bootstrap']
 image: './cl-main.png'
 ---

@@ -4,7 +4,7 @@ templateKey: 'services'
 slug: 'freelance-wordpress-developer'
 shortTitle: 'WordPress'
 longTitle: 'Freelance WordPress Developer'
-summary: 'This is the summary...'
+summary: 'Complete custom WordPress websites or as a headless CMS.'
 tools: ['WordPress', 'WooCommerce', 'PHP', 'MySQL']
 image: './cl-main.png'
 ---

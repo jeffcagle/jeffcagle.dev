@@ -4,12 +4,14 @@ templateKey: 'services'
 slug: 'freelance-web-developer-usa'
 shortTitle: 'Web Developer'
 longTitle: 'Freelance Web Developer'
-summary: 'This is the summary...'
+summary: 'Lightning fast applications using modern web frameworks.'
 tools: ['HTML5', 'CSS3', 'SASS', 'JavaScript', 'React', 'jQuery', 'WordPress']
 image: './cl-main.png'
 ---
 
-## As a freelance front-end <span>web developer</span>, I create custom website applications for clients around the globe.
+![Web Developer](./web-design.png 'Web Developer Jeff Cagle')
+
+As a freelance front-end <span>web developer</span>, I create custom website applications for clients around the globe.
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad. Adipiscing elit, sed do eiusmod tempor [incididunt](/freelance-ux-designer-usa/ 'Designer') ut labore et dolore magna aliqua ut enim ad.
 

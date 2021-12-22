@@ -4,9 +4,19 @@ templateKey: 'services'
 slug: 'freelance-javascript-developer'
 shortTitle: 'JavaScript'
 longTitle: 'Freelance JavaScript Developer'
-summary: 'This is the summary...'
+summary: 'Interactive and scalable full-stack web applications for any market.'
 tools:
-  ['JavaScript', 'React', 'jQuery', 'Gatsby', 'Next.js', 'TypeScript', 'Redux']
+  [
+    'JavaScript',
+    'React',
+    'jQuery',
+    'Gatsby',
+    'Next.js',
+    'TypeScript',
+    'Redux',
+    'GraphQL',
+    'Node',
+  ]
 image: './cl-main.png'
 ---
 
