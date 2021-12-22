@@ -52,7 +52,9 @@ function ListServices({ exclude = [], unstyled = false }: ListServicesProps) {
             title={service.frontmatter.shortTitle}
           >
             <Icon>
-              <Circle>{handleIcon(service.frontmatter.shortTitle)}</Circle>
+              <Circle className="grill">
+                {handleIcon(service.frontmatter.shortTitle)}
+              </Circle>
             </Icon>
             <Content>
               <Title>{service.frontmatter.shortTitle}</Title>
@@ -117,18 +119,6 @@ const Icon = styled.div`
 const Circle = styled.div`
   width: 100%;
   height: 100%;
-  background: linear-gradient(
-      90deg,
-      ${props => props.theme.colors.neutral800} 46%,
-      transparent 50%
-    ),
-    linear-gradient(
-      180deg,
-      transparent 50%,
-      ${props => props.theme.colors.neutral800} 54%
-    ),
-    ${props => props.theme.colors.neutral700};
-  background-size: 5px 5px;
   border: 2px solid ${props => props.theme.colors.neutral600};
   border-radius: 9999px;
   display: flex;

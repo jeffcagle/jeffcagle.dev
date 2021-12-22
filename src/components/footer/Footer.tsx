@@ -20,7 +20,7 @@ function Footer() {
   const dev = allDevJson.nodes[0];
 
   return (
-    <FooterBar>
+    <FooterBar className="grill">
       <FooterContainer>
         <Row>
           <Column mediumWidth={33.333} largeWidth={30}>
@@ -77,7 +77,6 @@ function Footer() {
 
 const FooterBar = styled.div`
   width: 100%;
-  background-color: ${props => props.theme.colors.neutral700};
   border-top: 3px solid ${props => props.theme.colors.secondary};
 
   @media only screen and ${breakpoint.device.small} {

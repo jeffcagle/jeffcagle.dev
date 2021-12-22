@@ -59,7 +59,7 @@ function Project({ data }: ProjectProps) {
         </h1>
         <p style={{ textAlign: 'center' }}>{project.frontmatter.summary}</p>
       </HeroBar>
-      <ToolWrapper>
+      <ToolWrapper className="grill">
         <Box withContainer>
           <ToolIntro>
             <BuiltWith>Built With:</BuiltWith>
@@ -123,21 +123,9 @@ function Project({ data }: ProjectProps) {
 }
 
 const ToolWrapper = styled.div`
-  background: linear-gradient(
-      90deg,
-      ${props => props.theme.colors.neutral800} 46%,
-      transparent 50%
-    ),
-    linear-gradient(
-      180deg,
-      transparent 50%,
-      ${props => props.theme.colors.neutral800} 54%
-    ),
-    ${props => props.theme.colors.neutral700};
-  background-size: 5px 5px;
+  padding: 1.5rem 0;
   border-bottom: 2px solid ${props => props.theme.colors.neutral700};
   border-top: 3px solid ${props => props.theme.colors.neutral800};
-  padding: 1.5rem 0;
 `;
 
 const ToolIntro = styled.div`

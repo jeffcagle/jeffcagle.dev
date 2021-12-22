@@ -59,7 +59,7 @@ function Service({ data }: ServiceProps) {
         </h1>
         <p style={{ textAlign: 'center' }}>{service.frontmatter.summary}</p>
       </HeroBar>
-      <ToolWrapper>
+      <ToolWrapper className="grill">
         <Box withContainer>
           <ToolIntro>
             <BuiltWith>{`My ${service.frontmatter.shortTitle} tools: `}</BuiltWith>
@@ -113,21 +113,9 @@ function handleProText(service: ServiceItemProps) {
 }
 
 const ToolWrapper = styled.div`
-  background: linear-gradient(
-      90deg,
-      ${props => props.theme.colors.neutral800} 46%,
-      transparent 50%
-    ),
-    linear-gradient(
-      180deg,
-      transparent 50%,
-      ${props => props.theme.colors.neutral800} 54%
-    ),
-    ${props => props.theme.colors.neutral700};
-  background-size: 5px 5px;
+  padding: 1.5rem 0;
   border-bottom: 2px solid ${props => props.theme.colors.neutral700};
   border-top: 3px solid ${props => props.theme.colors.neutral800};
-  padding: 1.5rem 0;
 `;
 
 const ToolIntro = styled.div`
