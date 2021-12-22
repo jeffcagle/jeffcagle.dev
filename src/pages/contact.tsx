@@ -170,6 +170,7 @@ const InputButton = styled.button`
   font-size: 1rem;
   line-height: 1.8;
   cursor: pointer;
+  border-radius: 5px;
 
   @media only screen and ${breakpoint.device.small} {
     display: flex;
