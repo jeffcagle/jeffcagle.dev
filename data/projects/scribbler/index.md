@@ -1,7 +1,7 @@
 ---
 order: 4
 date: '2021-09-02'
-templateKey: 'projects'
+templateKey: 'projectsOffline'
 slug: 'scribbler-task-manager'
 shortTitle: 'Scribbler'
 longTitle: 'Scribbler: A Modern Tool For Writers'
