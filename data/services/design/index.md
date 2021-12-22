@@ -13,12 +13,20 @@ image: './design.png'
 
 ## All great applications begin with great designs.
 
-I have dedicated over 15 years to mastering industry design tools such as [Photoshop](https://www.adobe.com/products/photoshop.html 'Adobe Photoshop'), [Adobe XD](https://www.adobe.com/products/xd.html 'Adobe XD'), and now [Figma](https://www.figma.com/ 'Figma').
+Design is about much more than just making something pretty. A polished design should be fast, uncluttered, with high-quality graphics and media.
 
-Step one to creating beautiful interfaces is designing mockups and/or interactive prototypes using design software. From these designs, ideas and solutions are developed to promote the best user experience.
+Potential code challenges should be considered, encouraging modularity and scalability for rapid development. In essence, designs should be thoughtful, reactive and engaging, and promote a positive user experience.
+
+This, of course, is the objective.
+
+For the past 15 years, I have focused my efforts on mastering industry design tools such as [Photoshop](https://www.adobe.com/products/photoshop.html 'Adobe Photoshop'), [Adobe XD](https://www.adobe.com/products/xd.html 'Adobe XD'), and now [Figma](https://www.figma.com/ 'Figma'). My proficiency allows me to focus on design requirements without being destracted by software complexities or limitations.
 
 ![Color Harmonies](./color-harmony.png 'Color Harmonies')
 
-In addition to user interface design, my skills expanded into high-end retouching, photo manipulation, color correction, and color grading.
+**_Colors matter._**
 
-I've developed a professional eye for image processing and color using tools such as [Capture One](https://www.captureone.com/en 'Capture One') and [Lightroom](https://www.adobe.com/products/photoshop-lightroom.html 'Adobe Lightroom'). This has become invaluable for developing brand color harmonies, theming, and color matching for digital media.
+Each one can invoke a different reaction. How colors relate to each other can also conjure up a sub-concious response.
+
+Fortunately, I have a background in photography and photo manipulation, where I've been able to cultivate a strong grasp of color theory. This insight is invaluable for producing pleasing color harmonies, develop branding, or creating new graphics.
+
+Through my image processing experience, I have developed a professional eye using tools such as [Capture One](https://www.captureone.com/en 'Capture One') and [Lightroom](https://www.adobe.com/products/photoshop-lightroom.html 'Adobe Lightroom').
