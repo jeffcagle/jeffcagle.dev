@@ -37,23 +37,6 @@ function NavFloating({ menu }: MenuProps) {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const handleMenuIcon = (index: number) => {
-    switch (index) {
-      case 0:
-        return <FontAwesomeIcon icon={faCode} size="1x" />;
-      case 1:
-        return <FontAwesomeIcon icon={faLaptopCode} size="1x" />;
-      case 2:
-        return <FontAwesomeIcon icon={faBlog} size="1x" />;
-      case 3:
-        return <FontAwesomeIcon icon={faUserAstronaut} size="1x" />;
-      case 4:
-        return <FontAwesomeIcon icon={faIdCard} size="1x" />;
-      default:
-        return <FontAwesomeIcon icon={faCode} size="1x" />;
-    }
-  };
-
   return (
     <FloatingNav>
       <Nav>
@@ -63,7 +46,6 @@ function NavFloating({ menu }: MenuProps) {
               <FontAwesomeIcon icon={faHome} size="1x" /> <span>Home</span>
             </MenuLink>
           </MenuItem>
-
           {menu.map((menuItem: MenuItemProps, index: number) => (
             <MenuItem key={menuItem.id}>
               <MenuLink to={menuItem.slug}>
@@ -75,6 +57,23 @@ function NavFloating({ menu }: MenuProps) {
       </Nav>
     </FloatingNav>
   );
+}
+
+function handleMenuIcon(index: number) {
+  switch (index) {
+    case 0:
+      return <FontAwesomeIcon icon={faCode} size="1x" />;
+    case 1:
+      return <FontAwesomeIcon icon={faLaptopCode} size="1x" />;
+    case 2:
+      return <FontAwesomeIcon icon={faBlog} size="1x" />;
+    case 3:
+      return <FontAwesomeIcon icon={faUserAstronaut} size="1x" />;
+    case 4:
+      return <FontAwesomeIcon icon={faIdCard} size="1x" />;
+    default:
+      return <FontAwesomeIcon icon={faCode} size="1x" />;
+  }
 }
 
 const FloatingNav = styled.div`
@@ -148,8 +147,8 @@ const MenuLink = styled(Link)`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: ${props => props.theme.colors.neutral700};
-  color: ${props => props.theme.colors.neutral400};
+  background-color: ${props => props.theme.colors.secondary};
+  box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.1);
   padding: 0.2rem 1rem;
   height: 50px;
   width: 50px;
@@ -165,7 +164,7 @@ const MenuLink = styled(Link)`
   }
 
   svg {
-    color: ${props => props.theme.colors.neutral400};
+    color: ${props => props.theme.colors.neutral150};
   }
 
   &:hover {
