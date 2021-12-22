@@ -46,7 +46,7 @@ function ListServices({ exclude = [], unstyled = false }: ListServicesProps) {
   return (
     <Row>
       {services.map((service: ServiceProps) => (
-        <Column mediumWidth={50} largeWidth={50}>
+        <Column mediumWidth={50} largeWidth={50} key={service.id}>
           <Service
             to={`/services/${service.frontmatter.slug}`}
             title={service.frontmatter.shortTitle}
