@@ -7,7 +7,7 @@ interface H2Props {
 }
 
 interface SectionItemProps extends H2Props {
-  alt?: boolean;
+  light?: boolean;
 }
 interface SectionProps extends SectionItemProps {
   h2?: string;
@@ -24,9 +24,9 @@ interface SectionProps extends SectionItemProps {
  * @param flex Optional flexbox for section content.
  * @returns A section element.
  */
-export function Section({ h2, centered, flex, children, alt }: SectionProps) {
+export function Section({ h2, centered, flex, children, light }: SectionProps) {
   return (
-    <SectionItem alt={alt}>
+    <SectionItem light={light}>
       <SectionContainer flex={flex}>
         {h2 && (
           <Title centered={centered}>
@@ -43,7 +43,7 @@ const SectionItem = styled.section<SectionItemProps>`
   margin-top: 3rem;
 
   ${props =>
-    props.alt &&
+    props.light &&
     `
     background-color: ${props.theme.colors.neutral700};
     padding:2rem 0 3rem 0;
