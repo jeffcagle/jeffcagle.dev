@@ -96,6 +96,7 @@ const Btn = styled(Link)<ButtonProps>`
   font-size: 1rem;
   line-height: 1.8;
   cursor: pointer;
+  border-radius: 5px;
 
   @media only screen and ${breakpoint.device.small} {
     display: flex;
@@ -146,6 +147,7 @@ const BtnExternal = styled.a<BtnExternalProps>`
   font-size: 1rem;
   line-height: 1.8;
   cursor: pointer;
+  border-radius: 5px;
 
   @media only screen and ${breakpoint.device.small} {
     display: flex;
