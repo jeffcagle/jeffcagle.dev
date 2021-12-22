@@ -148,6 +148,7 @@ const MenuLink = styled(Link)`
   justify-content: center;
   align-items: center;
   background-color: ${props => props.theme.colors.secondary};
+  color: ${props => props.theme.colors.secondary};
   box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.1);
   padding: 0.2rem 1rem;
   height: 50px;
@@ -171,9 +172,10 @@ const MenuLink = styled(Link)`
     width: auto;
     max-width: 150px;
     justify-content: flex-start;
+    color: ${props => props.theme.colors.neutral150};
 
     span {
-      opacity: 0.8;
+      opacity: 1;
       display: block;
       margin-left: 0.6rem;
     }
@@ -182,78 +184,6 @@ const MenuLink = styled(Link)`
 
 const MenuItem = styled.li`
   margin-bottom: 0.3rem;
-
-  &:nth-child(1) {
-    ${MenuLink}:hover {
-      background-color: ${props => props.theme.colors.secondary};
-      color: ${props => props.theme.colors.neutral100};
-
-      svg {
-        color: ${props => props.theme.colors.neutral100};
-        justify-self: left;
-      }
-    }
-  }
-
-  &:nth-child(2) {
-    ${MenuLink}:hover {
-      background-color: ${props => props.theme.colors.accent1};
-      color: ${props => props.theme.colors.neutral100};
-
-      svg {
-        color: ${props => props.theme.colors.neutral100};
-        justify-self: left;
-      }
-    }
-  }
-
-  &:nth-child(3) {
-    ${MenuLink}:hover {
-      background-color: ${props => props.theme.colors.primary};
-      color: ${props => props.theme.colors.jsToolFont};
-
-      svg {
-        color: ${props => props.theme.colors.jsToolFont};
-        justify-self: left;
-      }
-    }
-  }
-
-  &:nth-child(4) {
-    ${MenuLink}:hover {
-      background-color: ${props => props.theme.colors.secondary};
-      color: ${props => props.theme.colors.neutral100};
-
-      svg {
-        color: ${props => props.theme.colors.neutral100};
-        justify-self: left;
-      }
-    }
-  }
-
-  &:nth-child(5) {
-    ${MenuLink}:hover {
-      background-color: ${props => props.theme.colors.accent1};
-      color: ${props => props.theme.colors.neutral100};
-
-      svg {
-        color: ${props => props.theme.colors.neutral100};
-        justify-self: left;
-      }
-    }
-  }
-
-  &:nth-child(6) {
-    ${MenuLink}:hover {
-      background-color: ${props => props.theme.colors.primary};
-      color: ${props => props.theme.colors.jsToolFont};
-
-      svg {
-        color: ${props => props.theme.colors.jsToolFont};
-        justify-self: left;
-      }
-    }
-  }
 `;
 
 export default NavFloating;
