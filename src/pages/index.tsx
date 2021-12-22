@@ -10,6 +10,7 @@ import HeroBar from '../components/shared/HeroBar';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import '@fortawesome/fontawesome-svg-core/styles.css';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import ListServices from '../components/lists/ListServices';
 import ListProjects from '../components/lists/ListProjects';
 import Seo from '../components/shared/Seo';
 import { graphql, Link } from 'gatsby';
@@ -71,7 +72,13 @@ function Index({ data }: IndexProps) {
           </Box>
         </Box>
       </HeroBar>
-      <Section h2="Current Projects">
+      <Section h2="My Services" centered>
+        <ListServices exclude={['WordPress']} />
+        <Button variant="primary" centered to="/services" mt={1}>
+          All Services
+        </Button>
+      </Section>
+      <Section h2="Current Projects" centered>
         <ListProjects exclude={['JeffCagle.dev']} />
         <Button variant="primary" centered to="/projects" mt={1}>
           All Projects
