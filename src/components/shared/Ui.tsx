@@ -5,7 +5,11 @@ import breakpoint from '../../styles/breakpoints';
 interface H2Props {
   centered?: boolean;
 }
-interface SectionProps extends H2Props {
+
+interface SectionItemProps extends H2Props {
+  alt?: boolean;
+}
+interface SectionProps extends SectionItemProps {
   h2?: string;
   flex?: boolean;
   children?: React.ReactNode;
@@ -20,9 +24,9 @@ interface SectionProps extends H2Props {
  * @param flex Optional flexbox for section content.
  * @returns A section element.
  */
-export function Section({ h2, centered, flex, children }: SectionProps) {
+export function Section({ h2, centered, flex, children, alt }: SectionProps) {
   return (
-    <SectionItem>
+    <SectionItem alt={alt}>
       <SectionContainer flex={flex}>
         {h2 && (
           <Title centered={centered}>
@@ -35,8 +39,17 @@ export function Section({ h2, centered, flex, children }: SectionProps) {
   );
 }
 
-const SectionItem = styled.section`
+const SectionItem = styled.section<SectionItemProps>`
   margin-top: 3rem;
+
+  ${props =>
+    props.alt &&
+    `
+    background-color: ${props.theme.colors.neutral700};
+    padding:2rem 0 3rem 0;
+    border-bottom: 2px solid ${props.theme.colors.neutral600};
+    border-top: 2px solid ${props.theme.colors.neutral600};
+  `}
 `;
 
 const SectionContainer = styled.div<SectionProps>`
