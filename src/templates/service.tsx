@@ -162,6 +162,11 @@ const Explore = styled.span`
 const MoreButtons = styled.div`
   margin-bottom: 2rem;
 
+  @media only screen and ${breakpoint.device.medium} {
+    display: flex;
+    align-items: center;
+  }
+
   a:first-of-type {
     @media only screen and ${breakpoint.device.small} {
       margin-bottom: 2rem;
