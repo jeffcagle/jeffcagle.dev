@@ -129,7 +129,7 @@ const Circle = styled.div`
     ),
     ${props => props.theme.colors.neutral700};
   background-size: 5px 5px;
-  border: 2px solid ${props => props.theme.colors.neutral700};
+  border: 2px solid ${props => props.theme.colors.neutral600};
   border-radius: 9999px;
   display: flex;
   justify-content: center;
