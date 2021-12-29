@@ -82,7 +82,13 @@ function Contact() {
                 </Icon>
                 <OptionDetails>
                   <span>LinkedIn</span>
-                  <a href="/">My LinkedIn Profile</a>
+                  <a
+                    href="https://www.linkedin.com/in/jeffccagle/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    My LinkedIn Profile
+                  </a>
                 </OptionDetails>
               </Option>
               <Option>
@@ -91,7 +97,13 @@ function Contact() {
                 </Icon>
                 <OptionDetails>
                   <span>GitHub</span>
-                  <a href="/">My GitHub Page</a>
+                  <a
+                    href="https://github.com/jeffcagle"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    My GitHub Page
+                  </a>
                 </OptionDetails>
               </Option>
             </ContactOptions>

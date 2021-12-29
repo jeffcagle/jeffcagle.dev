@@ -20,7 +20,12 @@ function ListBooks() {
     <Row mt={3}>
       {books.map((book: BookProps) => (
         <Column key={book.id} mediumWidth={33.333} largeWidth={20}>
-          <Book href={book.amazonUrl} target="_blank" title={book.title}>
+          <Book
+            href={book.amazonUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            title={book.title}
+          >
             <Image>
               {
                 // @ts-ignore

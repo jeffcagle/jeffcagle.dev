@@ -62,6 +62,7 @@ function Button({
         variant={variant}
         href={to}
         target="_blank"
+        rel="noopener noreferrer"
         disabled={disabled}
       >
         {children}

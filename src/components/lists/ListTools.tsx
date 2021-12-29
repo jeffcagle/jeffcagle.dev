@@ -69,7 +69,11 @@ function ListTools({ startText = '', items, unstyled, mb }: ToolListProps) {
                 </ToolName>
                 <ToolDesc>{tool.desc}</ToolDesc>
               </ToolText>
-              <ToolUrl href={tool.url} target="_blank">
+              <ToolUrl
+                href={tool.url}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 {tool.url}
               </ToolUrl>
             </ToolDetails>

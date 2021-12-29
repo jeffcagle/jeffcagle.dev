@@ -25,7 +25,12 @@ function ListExperiments() {
     <ExperimentGroup>
       {experiments.map((experiment: ExperimentProps) => (
         <Experiment key={experiment.id}>
-          <a href={experiment.url} title="Chat App" target="_blank">
+          <a
+            href={experiment.url}
+            title="Chat App"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <FontAwesomeIcon icon={faFlask} size="xs" /> {experiment.name}
           </a>
         </Experiment>

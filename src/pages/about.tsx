@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { graphql } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import ListTools from '../components/lists/ListTools';
 import { Box, Section } from '../components/shared/Ui';
@@ -34,17 +34,25 @@ function About({ data }: AboutProps) {
         <Row>
           <Column mediumWidth={50}>
             <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-              Molestias aut, repellat ipsum facere voluptate dicta obcaecati
-              deserunt nobis suscipit eaque. Lorem, ipsum dolor sit amet
-              consectetur adipisicing elit. Molestias aut, repellat ipsum facere
-              voluptate dicta obcaecati deserunt nobis suscipit eaque.
+              I am a freelance{' '}
+              <Link to="/services/freelance-javascript-developer">
+                JavaScript Developer
+              </Link>{' '}
+              and{' '}
+              <Link to="/services/freelance-ux-designer-usa">UX Designer</Link>{' '}
+              from the USA who has been working in the industry for more than 15
+              years.
             </p>
             <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-              Molestias aut, repellat ipsum facere voluptate dicta obcaecati
-              deserunt nobis suscipit eaque.
+              I love learning the latest libraries, languages, and frameworks,
+              experimenting with new tools, and building cool apps.
             </p>
+            <p>
+              I have a strong interest in networking, cybersecurity, and systems
+              architecture. I like to build virtual testing labs at home to
+              break and discover new things.
+            </p>
+            <p>I am partial to Linux - specifically Kali and Ubuntu.</p>
           </Column>
           <Column mediumWidth={50}>
             <Box flex justifyRight>

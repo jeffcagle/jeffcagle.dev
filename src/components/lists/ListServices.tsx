@@ -33,7 +33,6 @@ interface ListServicesProps {
  */
 function ListServices({ exclude = [], unstyled = false }: ListServicesProps) {
   const { allMarkdownRemark } = useStaticQuery(query);
-  // const services = allMarkdownRemark.nodes;
 
   const services = allMarkdownRemark.nodes.filter(
     (service: ServiceProps) => !exclude.includes(service.frontmatter.shortTitle)
