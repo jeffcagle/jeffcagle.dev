@@ -18,7 +18,7 @@ siteUnavailable: true
 
 ![Spotify Redux Design](./spotify-redux-main.jpg 'Website Design - Spotify + Redux')
 
-Spotify is an virtual music library and player, available as a desktop application, on the web, or as a mobile app. Like many apps these days, they have an API service for developers.
+Spotify is a virtual music library and player, available as a desktop application, on the web, or as a mobile app. Like many apps these days, they have an API service for developers.
 
 I had been wanting to learn [Redux](https://redux.js.org/ 'Redux'), a popular state management library, and needed a project. Something fun to build. Rebuilding Spotify with Redux seemed the perfect fit.
 

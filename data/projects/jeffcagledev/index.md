@@ -30,4 +30,4 @@ I decided to host this site on [Netlify](https://www.netlify.com/ 'Netlify') for
 
 ![Color Palette](./palette.jpg 'My Color Palette')
 
-As a JavaScript developer, I wanted emphasize all things JavaScript on my site. To do this, my color pallette was designed around the yellow of the JavaScript brand. This would be my primary color. In order to make sure the yellow stood out, all complimentary colors needed to be on the cooler side of the color wheel.
+As a JavaScript developer, I wanted to emphasize all things JavaScript on my site. To do this, my color pallette was designed around the yellow of the JavaScript brand. This would be my primary color. In order to make sure the yellow stood out, all complimentary colors needed to be on the cooler side of the color wheel.
