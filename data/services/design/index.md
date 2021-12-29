@@ -6,10 +6,10 @@ shortTitle: 'Design & UX'
 longTitle: 'Freelance UI / UX Designer'
 summary: 'Elegant interface design for modern mobile and web applications.'
 tools: ['Figma', 'Photoshop', 'Adobe XD', 'Lightroom', 'Capture One']
-image: './design.png'
+image: './ux-design.jpg'
 ---
 
-![UX Design](./web-design.png 'UX Design by Jeff Cagle')
+![UX Design](./ux-design.jpg 'UX Design by Jeff Cagle')
 
 ## All great applications begin with great designs.
 
@@ -19,13 +19,13 @@ Potential code challenges should be considered, encouraging modularity and scala
 
 This, of course, is the objective.
 
-For the past 15 years, I have focused my efforts on mastering industry design tools such as [Photoshop](https://www.adobe.com/products/photoshop.html 'Adobe Photoshop'), [Adobe XD](https://www.adobe.com/products/xd.html 'Adobe XD'), and now [Figma](https://www.figma.com/ 'Figma'). My proficiency allows me to focus on design requirements without being destracted by software complexities or limitations.
+For the past 15 years, I have focused my efforts on mastering industry design tools such as [Photoshop](https://www.adobe.com/products/photoshop.html 'Adobe Photoshop'), [Adobe XD](https://www.adobe.com/products/xd.html 'Adobe XD'), and now [Figma](https://www.figma.com/ 'Figma'). My proficiency allows me to focus on design requirements without being distracted by software complexities or limitations.
 
-![Color Harmonies](./color-harmony.png 'Color Harmonies')
+## Color
 
-**_Colors matter._**
+![Color Palette for this Website](./palette.jpg 'Color Harmonies')
 
-Each one can invoke a different reaction. How colors relate to each other can also conjure up a sub-concious response.
+**_Colors matter._** Each one can invoke a different reaction. How colors relate to each other can also conjure up a subconscious response.
 
 Fortunately, I have a background in photography and photo manipulation, where I've been able to cultivate a strong grasp of color theory. This insight is invaluable for producing pleasing color harmonies, develop branding, or creating new graphics.
 

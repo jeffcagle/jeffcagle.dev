@@ -88,6 +88,10 @@ const GlobalStyle = createGlobalStyle`
     a {
       color: ${props => props.theme.colors.primary}
     }
+
+    h2 {
+      margin-top:3rem;
+    }
   }
 
   .card {
@@ -120,17 +124,37 @@ const GlobalStyle = createGlobalStyle`
   }
 
   blockquote {
-    text-align:center;
+    background: ${props => props.theme.colors.neutral700};
     color: ${props => props.theme.colors.neutral300};
-    font-weight: bold;
     font-size:1.6rem;
     font-style: italic;
+    font-weight:bold;
+    text-align:center;
+    margin:2rem 0;
+    padding:1rem;
+    border-radius:5px;
+
+    p {
+      line-height:2.2rem;
+    }
 
     cite {
       font-size:1rem;
       color: ${props => props.theme.colors.neutral400};
       font-style: normal;
       font-weight: normal;
+    }
+  }
+
+  pre {
+    background-color: ${props => props.theme.colors.neutral700};
+    border: 1px dashed ${props => props.theme.colors.neutral550};
+    padding:2rem;
+    border-radius:5px;
+    margin:2rem 0;
+
+    code {
+      color: ${props => props.theme.colors.neutral400};
     }
   }
 `;

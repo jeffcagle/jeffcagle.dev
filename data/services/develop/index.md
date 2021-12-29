@@ -6,15 +6,35 @@ shortTitle: 'Web Developer'
 longTitle: 'Freelance Web Developer'
 summary: 'Lightning fast applications using modern web frameworks.'
 tools: ['HTML5', 'CSS3', 'SASS', 'JavaScript', 'React', 'jQuery', 'WordPress']
-image: './cl-main.png'
+image: './web-development.jpg'
 ---
 
-![Web Developer](./web-design.png 'Web Developer Jeff Cagle')
+![Web Designs](./web-development.jpg 'Web Developer Jeff Cagle')
 
-As a freelance front-end <span>web developer</span>, I create custom website applications for clients around the globe.
+I build fast and responsive websites using modern frameworks such as [React](https://reactjs.org/ 'React'), [Next.js](https://nextjs.org/ 'Next.js'), [Gatsby](https://www.gatsbyjs.com/ 'Gatsby'), and [Svelte](https://svelte.dev/ 'Svelte'). I have more than 15 years of Web Developer experience, and love what I do.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad. Adipiscing elit, sed do eiusmod tempor [incididunt](/freelance-ux-designer-usa/ 'Designer') ut labore et dolore magna aliqua ut enim ad.
+## Design & UX
 
-Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad.
+Using design software such as [Figma](https://www.figma.com/ 'Figma') and [Photoshop](https://www.adobe.com/ 'Photoshop'), I can create modern web and mobile applications for any market.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad.
+[My Design Services](/services/freelance-ux-designer-usa 'My Design Services')
+
+## JavaScript
+
+I build JavaScript full-stack apps, single page apps, and JAMStack static sites using a variety of modern libraries and frameworks.
+
+[My JavaScript Services](/services/freelance-javascript-developer 'My JavaScript Services')
+
+## WordPress
+
+I can create custom WordPress themes and websites, as well as a custom admin experience in the WordPress CMS.
+
+[My WordPress Services](/services/freelance-wordpress-developer 'My WordPress Services')
+
+## HTML/CSS
+
+I build mobile-first accessible websites using HTML5 and CSS3, along with libraries and preprocessors like [SASS](https://sass-lang.com/ 'SASS'), [Tailwind](https://tailwindcss.com/ 'Tailwind'), and [Styled Components](https://www.styled-components.com/ 'Styled Components').
+
+[My HTML/CSS Services](/services/html-css-website-design 'My HTML/CSS Services')
+
+If you have a project and would like to discuss it further, feel free to contact me [here](/contact 'Contact Me').

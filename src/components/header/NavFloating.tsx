@@ -66,10 +66,8 @@ function handleMenuIcon(index: number) {
     case 1:
       return <FontAwesomeIcon icon={faLaptopCode} size="1x" />;
     case 2:
-      return <FontAwesomeIcon icon={faBlog} size="1x" />;
-    case 3:
       return <FontAwesomeIcon icon={faUserAstronaut} size="1x" />;
-    case 4:
+    case 3:
       return <FontAwesomeIcon icon={faIdCard} size="1x" />;
     default:
       return <FontAwesomeIcon icon={faCode} size="1x" />;

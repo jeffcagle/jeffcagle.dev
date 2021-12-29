@@ -8,55 +8,50 @@ longTitle: 'Spotify Redux'
 summary: 'A re-creation of the Spotify Web App using React with Redux.'
 frontendTools: ['HTML5', 'JavaScript', 'React', 'Redux', 'SASS']
 backendTools: ['Firebase', 'Spotify API']
-image: './spotify-redux.jpg'
+image: './spotify-redux-cover.jpg'
 
 codeUrl: 'https://www.github.com'
-codeUnavailable: false
+codeUnavailable: true
 siteUrl: 'https://spotifyredux.jeffcagle.dev'
-siteUnavailable: false
+siteUnavailable: true
 ---
 
-## Design
+![Spotify Redux Design](./spotify-redux-main.jpg 'Website Design - Spotify + Redux')
 
-<div class="row">
-<div class="column six">
+Spotify is an virtual music library and player, available as a desktop application, on the web, or as a mobile app. Like many apps these days, they have an API service for developers.
 
-### Lorem ipsum dolor sit amet, consectetur adipiscing elit
+I had been wanting to learn [Redux](https://redux.js.org/ 'Redux'), a popular state management library, and needed a project. Something fun to build. Rebuilding Spotify with Redux seemed the perfect fit.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+And so the project began.
 
-Duis aute irure dolor in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+The big question was, do I build it exactly as it is in the real Spotify app? Do I re-design it? Ultimately, I decided to make only minor changes to the design, so as not to be distracted from the primary objective - to learn Redux.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+## Redux Toolkit
 
-[Spotify API](/) - [Redux Toolkit](/)
+In addition to learning Redux, I decided to include the [Redux Toolkit](/ 'Redux Toolkit'). This library helps to reduce boilerplate code generally required by Redux, and simplify the complexities Redux is known for.
 
-</div>
-<div class="column six">
+Here is a code example using the Redux Toolkit's createSlice function.
 
-![Spotify Redux](./spotify-2.webp)
+```javascript
+const postsSlice = createSlice({
+  name: 'posts',
+  initialState: [],
+  reducers: {
+    createPost(state, action) {},
+    updatePost(state, action) {},
+    deletePost(state, action) {},
+  },
+});
 
-</div>
+const { actions, reducer } = postsSlice;
+export const { createPost, updatePost, deletePost } = actions;
+export default reducer;
+```
 
-</div>
+Redux Toolkit not only allows you to include reducers and actions in the same file, but makes it much cleaner and easier to read.
 
-<div class="row">
-<div class="column six">
+## API Limitations
 
-![Spotify Redux](./spotify-mobile.jpeg)
+There is a limitation on the number of requests to the API, so this meant disabling features like the track slider.
 
-</div>
-<div class="column six">
-
-### Lorem ipsum dolor sit amet, consectetur adipiscing elit
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-
-</div>
-</div>
-
-## Development
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+**_NOTE: To view the app, you must have a [free Spotify account](https://www.spotify.com/signup/ 'Spotify')._**

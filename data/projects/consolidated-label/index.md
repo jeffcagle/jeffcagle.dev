@@ -5,10 +5,10 @@ templateKey: 'projects'
 slug: 'modern-wordpress-website'
 shortTitle: 'Consolidated Label'
 longTitle: 'Consolidated Label WordPress Website'
-summary: 'A brochure & client portal website with 25k+ monthly unique visitors.'
+summary: 'A brochure & client portal website with over 25k+ monthly visitors.'
 frontendTools: ['HTML5', 'JavaScript', 'jQuery', 'SASS']
 backendTools: ['WordPress', 'PHP', 'MySQL', 'Linux']
-image: './cl-main.png'
+image: './cl-cover.jpg'
 
 codeUrl: 'https://www.github.com'
 codeUnavailable: true
@@ -16,56 +16,18 @@ siteUrl: 'https://consolidatedlabel.com'
 siteUnavailable: false
 ---
 
-![This is the alt tag](./cl-main.png 'This is the title')
+![Main Website Design for Consolidated Label](./cl-main.jpg 'Website Design - Consolidated Label')
 
-## Heading 2
+Consolidated Label is one of the top product label producers in the United States, serving customers for over 30 years. Their website functions as a brochure for labeling services, as well as a client portal for ordering and processing.
 
-Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorem
-officiis corrupti velit incidunt beatae commodi odio sed iusto in
-nihil! Natus sequi quas temporibus ex et, saepe debitis quae? Sequi.
-Fugit error assumenda voluptates!
+They are family owned and operated, along with their sister company, [Online Labels](https://www.onlinelabels.com 'Online Labels').
 
-### Heading 3
+## My Responsibilities
 
-Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorem
-officiis corrupti velit incidunt beatae commodi odio sed iusto in
-nihil! Natus sequi quas temporibus ex et, saepe debitis quae?
+> "Working with Jeff is a pleasure. He's always up for a new challenge."
+>
+> <cite>- Gregg Step | Marketing Manager</cite>
 
-Here is some **bold text**.
+As the lead website developer for nearly a decade, I was responsible for everything from design and development, to server provisioning and deployment. I setup and managed multiple website instances and databases across testing and production servers, and kept their servers up to date and secure.
 
-Here is some _italic text_.
-
-Here is some **_bold & italic text_**.
-
-Here is a [link](https://www.google.com 'Here is a link title')
-
-Turn email into link <jeff@jeffcagle.dev>
-
-Here is a linked image:
-
-[![This is the alt tag](./cl-main.png 'This is the title')](https://www.google.com)
-
-> Here is a block quote.
-
-Here is an ordered list:
-
-1. Item 1
-2. Item 2
-3. Item 3
-
-Here is an unordered list:
-
-- Item A
-- Item B
-- Item C
-
-Here is some code:
-
-`<div>Something</div>`
-
-Here is a code block:
-
-    <html>
-      <head>
-      </head>
-    </html>
+I also created custom admin tools for the content and marketing team and developed a modular, _component-like_, template system for rapid theme development.
