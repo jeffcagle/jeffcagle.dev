@@ -69,7 +69,7 @@ module.exports = {
               withWebp: true,
               loading: `lazy`,
               linkImagesToOriginal: false,
-              quality: 50,
+              quality: 70,
             },
           },
           {
