@@ -10,11 +10,6 @@
     "hasSubMenu": true
   },
   {
-    "name": "Blog",
-    "slug": "/blog",
-    "hasSubMenu": false
-  },
-  {
     "name": "About",
     "slug": "/about",
     "hasSubMenu": false

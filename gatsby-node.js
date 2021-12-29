@@ -6,8 +6,8 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const serviceTemplate = path.resolve('./src/templates/service.tsx');
   const projectTemplate = path.resolve('./src/templates/project.tsx');
-  const blogPostTemplate = path.resolve('./src/templates/blogPost.tsx');
-  const blogListTemplate = path.resolve('./src/templates/blogList.tsx');
+  // const blogPostTemplate = path.resolve('./src/templates/blogPost.tsx');
+  // const blogListTemplate = path.resolve('./src/templates/blogList.tsx');
 
   const servicesResult = await graphql(
     `
@@ -47,24 +47,24 @@ exports.createPages = async ({ graphql, actions }) => {
     `
   );
 
-  const blogPostsResult = await graphql(
-    `
-      {
-        allMarkdownRemark(
-          filter: { frontmatter: { templateKey: { in: "blog" } } }
-          sort: { fields: [frontmatter___date], order: DESC }
-          limit: 1000
-        ) {
-          nodes {
-            id
-            frontmatter {
-              slug
-            }
-          }
-        }
-      }
-    `
-  );
+  // const blogPostsResult = await graphql(
+  //   `
+  //     {
+  //       allMarkdownRemark(
+  //         filter: { frontmatter: { templateKey: { in: "blog" } } }
+  //         sort: { fields: [frontmatter___date], order: DESC }
+  //         limit: 1000
+  //       ) {
+  //         nodes {
+  //           id
+  //           frontmatter {
+  //             slug
+  //           }
+  //         }
+  //       }
+  //     }
+  //   `
+  // );
 
   const services = servicesResult.data.allMarkdownRemark.nodes;
   const projects = projectsResult.data.allMarkdownRemark.nodes;
@@ -101,36 +101,36 @@ exports.createPages = async ({ graphql, actions }) => {
     });
   });
 
-  const blogPosts = blogPostsResult.data.allMarkdownRemark.nodes;
-  const postsPerPage = 9;
-  const numberOfPages = Math.ceil(blogPosts.length / postsPerPage);
+  // const blogPosts = blogPostsResult.data.allMarkdownRemark.nodes;
+  // const postsPerPage = 9;
+  // const numberOfPages = Math.ceil(blogPosts.length / postsPerPage);
 
-  Array.from({ length: numberOfPages }).forEach((_, index) => {
-    createPage({
-      path: index === 0 ? '/blog' : `/blog/${index + 1}`,
-      component: blogListTemplate,
-      context: {
-        limit: postsPerPage,
-        skip: index * postsPerPage,
-        numberOfPages,
-        currentPage: index + 1,
-      },
-    });
-  });
+  // Array.from({ length: numberOfPages }).forEach((_, index) => {
+  //   createPage({
+  //     path: index === 0 ? '/blog' : `/blog/${index + 1}`,
+  //     component: blogListTemplate,
+  //     context: {
+  //       limit: postsPerPage,
+  //       skip: index * postsPerPage,
+  //       numberOfPages,
+  //       currentPage: index + 1,
+  //     },
+  //   });
+  // });
 
-  blogPosts.forEach((post, index) => {
-    const previousPostId = index === 0 ? null : blogPosts[index - 1].id;
-    const nextPostId =
-      index === blogPosts.length - 1 ? null : blogPosts[index + 1].id;
+  // blogPosts.forEach((post, index) => {
+  //   const previousPostId = index === 0 ? null : blogPosts[index - 1].id;
+  //   const nextPostId =
+  //     index === blogPosts.length - 1 ? null : blogPosts[index + 1].id;
 
-    createPage({
-      path: `/blog/${post.frontmatter.slug}`,
-      component: blogPostTemplate,
-      context: {
-        id: post.id,
-        previousPostId,
-        nextPostId,
-      },
-    });
-  });
+  //   createPage({
+  //     path: `/blog/${post.frontmatter.slug}`,
+  //     component: blogPostTemplate,
+  //     context: {
+  //       id: post.id,
+  //       previousPostId,
+  //       nextPostId,
+  //     },
+  //   });
+  // });
 };

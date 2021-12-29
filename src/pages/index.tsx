@@ -61,11 +61,19 @@ function Index({ data }: IndexProps) {
           <Box mt={1.5} mb={0.5}>
             <FindMe>
               <span>Find me on:</span>
-              <Social href={dev.social.gitHub} target="_blank">
+              <Social
+                href={dev.social.gitHub}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <FontAwesomeIcon icon={faGithub} size="1x" /> GitHub
               </Social>
               &middot;
-              <Social href={dev.social.linkedIn} target="_blank">
+              <Social
+                href={dev.social.linkedIn}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <FontAwesomeIcon icon={faLinkedin} size="1x" /> LinkedIn
               </Social>
             </FindMe>
@@ -87,13 +95,13 @@ function Index({ data }: IndexProps) {
 
       <Section>
         <Row>
-          <Column title="Experiments" mediumWidth={50}>
+          <Column title="Experiments" mediumWidth={100}>
             <ListExperiments />
           </Column>
-          <Column title="Dev Blog" mediumWidth={50}>
+          {/* <Column title="Dev Blog" mediumWidth={50}>
             <ListPosts />
             <Link to="/blog">All Posts &raquo;</Link>
-          </Column>
+          </Column> */}
         </Row>
       </Section>
     </>

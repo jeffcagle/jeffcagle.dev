@@ -8,6 +8,7 @@ import { Link, useStaticQuery, graphql } from 'gatsby';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import '@fortawesome/fontawesome-svg-core/styles.css';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import ListExperiments from '../lists/ListExperiments';
 
 /**
  *
@@ -33,6 +34,7 @@ function Footer() {
                       href={dev.social.gitHub}
                       title="GitHub"
                       target="_blank"
+                      rel="noopener noreferrer"
                     >
                       <FontAwesomeIcon icon={faGithub} size="1x" />
                     </Icon>
@@ -40,6 +42,7 @@ function Footer() {
                       href={dev.social.linkedIn}
                       title="LinkedIn"
                       target="_blank"
+                      rel="noopener noreferrer"
                     >
                       <FontAwesomeIcon icon={faLinkedin} size="1x" />
                     </Icon>
@@ -49,11 +52,19 @@ function Footer() {
               <li>
                 <p>
                   Find me on{' '}
-                  <a href={dev.social.gitHub} target="_blank">
+                  <a
+                    href={dev.social.gitHub}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     GitHub
                   </a>{' '}
                   &amp;{' '}
-                  <a href={dev.social.linkedIn} target="_blank">
+                  <a
+                    href={dev.social.linkedIn}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     LinkedIn
                   </a>
                   , or contact me via <Link to="/contact">email</Link>.
@@ -66,8 +77,8 @@ function Footer() {
             <ListServices unstyled />
           </Column>
           <Column mediumWidth={33.333} largeWidth={50}>
-            <h3>Latest Dev Blog</h3>
-            <ListPosts />
+            <h3>Latest Experiments</h3>
+            <ListExperiments />
           </Column>
         </Row>
       </FooterContainer>
