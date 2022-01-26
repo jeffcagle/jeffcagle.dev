@@ -6,7 +6,7 @@ slug: 'spotify-react-redux'
 shortTitle: 'Spotify Redux'
 longTitle: 'Spotify Redux'
 summary: 'A re-creation of the Spotify Web App using React with Redux.'
-frontendTools: ['HTML5', 'JavaScript', 'React', 'Redux', 'Tailwind']
+frontendTools: ['HTML5', 'JavaScript', 'Next.js', 'React', 'Redux', 'Tailwind']
 backendTools: ['Node', 'Spotify API']
 image: './spotify-redux-cover.jpg'
 
