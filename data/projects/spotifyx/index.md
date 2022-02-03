@@ -10,10 +10,10 @@ frontendTools: ['HTML5', 'JavaScript', 'Next.js', 'React', 'Redux', 'Tailwind']
 backendTools: ['Node', 'Spotify API']
 image: './spotify-redux-cover.jpg'
 
-codeUrl: 'https://www.github.com'
-codeUnavailable: true
-siteUrl: 'https://spotifyredux.jeffcagle.dev'
-siteUnavailable: true
+codeUrl: 'https://github.com/jeffcagle/spotify-redux'
+codeUnavailable: false
+siteUrl: 'https://spotify-redux-rho.vercel.app/'
+siteUnavailable: false
 ---
 
 ![Spotify Redux Design](./spotify-redux-main.jpg 'Website Design - Spotify + Redux')
