@@ -28,7 +28,7 @@ The big question was, do I build it exactly as it is in the real Spotify app? Do
 
 ## Redux Toolkit
 
-In addition to learning Redux, I decided to include the [Redux Toolkit](/ 'Redux Toolkit'). This library helps to reduce boilerplate code generally required by Redux, and simplify the complexities Redux is known for.
+In addition to learning Redux, I decided to include the [Redux Toolkit](https://redux-toolkit.js.org/ 'Redux Toolkit'). This library helps to reduce boilerplate code generally required by Redux, and simplify the complexities Redux is known for.
 
 Here is a code example using the Redux Toolkit's createSlice function.
 
