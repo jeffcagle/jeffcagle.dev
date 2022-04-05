@@ -236,5 +236,45 @@
     "toolColor": "accent2",
     "url": "https://www.netlify.com/",
     "icon": "./icons/icon-netlify.png"
+  },
+  {
+    "name": "Express",
+    "desc": "A back end web application framework for Node.js designed for building web applications and APIs.",
+    "skillLvl": 68,
+    "toolColor": "accent1",
+    "url": "https://expressjs.com/",
+    "icon": "./icons/icon-express.png"
+  },
+  {
+    "name": "Google Cloud",
+    "desc": "A suite of cloud computing services that runs on the same infrastructure that Google uses internally for its end-user products.",
+    "skillLvl": 52,
+    "toolColor": "accent3",
+    "url": "https://cloud.google.com/",
+    "icon": "./icons/icon-google-cloud.png"
+  },
+  {
+    "name": "React Router",
+    "desc": "A standard library for routing in React. It enables the navigation among views of various components in a React Application.",
+    "skillLvl": 75,
+    "toolColor": "accent1",
+    "url": "https://reactrouter.com/",
+    "icon": "./icons/icon-react-router.png"
+  },
+  {
+    "name": "Vercel",
+    "desc": "A cloud platform provider intended to optimize the development and deployment experience for frontend teams.",
+    "skillLvl": 64,
+    "toolColor": "accent2",
+    "url": "https://vercel.com/",
+    "icon": "./icons/icon-vercel.png"
+  },
+  {
+    "name": "Digital Ocean",
+    "desc": "A cloud infrastructure provider for developers, startups, and SMBs with cloud infrastructure-as-a-service platforms.",
+    "skillLvl": 52,
+    "toolColor": "accent1",
+    "url": "https://www.digitalocean.com/",
+    "icon": "./icons/icon-digital-ocean.png"
   }
 ]
