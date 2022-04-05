@@ -81,7 +81,7 @@ function Index({ data }: IndexProps) {
         </Box>
       </HeroBar>
       <Section h2="Current Projects" centered>
-        <ListProjects />
+        <ListProjects exclude={['JeffCagle.dev']} />
         <Button variant="primary" centered to="/projects" mt={1}>
           All Projects
         </Button>
