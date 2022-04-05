@@ -7,7 +7,7 @@ shortTitle: 'Consolidated Label'
 longTitle: 'Consolidated Label WordPress Website'
 summary: 'A brochure & client portal website with over 25k+ monthly visitors.'
 frontendTools: ['HTML5', 'JavaScript', 'jQuery', 'SASS']
-backendTools: ['WordPress', 'PHP', 'MySQL', 'Linux']
+backendTools: ['WordPress', 'PHP', 'MySQL', 'Digital Ocean']
 image: './cl-cover.jpg'
 
 codeUrl: 'https://www.github.com'
