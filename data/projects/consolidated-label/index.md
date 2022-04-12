@@ -24,9 +24,11 @@ They are family owned and operated, along with their sister company, [Online Lab
 
 ## My Responsibilities
 
-> "Working with Jeff is a pleasure. He's always up for a new challenge."
+![Figma design mock-ups](./cl-figma.png 'Figma design mock-ups')
+
+<!-- > "Working with Jeff is a pleasure. He's always up for a new challenge."
 >
-> <cite>- Gregg Step | Marketing Manager</cite>
+> <cite>- Gregg Step | Marketing Manager</cite> -->
 
 As the lead website developer for nearly a decade, I was responsible for everything from design and development, to server provisioning and deployment. I setup and managed multiple website instances and databases across testing and production servers, and kept their servers up to date and secure.
 
