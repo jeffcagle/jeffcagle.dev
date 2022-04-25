@@ -7,20 +7,7 @@ import { Row, Column } from '../components/shared/Columns';
 import ListBooks from '../components/lists/ListBooks';
 import Seo from '../components/shared/Seo';
 
-interface AboutProps {
-  data: {
-    allDevJson: {
-      nodes: [
-        {
-          name: string;
-          photos: string[];
-        }
-      ];
-    };
-  };
-}
-
-function About({ data }: AboutProps) {
+function About({ data }: About.Me) {
   const dev = data.allDevJson.nodes[0];
 
   return (

@@ -2,19 +2,6 @@ import * as React from 'react';
 import styled from 'styled-components';
 import breakpoint from '../../styles/breakpoints';
 
-interface H2Props {
-  centered?: boolean;
-}
-
-interface SectionItemProps extends H2Props {
-  light?: boolean;
-}
-interface SectionProps extends SectionItemProps {
-  h2?: string;
-  flex?: boolean;
-  children?: React.ReactNode;
-}
-
 /**
  *
  * Create an HTML section element.
@@ -24,7 +11,7 @@ interface SectionProps extends SectionItemProps {
  * @param flex Optional flexbox for section content.
  * @returns A section element.
  */
-export function Section({ h2, centered, flex, children, light }: SectionProps) {
+export function Section({ h2, centered, flex, children, light }: UI.Section) {
   return (
     <SectionItem light={light}>
       <SectionContainer flex={flex}>
@@ -39,7 +26,7 @@ export function Section({ h2, centered, flex, children, light }: SectionProps) {
   );
 }
 
-const SectionItem = styled.section<SectionItemProps>`
+const SectionItem = styled.section<UI.Theme>`
   margin-top: 3rem;
 
   ${props =>
@@ -52,7 +39,7 @@ const SectionItem = styled.section<SectionItemProps>`
   `}
 `;
 
-const SectionContainer = styled.div<SectionProps>`
+const SectionContainer = styled.div<UI.Section>`
   max-width: ${props => props.theme.sizes.containerWidthSmall};
 
   @media only screen and ${breakpoint.device.medium} {
@@ -73,7 +60,7 @@ const SectionContainer = styled.div<SectionProps>`
   `}
 `;
 
-const Title = styled.h2<H2Props>`
+const Title = styled.h2<UI.H2>`
   margin-bottom: 3.5rem;
 
   span {
@@ -91,27 +78,6 @@ const Title = styled.h2<H2Props>`
     }
   `}
 `;
-
-interface BoxProps {
-  flex?: boolean;
-  flexSpace?: boolean;
-  justifyRight?: boolean;
-  justifyCenter?: boolean;
-  withContainer?: boolean;
-  mt?: number;
-  mr?: number;
-  ml?: number;
-  mb?: number;
-  pt?: number;
-  pr?: number;
-  pl?: number;
-  pb?: number;
-  children?: React.ReactNode;
-}
-
-interface BoxContainerProps {
-  flex?: boolean;
-}
 
 /**
  *
@@ -132,7 +98,7 @@ interface BoxContainerProps {
  * @param pb Optional bottom padding.
  * @returns A div element.
  */
-export function Box(props: BoxProps) {
+export function Box(props: UI.Box) {
   return (
     <BoxItem
       flex={props.flex}
@@ -157,7 +123,7 @@ export function Box(props: BoxProps) {
   );
 }
 
-const BoxItem = styled.div<BoxProps>`
+const BoxItem = styled.div<UI.Box>`
   margin-top: ${props => (props.mt ? `${props.mt}rem` : '0')};
   margin-right: ${props => (props.mr ? `${props.mr}rem` : '0')};
   margin-left: ${props => (props.ml ? `${props.ml}rem` : '0')};
@@ -202,7 +168,7 @@ ${props =>
   `}
 `;
 
-const BoxContainer = styled.div<BoxContainerProps>`
+const BoxContainer = styled.div<UI.BoxContainer>`
   max-width: ${props => props.theme.sizes.containerWidthSmall};
 
   @media only screen and ${breakpoint.device.medium} {

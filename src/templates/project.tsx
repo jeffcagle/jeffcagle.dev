@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styled from 'styled-components';
 import { graphql } from 'gatsby';
-import { GatsbyImageProps } from 'gatsby-plugin-image';
+// import { GatsbyImageProps } from 'gatsby-plugin-image';
 import ListTools from '../components/lists/ListTools';
 import { Box } from '../components/shared/Ui';
 import HeroBar from '../components/shared/HeroBar';
@@ -14,36 +14,7 @@ import Button from '../components/shared/Button';
 import { faChrome, faGithub } from '@fortawesome/free-brands-svg-icons';
 import breakpoint from '../styles/breakpoints';
 
-interface ProjectProps {
-  data: {
-    markdownRemark: {
-      html: string;
-      frontmatter: {
-        shortTitle: string;
-        longTitle: string;
-        summary: string;
-        frontendTools: string[];
-        backendTools: string[];
-        codeUrl: string;
-        codeUnavailable: boolean;
-        siteUrl: string;
-        siteUnavailable: boolean;
-      };
-    };
-    next: PrevNextProps;
-    previous: PrevNextProps;
-  };
-}
-
-interface PrevNextProps {
-  frontmatter: {
-    shortTitle: string;
-    slug: string;
-    image: GatsbyImageProps['image'];
-  };
-}
-
-function Project({ data }: ProjectProps) {
+function Project({ data }: Templates.Project) {
   const project = data.markdownRemark;
   const { previous, next } = data;
 

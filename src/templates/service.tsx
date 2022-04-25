@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styled from 'styled-components';
 import { graphql } from 'gatsby';
-import { GatsbyImageProps } from 'gatsby-plugin-image';
+// import { GatsbyImageProps } from 'gatsby-plugin-image';
 import ListTools from '../components/lists/ListTools';
 import { Box } from '../components/shared/Ui';
 import HeroBar from '../components/shared/HeroBar';
@@ -13,37 +13,7 @@ import '@fortawesome/fontawesome-svg-core/styles.css';
 import { faComments, faHandPointer } from '@fortawesome/free-solid-svg-icons';
 import breakpoint from '../styles/breakpoints';
 
-interface ServiceProps {
-  data: {
-    markdownRemark: {
-      html: string;
-      frontmatter: {
-        shortTitle: string;
-        longTitle: string;
-        summary: string;
-        tools: string[];
-      };
-    };
-    next: PrevNextProps;
-    previous: PrevNextProps;
-  };
-}
-
-interface ServiceItemProps {
-  frontmatter: {
-    shortTitle: string;
-  };
-}
-
-interface PrevNextProps {
-  frontmatter: {
-    shortTitle: string;
-    slug: string;
-    image: GatsbyImageProps['image'];
-  };
-}
-
-function Service({ data }: ServiceProps) {
+function Service({ data }: Templates.Service) {
   const service = data.markdownRemark;
   const { previous, next } = data;
 
@@ -100,7 +70,7 @@ function Service({ data }: ServiceProps) {
   );
 }
 
-function handleProText(service: ServiceItemProps) {
+function handleProText(service: Templates.ShortTitle) {
   if (service.frontmatter.shortTitle === 'Web Developer') {
     return 'Need a Web Developer?';
   }

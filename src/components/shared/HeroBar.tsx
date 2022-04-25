@@ -2,19 +2,6 @@ import * as React from 'react';
 import styled from 'styled-components';
 import breakpoint from '../../styles/breakpoints';
 
-interface HeroBarWrapperProps {
-  hasSubMenu?: boolean;
-  py?: number;
-}
-
-interface HeroBarContainer {
-  flex?: boolean;
-}
-
-interface HeroBarProps extends HeroBarContainer, HeroBarWrapperProps {
-  children: React.ReactNode;
-}
-
 /**
  *
  * The page hero block.
@@ -24,7 +11,7 @@ interface HeroBarProps extends HeroBarContainer, HeroBarWrapperProps {
  * @param flex Optional flexbox.
  * @returns A hero element.
  */
-function HeroBar({ hasSubMenu, py = 4, flex, children }: HeroBarProps) {
+function HeroBar({ hasSubMenu, py = 4, flex, children }: Hero.Bar) {
   return (
     <Wrapper hasSubMenu={hasSubMenu} py={py}>
       <Container flex={flex}>{children}</Container>
@@ -32,7 +19,7 @@ function HeroBar({ hasSubMenu, py = 4, flex, children }: HeroBarProps) {
   );
 }
 
-const Wrapper = styled.div<HeroBarWrapperProps>`
+const Wrapper = styled.div<Hero.Wrapper>`
   background-color: ${props => props.theme.colors.neutral700};
   padding-top: ${props => `${props.py}rem`};
   padding-bottom: ${props => `${props.py}rem`};
@@ -46,7 +33,7 @@ const Wrapper = styled.div<HeroBarWrapperProps>`
   `}
 `;
 
-const Container = styled.div<HeroBarContainer>`
+const Container = styled.div<Hero.Container>`
   max-width: ${props => props.theme.sizes.containerWidthSmall};
 
   @media only screen and ${breakpoint.device.medium} {

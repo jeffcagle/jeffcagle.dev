@@ -3,28 +3,6 @@ import { Link } from 'gatsby';
 import styled from 'styled-components';
 import breakpoint from '../../styles/breakpoints';
 
-interface BtnContainerProps {
-  centered?: boolean;
-  mt?: number;
-  mb?: number;
-}
-
-interface BtnExternalProps {
-  variant: 'primary' | 'secondary';
-  href: string;
-  disabled?: boolean;
-  externalLink?: boolean;
-  children: React.ReactNode;
-}
-
-interface ButtonProps extends BtnContainerProps {
-  variant: 'primary' | 'secondary';
-  to: string;
-  disabled?: boolean;
-  externalLink?: boolean;
-  children: React.ReactNode;
-}
-
 /**
  *
  * Display a Button component.
@@ -45,7 +23,7 @@ function Button({
   mb,
   externalLink = false,
   children,
-}: ButtonProps) {
+}: Buttons.Button) {
   if (centered) {
     return (
       <BtnContainer centered={centered} mt={mt} mb={mb}>
@@ -77,14 +55,14 @@ function Button({
   );
 }
 
-const BtnContainer = styled.div<BtnContainerProps>`
+const BtnContainer = styled.div<Buttons.Container>`
   display: flex;
   justify-content: ${props => (props.centered ? 'center' : 'left')};
   margin-top: ${props => (props.mt ? `${props.mt}rem` : '0')};
   margin-bottom: ${props => (props.mb ? `${props.mb}rem` : '0')};
 `;
 
-const Btn = styled(Link)<ButtonProps>`
+const Btn = styled(Link)<Buttons.Button>`
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -135,7 +113,7 @@ const Btn = styled(Link)<ButtonProps>`
   `}
 `;
 
-const BtnExternal = styled.a<BtnExternalProps>`
+const BtnExternal = styled.a<Buttons.Link>`
   display: inline-flex;
   align-items: center;
   justify-content: center;

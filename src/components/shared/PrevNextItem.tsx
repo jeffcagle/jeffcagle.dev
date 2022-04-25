@@ -5,23 +5,7 @@ import { GatsbyImage, getImage, GatsbyImageProps } from 'gatsby-plugin-image';
 import { Box } from './Ui';
 import { Row, Column } from './Columns';
 
-interface PrevNextItemProps {
-  slugBase: string;
-  type: string;
-  previous: PrevNextProps;
-  next: PrevNextProps;
-}
-
-interface PrevNextProps {
-  frontmatter: {
-    image: GatsbyImageProps['image'];
-    title?: string;
-    longTitle?: string;
-    slug: string;
-  };
-}
-
-function PrevNextItem({ slugBase, type, previous, next }: PrevNextItemProps) {
+function PrevNextItem({ slugBase, type, previous, next }: Pagination.Item) {
   return (
     <Box withContainer mt={1}>
       <PrevNext>

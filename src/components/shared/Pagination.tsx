@@ -2,12 +2,7 @@ import * as React from 'react';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
 
-interface PaginationProps {
-  currentPage: number;
-  numberOfPages: number;
-}
-
-function Pagination({ currentPage, numberOfPages }: PaginationProps) {
+function Pagination({ currentPage, numberOfPages }: Pagination.Count) {
   const isFirstPage = currentPage === 1;
   const isNextToFirstPage = currentPage === 2;
   const isLastPage = currentPage === numberOfPages;

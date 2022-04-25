@@ -2,7 +2,7 @@ import * as React from 'react';
 import styled from 'styled-components';
 import ListTools from '../components/lists/ListTools';
 import ListExperiments from '../components/lists/ListExperiments';
-import ListPosts from '../components/lists/ListPosts';
+// import ListPosts from '../components/lists/ListPosts';
 import { Row, Column } from '../components/shared/Columns';
 import Button from '../components/shared/Button';
 import { Section, Box } from '../components/shared/Ui';
@@ -13,29 +13,10 @@ import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import ListServices from '../components/lists/ListServices';
 import ListProjects from '../components/lists/ListProjects';
 import Seo from '../components/shared/Seo';
-import { graphql, Link } from 'gatsby';
+import { graphql } from 'gatsby';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 
-interface IndexProps {
-  data: {
-    allDevJson: {
-      nodes: [
-        {
-          name: string;
-          titles: string[];
-          homeCountry: string;
-          toolsILove: string[];
-          social: {
-            gitHub: string;
-            linkedIn: string;
-          };
-        }
-      ];
-    };
-  };
-}
-
-function Index({ data }: IndexProps) {
+function Index({ data }: Home.Greet) {
   const dev = data.allDevJson.nodes[0];
 
   return (

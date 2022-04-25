@@ -1,17 +1,5 @@
-// @ts-check
-
 import * as React from 'react';
 import styled from 'styled-components';
-
-interface ToolTipWrapperProps {
-  position: string;
-  delay?: number;
-  className?: string;
-}
-
-interface TooTipProps extends ToolTipWrapperProps {
-  children: React.ReactNode;
-}
 
 /**
  *
@@ -22,7 +10,12 @@ interface TooTipProps extends ToolTipWrapperProps {
  * @param className Optional class for the tooltip.
  * @returns A tooltip element.
  */
-function ToolTip({ position, delay = 0, className, children }: TooTipProps) {
+function ToolTip({
+  position,
+  delay = 0,
+  className,
+  children,
+}: ToolTip.Element) {
   return (
     <ToolTipWrapper position={position} delay={delay} className={className}>
       {children}
@@ -30,7 +23,7 @@ function ToolTip({ position, delay = 0, className, children }: TooTipProps) {
   );
 }
 
-const ToolTipWrapper = styled.div<ToolTipWrapperProps>`
+const ToolTipWrapper = styled.div<ToolTip.Wrapper>`
   /* width: 250px; */
   display: flex;
   flex-wrap: wrap;
